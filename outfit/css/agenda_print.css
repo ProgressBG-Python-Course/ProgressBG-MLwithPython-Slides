@@ -1,0 +1,115 @@
+ /*fonts*/
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans|Roboto);
+/*other*/
+
+body{
+	/*line-height: 1.2em;*/
+  color: #4d4b4d;
+  background-color: #fff;
+  font-size: .9em;
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  margin: 0;
+  margin-left: 1em;
+}
+header{
+  margin: 0 0 4em 0;
+  text-align: center;
+  color: #4d4b4d;
+}
+header h2, header h3{
+  /*display: none;*/
+  display: inline-block;
+  font-size: 1.2em;
+  margin: 0;
+}
+
+footer{
+  margin: 3em 0 0 0;
+  border-top: 1px solid #333;
+}
+.syllabus .toggleButtons{
+  display: none;
+}
+
+
+
+/*THEMES*/
+.themes{
+	margin: 0 0 2em 0;
+	counter-reset: section topics;
+}
+
+/*ARTICLES*/
+.themes>article{
+	padding: 0;
+	margin: 0;
+	line-height: 1.7em;
+}
+.themes>article>h1{
+  display: none;
+}
+
+/*SECTIONS*/
+.themes>article>section{
+	position: relative;
+	margin: 0 0 0 1em;
+  page-break-inside: avoid;
+}
+
+
+.themes>article>section h3{
+	display: inline-block;
+  width: 100%;
+  margin: 0em 0 0em 0;
+  font-size: 1.15em;
+  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  line-height: 1.5em;
+  letter-spacing: .1em;
+  counter-reset: sub_topics;
+}
+.themes>article>section h3:before{
+	counter-increment: topics;
+	content: counter(topics) ". ";
+  display: inline-block;
+  /*width: 1.5em;*/
+  text-align: right;
+  margin-right: .3em;
+  font-size: .95em;
+	color: #999;
+}
+
+.themes>article>section>ol{
+	margin: 0.1em 0 1.2em 2.7em;
+  padding: 0;
+  page-break-inside: avoid;
+  list-style-type: none;
+}
+/*.themes>article>section>ol>li:before{
+  counter-increment: sub_topics;
+  content: counter(topics) "." counter(sub_topics) ". ";
+}*/
+.themes>article>section>ol>li{
+  margin: 0 0 .5em 0;
+  padding: 0;
+  line-height: normal;
+  page-break-after: avoid;
+}
+.themes>article>section>ol>li>ol{
+	/*list-style-type: disc;*/
+	/*margin: 0 0 0 2em;*/
+}
+
+.hours, .sectionHours, .stats{
+  display: none;
+}
+
+.license{
+  font-size: 1.2em;
+}
+a[rel="license"] img{
+  height: .8em;
+}

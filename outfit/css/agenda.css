@@ -1,0 +1,201 @@
+ /*fonts*/
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web);
+/*@import url(https://fonts.googleapis.com/css?family=Glass+Antiqua);*/
+@import url(https://fonts.googleapis.com/css?family=Modern+Antiqua);
+/*@import url(https://fonts.googleapis.com/css?family=Share+Tech+Mono);*/
+/*@import url(https://fonts.googleapis.com/css?family=Space+Mono);*/
+@import url(https://fonts.googleapis.com/css?family=Cutive+Mono|VT323);
+/*other*/
+@import	url('common.css');
+
+body{
+	line-height: 1.2em;
+    color: #4d4b4d;
+    background-color: #fff;
+    font-family: 'Titillium Web', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/*SYLLABUS TITLE*/
+.syllabus>h1{
+	margin: 0em 0 1em 0;
+	padding: 0;
+	font-size:2em;
+	text-align: center;
+	/*text-transform: uppercase;*/
+	color: #999;
+}
+.syllabus>h1:hover{
+    /*font-size: 1.4em;*/
+    /*cursor: pointer;*/
+}
+.syllabus .toggleButtons{
+    position: sticky;
+    top:1em;
+    z-index: 999;
+    margin: 0 0 3em 0;
+    padding: 0;
+    font-size: 1em;
+    font-weight: normal;
+    /*text-align: center;*/
+    /*vertical-align: top;*/
+    color: #999;
+    opacity: .3;
+}
+.syllabus .toggleButtons .toggleSubThemes{
+  position: absolute;
+  top: 0; right: 10em;
+}
+.syllabus .toggleButtons:hover{
+  opacity: 1;
+}
+.syllabus .toggleButtons>.toggleThemes{
+    margin: 0 .3em 0 1em;
+    color: #718EBA;
+}
+.syllabus .toggleButtons>.toggleSubThemes{
+    /*display: block;
+    height: 2em;*/
+    text-align: center;
+    margin: 0 auto;
+    padding: .3em 1em;
+    border-radius: 40%;
+    color: #CD0027;
+    /*background: #E8D0D033;*/
+    /*font-weight: bold;*/
+}
+.syllabus .toggleButtons>span:hover{
+    /*font-size:.9em;*/
+    cursor: pointer;
+}
+
+
+/*THEMES*/
+.themes{
+	margin: 0 0 2em 0;
+	counter-reset: section topics;
+}
+
+/*ARTICLES*/
+.themes>article{
+	padding: 0;
+	margin: 0;
+	line-height: 1.7em;
+}
+.themes>article>h1{
+  display: none;
+	margin: 1em 0;
+	font-size: 1.2em;
+	color: #AAA;
+	font-style: italic;
+	border-bottom: 1px dotted #718EBA;
+}
+
+/*SECTIONS*/
+.themes>article>section{
+	position: relative;
+	margin: 0 0 0 1em;
+}
+
+
+.themes>article>section h3{
+	display: inline-block;
+  width: 100%;
+  margin: 0.8em 0 .5em 0;
+  font-size: 1.1em;
+  font-weight: normal;
+  color: #333;
+  line-height: 1.5em;
+  letter-spacing: .1em;
+  border-bottom: .05em solid #EED6DB;
+}
+.themes>article>section h3:before{
+	counter-increment: topics;
+	content: counter(topics) ". ";
+  display: inline-block;
+  width: 1.6em;
+  text-align: right;
+  margin-right: .3em;
+  /*border: 1px solid red;*/
+	color: #EEA6B4;
+}
+.themes>article>section h3:after{
+    margin-left: .5em;
+    font-family: FontAwesome;
+    text-decoration: none;
+    font-size: .9em;
+    color: #CD0027;
+}
+.themes>article>section h3.arrow_down:after{
+	content: "\f0d7";
+}
+.themes>article>section h3.arrow_up:after{
+	content: "\f0d8";
+  color: #EEA6B4;
+}
+.themes>article>section h3>a{
+	text-decoration: none;
+  line-height: 1.1em;
+}
+.themes>article h3>a:hover{
+	background: none;
+  /*font-weight: bold;*/
+  font-size: 1.1em;
+
+  color: #890E0E;
+  /*text-shadow:
+      1px 1px 1px #A85959,
+      2px 2px 0px #B74F4F
+     ;*/
+  padding: .5em .3em;
+  /*box-shadow:
+    0 4px 4px rgba(163,1,67,.24),
+    0 0 4px rgba(163,1,67,.12),
+    0 6px 18px rgba(231,43,133,.12);
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);*/
+  animation: shake .5s ease-in-out 1;
+  border: none;
+  border-radius: 15%;
+}
+.themes>article>section>ol{
+	margin: 0.1em 0 0.6em 2.4em;
+}
+.themes>article>section>ol>li>ol{
+	/*list-style-type: disc;*/
+	margin: 0 0 0 2em;
+}
+
+
+/*STATS*/
+.hours, .sectionHours{
+	float: right;
+	font-size: 1rem;
+	/*margin: 0 .5em 0 0;*/
+	color: #AAA;
+}
+.hours:before{
+	content: "[ ";
+}
+.hours:after{
+	content: ' h.]';
+}
+.stats>#total_hours{
+	float: left;
+	height: 1em;
+	color: #7B3B3B;
+}
+.stats>#total_hours:before{
+	content: "total hours: ";
+}
+.stats>#total_days{
+	float: right;
+	height: 1em;
+	color: #7B3B3B;
+}
+.stats>#total_days:before{
+	content: "total days: ";
+}
