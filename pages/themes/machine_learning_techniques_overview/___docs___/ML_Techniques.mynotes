@@ -1,0 +1,44 @@
+Supervised Learning
+  basic characteristics:
+    - the input data is labeled
+    - the model is trained to predict labels on train data
+      - when the prediction is not satisfactory we correct the model
+      - the goal is to minimize the error on prediction
+  common problems solved:
+    - classification
+    - regression.
+  area of applicatios:
+    -
+  algorithms:
+    - Linear Regression
+    - Logistic Regression
+    - Back Propagation Neural Network
+
+Unsupervised Learning
+  basic characteristics:
+    - input date are not labeled (we can non evaluate the model of terms of correct or not correct prediction, as we do not know what is correct)
+    - the goal of the model is to deduce a structures in the data:
+      - organize data by similarity
+      - extract common rules(patterns)
+      - reduce redundancy
+  common problems solved:
+    - clustering
+    - association rule learning
+    - dimensionality reduction
+  area of applicatios:
+    -
+  algorithms:
+    - Apriori algorithm
+    - k-Means
+
+Semi-Supervised Learning
+  basic characteristics:
+    - input data is a mixture of labeled and unlabelled examples.
+    - the goal is to organize/structure the data and to make predictions.
+  common problems solved:
+    - classification
+    - regression
+  area of applicatios:
+    -image classification on large datasets with few labeled examples
+  algorithms:
+    -

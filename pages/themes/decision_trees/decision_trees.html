@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>decision_trees</title>
+	<link rel="shortcut icon" href="/ProgressBG-MLwithPython-Slides/favicon.ico">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<!-- css & themes include -->
+	<link rel="stylesheet" href="/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="/ProgressBG-MLwithPython-Slides/outfit/css/themes/projector.css" id="theme">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? '/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+	<!-- CUSTOM -->
+	<base target="_blank">
+</head>
+
+<body>
+	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+		<div class="top_links">
+			<a class="home_link" href="/ProgressBG-MLwithPython-Slides/index.html#decision_trees" target="_top"><i class="fa fa-home"></i></a>
+			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
+			<div class="help_text">
+				<div><span>N/Space</span><span>Next Slide</span></div>
+				<div><span>P</span><span>Previous Slide</span></div>
+				<div><span>O</span><span>Slides Overview</span></div>
+				<div><span>ctrl+left click</span><span>Zoom Element</span></div>
+			</div>
+		</div>
+		<div class="footer theme_switch">
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+		</div>
+		<div class="slides">
+			<!--
+########################################################
+##################### SLIDES START #####################
+########################################################
+-->
+<section data-min-total="80">
+	<h1>Decision Trees</h1>
+</section>
+<section class="copyright" data-transition="zoom">
+	<section>
+		<div class="note">
+			<p>Created for</p>
+		</div>
+		<div class="company">
+			<a href="http://progressbg.net/kurs-po-web-design/">
+				<img style="height:80%" src="/ProgressBG-MLwithPython-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+			</a>
+		</div>
+	</section>
+	<section>
+		<div class="note">
+			<p>Created by</p>
+		</div>
+		<div class="company">
+			<div class="LI-profile-badge" data-version="v1" data-size="large" data-locale="en_US" data-type="vertical"
+				data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva
+					E. Popova</a></div>
+		</div>
+		<div class="author">
+			<span>2018,</span>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License"
+					style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+		</div>
+	</section>
+</section>
+
+
+
+<section data-min="10"><h1>What are Decision Trees?</h1></section>
+<section><h2>What are Decision Trees?</h2>
+	<section><h3>Overview</h3>
+		<dl class="fa">
+			<dt>Extensive usage of Information Theory</dt>
+			<dt>Decision trees can be regarded as a set of <code>if-then</code> rules.</dt>
+			<dd>Or formally speaking, Decision trees represent a <span class="note">disjunction of conjunctive clauses</span></dd>
+			<dt>A hierarchical data structure that represents data by implementing a <a href="https://en.wiktionary.org/wiki/divide_and_conquer">divide and conquer</a> strategy</dt>
+			<dt>Can be used with binary/multi-valued/continuous inputs</dt>
+			<dt>Trees can be applied to both regression and classification problems</dt>
+			<dd>Classification And Regression Tree (CART) </dd>
+		</dl>
+	</section>
+	<section>
+			<a href="images/basic_tree_terms.png"><img src="images/basic_tree_terms.png"></a>
+	</section>
+	<section><h3>Tree Terminology</h3>
+		<dl class="fa">
+				<dt>Each node tests an attribute (ask question)</dt>
+				<dd>The start node is called <span class="note">root</span> node, the other - <span class="note">internal</span> nodes</dd>
+				<dt>Each branch corresponds to attribute value</dt>
+				<dt>Each leaf node assigns a classification</dt>
+			<dt><span class="note">Pure node</span> -  all the samples at that node have the same class label.</dt>
+		</dl>
+	</section>
+	<section><h3>Example - Are we going to play tennis?</h3>
+		<!-- <a href="examples/slides/play_tennis_table_data.html">play_tennis_table_data</a> -->
+		<a href="examples/slides/play_tennis_table_data.html"><img src="images/dt_the_problem.png" style="height: 60vh"></a>
+	</section>
+	<section><h3>DecisionTree - when to play tennis</h3>
+		<a href="images/DecisionTree_PlayTennis.png"><img src="images/DecisionTree_PlayTennis.png" alt=""></a>
+	</section>
+	<section><h3>Represented as disjunction of conjunctions</h3>
+		$$
+			(Outlook = Sunny ∧ Humidity = Normal) \\
+			∨ (Outlook = Overcast) \\
+			∨ (Outlook = Rain ∧ W ind = W eak)
+		$$
+	</section>
+	<section>
+		<dl class="fa">
+			<dt>Learn a pattern through a sequence of questions.</dt>
+			<dt>Next question asked depends on the answer to the current question</dt>
+			<dt>Questions can be asked in a “yes-no” or “true-false” style that do not require any notion of metric</dt>
+			<dt>Sequence of questions is displayed in a directed decision tree</dt>
+			<dt>Classification of a pattern begins at the root node until a leaf node was reached. </dt>
+		</dl>
+	</section>
+	<section>
+		<dl class="fa">
+			<p>A decision tree progressively splits the training set into smaller and smaller subsets </p>
+			<p>"Divide and Conquer" Algorithm:</p>
+			<dt>Split data into subsets</dt>
+			<dt>Are they pure?</dt>
+			<dd>If Yes then Stop</dd>
+			<dd>Else Repeat</dd>
+			<p>Which is <span class="note">the best split</span>?</p>
+		</dl>
+	</section>
+</section>
+
+
+<section data-min="5"><h1>Finding the best split</h1></section>
+<section><h2>Finding the best split</h2>
+	<section><h3>Let's order/split the data</h3>
+		<dl class="fa">
+			<dt>We want to build the minimal (depth) tree</dt>
+			<dt>On each split step, we have multiple choices</dt>
+			<dd>On the first level, we can split data on 'Outlook'/'Humidity'/'Wind'</dd>
+			<dt>How to measure which is the best attribute to split on?</dt>
+		</dl>
+		<a href="images/dt_split_on_outlook.png"><img src="images/dt_split_on_outlook.png" alt=""></a>
+	</section>
+	<section><h3>ID3 (Iterative Dichotomiser 3) overview</h3>
+		<dl class="fa">
+			<dt>Based on Entropy</dt>
+			<dt>Choose the "best" feature to split on</dt>
+			<dt>Employs a top-down, greedy search through the space of possible branches with no backtracking</dt>
+		</dl>
+	</section>
+	<section><h3>ID3 Algorithm</h3>
+		<ol>
+			<li>Find A, that is the “best” decision attribute for next node</li>
+			<li>Assign A as decision attribute for node</li>
+			<li>For each value of A, create new descendant of node</li>
+			<li>Sort training examples to leaf nodes</li>
+			<li>If training examples form pure set, Then STOP, Else iterate over new leaf nodes</li>
+		</ol>
+	</section>
+	<!-- <section>
+				<dl class="fa">
+					<dt>Start with the original set {\displaystyle S} S as the root node</dt>
+				</dl>
+		• Split&(node,&{examples}&):&
+		1. A&&the&best&a;ribute&for&spli`ng&the&{examples}&
+		2. Decision&a;ribute&for&this&node&&A&
+		3. For&each&value&of&A,&create&new&child&node&
+		4. Split&training&{examples}&to&child&nodes&
+		5. If&examples&perfectly&classified:&STOP&
+		else:&iterate&over&new&child&nodes&
+		Split&(child_node,&{subset&of&examples}&)&
+		• Ross&Quinlan&(ID3:&1986),&(C4.5:&1993)&
+		• Breimanetal&(CaRT:&1984)&from&sta>s>cs
+	</section> -->
+</section>
+
+<section><h1>Entropy in Information Theory</h1></section>
+<section><h2>Entropy in Information Theory</h2>
+	<section><h3>Overview</h3>
+		<a href="images/Entropy_flip_2_coins.jpg"><img src="images/Entropy_flip_2_coins.jpg" alt="" style="height:60vh"></a>
+	</section>
+	 <section><h3>Overview</h3>
+		<dl class="fa">
+			<dt>Introduced by Claude Shannon in 1948</dt>
+			<dd><a href="https://en.wikipedia.org/wiki/A_Mathematical_Theory_of_Communication">"A Mathematical Theory of Communication"</a></dd>
+			<dt>Typically is measured in <span class="note">bits</span> (when $log_2$) is used</dt>
+			<dd>The entropy of a fair coin toss is 1 bit</dd>
+			<dd>But if an observer can see the coin is on its head, then the coin entropy for that observer is 0 bits</dd>
+			<dd>Entropy is zero when one outcome is certain to occur. I.e. the message "The sun will rise tommorow" caries 0 information, as it's entropy is 0.</dd>
+			<dt>Entropy only takes into account the probability of observing a specific event, so the information it encapsulates is information about the underlying probability distribution, not the meaning of the events themselves.</dt>
+		</dl>
+	</section>
+	<section>
+		<p style="font-size: 2em">$${\displaystyle \mathrm {H} {(S)}=\sum _{x\in X}{-p(x)\log _{2}p(x)}}$$</p>
+	</section>
+	<section><h3>Entropy in decision trees</h3>
+			<dl class="fa">
+				<dt>Entropy ${ {H} {(S)}}$ is a measure of the amount of uncertainty in the (data) set  ${S}$ (i.e. entropy characterizes the (data) set  ${S}$).</dt>
+				<p>$${\displaystyle \mathrm {H} {(S)}=\sum _{x\in X}{-p(x)\log _{2}p(x)}}$$</p>
+				<dt>Where $S$ is a sample of training examples.</dt>
+				<dt>$p(x)$ is the proportion of $x_{th}$ examples in S</dt>
+				<dd>For binary tree, $X \in (True,False)$</dd>
+			</dl>
+	</section>
+	<section><h3>Entropy</h3>
+		<a href="images/entropyfunction.png"><img src="images/entropyfunction.png"></a>
+	</section>
+	<section><h3>Calculate Entropy</h3>
+		<p>$${\displaystyle \mathrm {H} {(S)}=\sum _{x\in X}{-p(x)\log _{2}p(x)}}$$</p>
+		<dl class="fa">
+			<dt>Let's take the 'Play' column. It's values are into two categories:</dt>
+			<dd>n - with 'Yes' and m=N-n with 'No'</dd>
+			<dt>And we want to group them by the labels. Let:</dt>
+			<dd>$p = n/N$ and $q = m/N$</dd>
+			<dt>The entropy of our set is given by the following equation:</dt>
+			<p>$${\displaystyle \mathrm {H} {(S)}= {-p\log _{2}p} + {-q\log _{2}q} } $$</p>
+			<dt>Which is: ${H} {(S)}= -(0.64*log_2{0.64}) - (0.36*log_2{0.36}) = 0.94$</dt>
+		</dl>
+	</section>
+</section>
+
+<section data-min="1"><h1>Information Gain</h1></section>
+<section><h2>Information Gain</h2>
+	<section><h3>Overview</h3>
+		<dl class="fa">
+			<dt>Also known in statistics as <span class="note">Mutual Information</span></dt>
+			<dt>Information gain $IG(A)$ is the measure of the difference in entropy from before to after the set ${\displaystyle S}$ is split on an attribute ${\displaystyle A}$.</dt>
+			<dd>In other words, how much uncertainty in ${\displaystyle S}$ was reduced after splitting set ${\displaystyle S}$ on attribute ${\displaystyle A}$</dd>
+			<dt>We want to maximize the Information Gain</dt>
+		</dl>
+	</section>
+	<section>
+		<dl class="fa">
+			<dt>Gain(S, A) = expected reduction in entropy in S due to sorting on A</dt>
+		</dl>
+	</section>
+</section>
+
+<section data-min="10"><h1>Pros/Cons ans Applications</h1></section>
+<section><h2>Pros/Cons ans Applications</h2>
+	<section><h3>Pros</h3>
+		<dl class="fa">
+			<dt>Very easily interpretable (not a "Black-Box" for the user)</dt>
+			<dd>We can explain how the model works to get to any decision</dd>
+			<dt>Can be a universal approximator</dt>
+			<dd>can represented any DNF (Disjunctive Logical Formula)</dd>
+			<dd>we can split infinitely the input space</dd>
+			<dt>Can model problems with multiple outputs</dt>
+			<dt>Can handle missing data and irrelevant attributes (Gain=0)</dt>
+			<dt>Data requires minimal preparation</dt>
+			<dt>Low memory print (very compact after pruning)</dt>
+			<dt>Takes time to learn, but is very fast in prediction phase - O(treeDepth)</dt>
+			<dd>The are <a href="https://machinelearningmastery.com/parametric-and-nonparametric-machine-learning-algorithms/">non-parametric</a></dd>
+		</dl>
+	</section>
+	<section><h3>Cons</h3>
+		<dl class="fa">
+			<dt>Not optimal (ID3 is greedy)</dt>
+			<dt>The decision boundaries are parallel (axis aligned) - not good for continuous values</dt>
+		</dl>
+	</section>
+	<section><h3>Applications</h3>
+		<dl class="fa">
+			<dt>Medical diagnosis</dt>
+			<dt>Credit risk analysis</dt>
+			<dt>Calendar scheduling</dt>
+		</dl>
+	</section>
+</section>
+
+<section data-min="10"><h1>Decision Forest</h1></section>
+<section><h2>Decision Forest</h2>
+	<section><h3>Overview</h3>
+
+	</section>
+</section>
+<!-- <section data-min="1"><h1>References</h1></section>
+<section><h2>References</h2>
+	<section><h3>Readings</h3>
+		<dl class="fa">
+			<dt></dt>
+		</dl>
+	</section>
+</section>
+
+<section id="hw" data-min="4"><h1>Exercises</h1></section>
+<section><h2>Task1: Task1Title</h2>
+	<section><h3>The Task</h3>
+		<dl class="fa">
+			<dt></dt>
+		</dl>
+	</section>
+</section>
+
+<section><h3>Submission</h3>
+	<dl class="fa">
+		<dt>PLease, prefix your file names/archive with your name initials, before sending.</dt>
+		<dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
+		<dt>Send files to <a href="mailto:ProgressBG.WWW.Courses@gmail.com?Subject=_decision_trees_">ProgressBG.WWW.Courses@gmail.com</a></dt>
+	</dl>
+</section> -->
+
+
+<section class="disclaimer" data-background="/ProgressBG-MLwithPython-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
+	<p>These slides are based on</p>
+	<p>customised version of </p>
+	<p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+	 <p>framework</p>
+</section>
+
+
+<!--
+########################################################
+##################### SLIDES END   #####################
+########################################################
+-->
+		</div>
+	</div>
+
+
+<!-- Custom processing -->
+<script src="/ProgressBG-MLwithPython-Slides/outfit/js/slides.js"></script>
+<!-- external scripts -->
+<script src="/ProgressBG-MLwithPython-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+<script src="/ProgressBG-MLwithPython-Slides/lib/reveal.js/js/reveal.js"></script>
+
+<!-- init reveal -->
+<script>
+	// Full list of configuration options available at:
+	// https://github.com/hakimel/reveal.js#configuration
+	var highlightjsTabSize = '  ';
+	Reveal.initialize({
+		controls: true,
+		progress: true,
+		slideNumber: 'c/t',
+		keyboard: true,
+		history: true,
+
+		// display control
+		// center: true,
+		// width: '100%',
+		// height: '100%',
+		// // Factor of the display size that should remain empty around the content
+		// margin: 0.1,
+
+		// The "normal" size of the presentation, aspect ratio will be preserved
+		// when the presentation is scaled to fit different resolutions. Can be
+		// specified using percentage units.
+		width: 960,
+		height: 700,
+
+		// Factor of the display size that should remain empty around the content
+		margin: 0.1,
+
+		// Bounds for smallest/largest possible scale to apply to content
+		minScale: 0.2,
+		maxScale: 1.5,
+
+		// slide transition
+		transition: 'concave', // none/fade/slide/convex/concave/zoom
+		// shift+mouse click to zoom in/out element
+		zoomKey: 'ctrl',
+		// theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+		// transition: Reveal.getQueryHash().transition || 'default'
+		// Optional reveal.js plugins
+		dependencies: [
+			{ src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
+			{ src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+			{ src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+			{ src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function () { hljs.configure({ tabReplace: highlightjsTabSize }); hljs.initHighlightingOnLoad(); } },
+			{ src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+			{ src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+		]
+	});
+</script>
+<!-- linkedin badge -->
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+
+<!-- MathJax -->
+<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	</script>
+	<script type="text/javascript" async src="/ProgressBG-MLwithPython-Slides/lib/MathJax/MathJax.js?config=TeX-AMS_HTML-full"></script>
+</body>
+
+</html>

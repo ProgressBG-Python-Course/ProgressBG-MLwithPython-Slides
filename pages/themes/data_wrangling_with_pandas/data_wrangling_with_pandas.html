@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>data_wrangling_with_pandas</title>
+  <link rel="shortcut icon" href="/ProgressBG-MLwithPython-Slides/favicon.ico">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <!-- css & themes include -->
+  <link rel="stylesheet" href="/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="/ProgressBG-MLwithPython-Slides/outfit/css/themes/projector.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <!-- CUSTOM -->
+  <base target="_blank">
+</head>
+<body>
+  <div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+    <div class="top_links">
+      <a class="home_link" href="/ProgressBG-MLwithPython-Slides/index.html#data_wrangling_with_pandas" target="_top"><i class="fa fa-home"></i></a>
+      <span class="help_link" href="#"><i class="fa fa-question"></i></span>
+      <div class="help_text">
+        <div><span>N/Space</span><span>Next Slide</span></div>
+        <div><span>P</span><span>Previous Slide</span></div>
+        <div><span>O</span><span>Slides Overview</span></div>
+        <div><span>ctrl+left click</span><span>Zoom Element</span></div>
+      </div>
+    </div>
+    <div class="footer theme_switch">
+      <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+      <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+      <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+    </div>
+    <div class="slides">
+<!--
+########################################################
+##################### SLIDES START #####################
+########################################################
+-->
+<section data-min-total="__X__"><h1>Data analysis with NumPy and Pandas</h1></section>
+<section class="copyright" data-transition="zoom">
+  <section >
+    <div class="note">
+      <p>Created for</p>
+    </div>
+    <div class="company">
+      <a href="http://progressbg.net/kurs-po-web-design/">
+      <img style="height:80%" src="/ProgressBG-MLwithPython-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+      </a>
+    </div>
+  </section>
+  <section>
+    <div class="note">
+      <p>Created by</p>
+    </div>
+    <div class="company">
+      <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova</a></div>
+    </div>
+    <div class="author">
+      <span>2018,</span>
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+    </div>
+  </section>
+</section>
+
+
+<section><h1>NumPy Arrays - Overview</h1></section>
+<section><h2>NumPy Arrays - Overview</h2>
+  <section><h3>NumPy overview</h3>
+    <dl class="fa">
+      <dt><a href="https://pypi.org/project/numpy/">numpy</a> is a python package that adds support for:</dt>
+      <dd>Effective implementation of large,  homogeneous multi-dimensional arrays</dd>
+      <dd>Great collection of high-level mathematical and logical functions to operate on these arrays</dd>
+      <dd>Built-in functions for linear algebra, Fourier transforms  and random number generation</dd>
+      <dt>Written mainly in C langualge</dt>
+      <dt>Play nice with Matplotlib and SciPy</dt>
+      <dt class="note">pandas is built on top of numpy</dt>
+    </dl>
+  </section>
+  <section><h3>N-Dimensional Arrays</h3>
+    <dl class="fa">
+      <dt>The main object in numpy is the <span class="note">homogeneous</span> multidimensional array (<a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.ndarray.html">ndarray Object</a>)</dt>
+      <dt>It is a table of elements (usually numbers), <span class="note">all of the same type</span>, indexed by a tuple of positive integers for each dimension.</dt>
+      <dd>In numpy, dimensions are called <span class="note">axes</span></dd>
+      <dd>Number of axes defines the <span class="note">rank</span> of the array</dd>
+    </dl>
+  </section>
+  <section><h3>NumPy arrays implementation (vs Python's lists)</h3>
+    <dl class="fa">
+      <dt>Implementation</dt>
+      <a href="images/array_vs_list_implementation.png"><img src="images/array_vs_list_implementation.png"></a>
+      <dt>Results in less memory consumption and speed of operations</dt>
+      <!-- <dt>Much faster (magnitudes)</dt>
+      <dd><a href="https://docs.python.org/3/faq/design.html#how-are-lists-implemented-in-cpython">How are lists implemented in CPython?</a></dd> -->
+    </dl>
+  </section>
+  <section><h3>Speed Test (Arrays vs Lists)</h3>
+    <pre><code rel="numpy_demo.ipy" class="python">
+      import numpy as np
+
+      SIZE = 2_000_000
+
+      # Create Python's lists
+      l1 = list(range(SIZE))
+      l2 = list(range(SIZE))
+
+      # Create Numpy Arrays
+      a1=np.arange(SIZE)
+      a2=np.arange(SIZE)
+
+
+      # The point to point sum on both data structures
+      def python_lists():
+        result = [(x+y) for x,y in zip(l1,l2)]
+
+      def numpy_arrays():
+        result = a1 + a2
+
+      # Time test:
+      %time python_lists()
+      print('-'*50)
+      %time numpy_arrays()
+    </code></pre>
+  </section>
+</section>
+
+<section><h1>NumPy Data Types</h1></section>
+<section><h2>NumPy Data Types</h2>
+  <section>
+      <dl class="fa">
+        <dt>Numpy supports much finer data types than Python</dt>
+        <dd><a href="https://docs.scipy.org/doc/numpy-1.14.0/user/basics.types.html">Data types @docs.scipy.org</a></dd>
+        <dt><span class="note">Do not forget, that Numpy Arrays are homogeneous</span>! I.e. can not store data from different data types.</dt>
+      </dl>
+  </section>
+</section>
+
+<section><h1>ndarray attributes</h1></section>
+<section><h2>basic attributes</h2>
+  <section>
+    <pre><code rel="Python" class="python">
+      import numpy as np
+
+      a1 = np.array([[1,2,3], [4,5,6]],dtype="int8")
+      print(a1)
+
+      #[[1 2 3]
+      # [4 5 6]]
+    </code></pre>
+    <pre><code class="bash">
+      # shape - tuple of array dimensions
+      a1.shape:   (2, 3)
+
+      # ndim - number of array dimensions
+      a1.ndim:    2
+
+      # dtype - data-type of the array’s elements
+      a1.dtype:   int8
+
+      # size - number of elements in the array
+      a1.size:    6
+
+      # itemsize - length of one array element in bytes
+      a1.itemsize:1
+
+      # nbytes - total bytes consumed by the elements of the array
+      a1.nbytes:  6
+    </code></pre>
+  </section>
+</section>
+
+<section><h1>Point to point (element-wise) Operations</h1></section>
+<section><h2>Point to point (element-wise) Operations</h2>
+  <section>
+    <dl class="fa">
+      <dt>All arithmetic operations are <span class="note">point to point</span> (element by element) operations</dt>
+      <pre><code rel="Python" class="python">
+        import numpy as np
+
+        l1 = list(range(1,11))
+        l2 = list(range(11,21))
+        a1 = np.arange(1,11)
+        a2 = np.arange(11,21)
+
+        print("\nPlus operator on NumPy Arrays")
+        print("a1 + a2 = {}".format(a1+a2))
+
+        print("\nPlus operator on Python Lists")
+        print("l1 + l2 = {}".format(l1+l2))
+      </code></pre>
+      <pre><code rel="Output" class="bash" data-noescape>
+        Plus operator on NumPy Arrays
+        a1 + a2 = [12 14 16 18 20 22 24 26 28 30]
+
+        Plus operator on Python Lists
+        l1 + l2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+      </code></pre>
+    </dl>
+  </section>
+</section>
+
+
+<section><h1>ndarray create methods</h1></section>
+<section><h2>ndarray create methods</h2>
+  <section><h3>numpy.array()</h3>
+    <pre><code rel="Syntax" class="bash" data-noescape>
+      numpy.array(object, dtype=None, copy=True, order='K', subok=False, ndmin=0)
+    </code></pre>
+    <dl class="fa">
+      <dt>Main Parameters:</dt>
+      <dd><span class="note">object</span> - can be any Python Sequence or other object exposing the array interface</dd>
+      <dd><span class="note">dtype</span> - specify the data-type, optional
+      <dd><span class="note">ndmin</span> - specifies the minimum number of dimensions, optional</dd>
+      <dt>Reference: <a href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.array.html#numpy.array">numpy.array</a> method</dt>
+    </dl>
+  </section>
+  <section><h3>numpy.array() - examples</h3>
+    <pre><code rel="Python" class="python">
+      import numpy as np
+
+      # from Python list object
+      a1 = np.array([1,2,3])
+
+      # set explicit the data type
+      a2 = np.array([1,2,3], dtype=float)
+      a3 = np.array([1,2,3], dtype=bool)
+
+
+      # type coercion
+      a4 = np.array([1, 2, 3.0])
+
+      print(a1)
+      print(a2)
+      print(a3)
+      print(a4)
+    </code></pre>
+    <pre><code rel="Output" class="bash" data-noescape>
+      [1 2 3]
+      [1. 2. 3.]
+      [ True  True  True]
+      [1. 2. 3.]
+    </code></pre>
+  </section>
+  <section><h3>numpy.arange()</h3>
+    <pre><code rel="Syntax" class="bash" data-noescape>
+      numpy.arange([start,] stop, [step,] dtype=None)
+    </code></pre>
+    <dl class="fa">
+      <dt>Return evenly spaced values within a given interval</dt>
+      <dt>Parameters</dt>
+      <dd><span class="note">start</span> - start of interval (<span class="note">included</span>). Default value - 0</dd>
+      <dd><span class="note">stop</span> - stop of interval (<span class="note">not included</span>).</dd>
+      <dd><span class="note">step</span> - the step of interval generation. Default value - 1</dd>
+      <dd><span class="note">dtype</span> - the data type of output array. If not given, will infer the data type from the other input arguments</dd>
+    </dl>
+  </section>
+  <section><h3>numpy.arange() - examples</h3>
+    <pre><code rel="Python" class="python">
+      a1 = np.arange(5)
+      a2 = np.arange(5,10)
+      a3 = np.arange(1,10,2)
+
+      print("\nnp.arange(5):",a1)
+      print("\nnp.arange(5,10):",a2)
+      print("\nnp.arange(1,10,2):",a3)
+    </code></pre>
+    <pre><code rel="Output" class="bash" data-noescape>
+      np.arange(5): [0 1 2 3 4]
+
+      np.arange(5,10): [5 6 7 8 9]
+
+      np.arange(1,10,2): [1 3 5 7 9]
+    </code></pre>
+  </section>
+  <section><h3>numpy.full()</h3>
+    <pre><code rel="Syntax" class="bash" data-noescape>
+      numpy.full(shape, fill_value, dtype=None)
+    </code></pre>
+    <dl class="fa">
+      <dt>Return a new array of given shape and type, filled with fill_value.</dt>
+      <dt>Parameters</dt>
+      <dd><span class="note">shape</span> - shape of the new array, e.g., (2, 3)</dd>
+      <dd><span class="note">fill_value</span> - the value for array elements</dd>
+      <dd><span class="note">dtype</span> - the desired data-type for the array The default, None</dd>
+    </dl>
+  </section>
+  <section><h3>numpy.full() - examples</h3>
+    <pre><code rel="Python" class="python">
+      a1 = np.full( (3,2), 2)
+      print(a1)
+    </code></pre>
+    <pre><code rel="Output" class="bash" data-noescape>
+      [[2 2]
+       [2 2]
+       [2 2]]
+    </code></pre>
+
+  </section>
+  <section><h3>Reference</h3>
+    <a href="https://docs.scipy.org/doc/numpy/reference/routines.array-creation.html">Array creation routines @official docs</a>
+  </section>
+</section>
+
+<section><h1>ndarrays - Indexing & Slicing</h1></section>
+<section><h2>ndarrays - Indexing & Slicing</h2>
+  <section><h3>Overview</h3>
+    <dl class="fa">
+      <dt>ndarrays can be indexed using the standard Python x[obj] syntax, where x is the array and obj is the selection</dt>
+      <dt>All arrays generated by basic slicing <span class="note">are always views of the original array</span>.</dt>
+    </dl>
+  </section>
+  <section><h3>Basic Indexing - Examples</h3>
+    <pre><code rel="Python" class="python">
+      import numpy as np
+
+      a1 = np.arange(1,10)
+      print(a1)
+      # [1 2 3 4 5 6 7 8 9]
+
+      # positive index - from left to right
+      print(a1[1])
+      # 2
+
+      # negative index - from right to left
+      print(a1[-1])
+      # 9
+    </code></pre>
+  </section>
+  <section><h3>Basic Slicing - Examples</h3>
+    <pre><code rel="Python" class="python">
+      a1 = np.arange(1,10)
+      print(a1)
+
+      print(a1[0:3])
+      # [1 2 3]
+
+      print(a1[0:9:2])
+      # [1 3 5 7 9]
+
+      print(a1[::2])
+      # [1 3 5 7 9]
+
+      print(a1[-1::-2])
+      # [9 7 5 3 1]
+    </code></pre>
+  </section>
+  <section><h3>Multi-dimensional array indexing/slicing</h3>
+    <pre><code rel="Python" class="python">
+      a1 = np.arange(1,10).reshape(3,3)
+      print(a1)
+      # [[1 2 3]
+      #  [4 5 6]
+      #  [7 8 9]]
+
+      print(a1[1,1])
+      # 5
+
+      print(a1[1,])
+      # [4 5 6]
+
+      print(a1[0:2, 0:2])
+      # [[1 2]
+      #  [4 5]]
+    </code></pre>
+  </section>
+  <section><h3>Note</h3>
+    <p>Though <code class="note">a[i,j]</code> gives the same results as <code class="note">a[i][j]</code>, index chaining is is not efficient, as <span class="note">a new temporary array is created</span> after the first index</p>
+    <pre><code rel="iPython" class="python">
+      a1 = np.arange(1,28).reshape(3,3,3)
+      SIZE = 1_000_000
+
+      def multi_index_proper():
+        for i in range(SIZE):
+          x = a1[1,1,1]
+
+      def multi_index_wrong():
+        for i in range(SIZE):
+          x = a1[1][1][1]
+
+
+      %timeit multi_index_proper()
+      %timeit multi_index_wrong()
+    </code></pre>
+    <pre><code rel="Output" class="bash" data-noescape>
+      115 ms ± 4.11 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+      308 ms ± 5.66 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+    </code></pre>
+  </section>
+</section>
+
+<section><h1>More on NumPy</h1></section>
+<section><h2>More on NumPy</h2>
+  <section><h3>Examples</h3>
+    <dl class="fa">
+      <dt>numpy array examples in Jupyter Notebook:</dt>
+      <dd><a href="examples/NDArrays.html">See as html</a></dd>
+      <dd>Or download the <a href="https://raw.githubusercontent.com/ProgressBG-Python-Course/ProgressBG-MLwithPython-Code/code/data_wrangling_with_pandas/numpy/NDArrays.ipynb">NDArrays.ipynb</a> (make sure to save it as .ipynb)</dd>
+    </dl>
+  </section>
+  <section><h3>References</h3>
+    <dl class="fa">
+      <dt><a href="http://www.scipy-lectures.org/intro/numpy/index.html">NumPy: creating and manipulating numerical data</a> @<a href="http://www.scipy-lectures.org/index.html">Scipy Lecture Notes</a></dt>
+    </dl>
+  </section>
+</section>
+
+<section><h1>pandas - Overview</h1></section>
+<section><h2>pandas - Overview</h2>
+  <section><h3>Overview</h3>
+    <dl class="fa">
+      <dt><a href="https://pandas.pydata.org/">pandas</a> is an open source library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language</dt>
+      <dt>pandas is great for data analysis and modeling</dt>
+      <dt>pandas combined with the IPython toolkit and other libraries creates environment for doing data analysis in Python, which excels in performance, productivity, and the ability to collaborate.</dt>
+    </dl>
+  </section>
+  <section><h3>Install</h3>
+    <pre><code rel="Terminal" class="shell" data-noescape>
+      #install pandas with pip3
+      $ pip3 install pandas
+
+      #install pandas on pipenv
+      $ pipenv install pandas
+
+      # install pandas on conda
+      conda install pandas
+    </code></pre>
+  </section>
+  <section><h3>Pandas Data Structures</h3>
+    <p style="font-size: 1.5em">The two primary data structures in pandas are <span class="note">Series</span> and <span class="note">DataFrame</span>.</p>
+  </section>
+</section>
+
+<section><h1>pandas - Series Object</h1></section>
+<section><h2>pandas - Series Object</h2>
+  <section><h3>Pandas Series Object</h3>
+    <dl class="fa">
+      <dt>A Pandas Series is <span class="note">a one-dimensional array</span> of indexed data, based on the NumPy ndarray.</dt>
+      <dt>But a Pandas Series object wraps both <span class="note">a sequence of values</span> and <span class="note">a sequence of indices</span></dt>
+    </dl>
+    <pre><code rel="Python" class="python">
+      import pandas as pd
+
+      ds = pd.Series([1,2,3,4])
+      print(ds)
+    </code></pre>
+    <pre><code rel="Output" class="shell" data-noescape>
+      0    1
+      1    2
+      2    3
+      3    4
+      dtype: int64
+    </code></pre>
+  </section>
+  <section><h3>Create a Series Object</h3>
+    <pre><code rel="Syntax" class="bash" data-noescape>
+      pandas.Series( data, index, dtype, copy)
+    </code></pre>
+    <dl class="fa">
+      <dt><span class="note">data</span>: array-like, dict, or scalar value </dt>
+      <dd>Contains data stored in Series</dd>
+      <dt><span class="note">index</span>: array-like or Index (1d)</dt>
+      <dd>Values must have the same length as data</dd>
+      <dt><span class="note">dtype</span>: any numpy datatype </dt>
+      <dd>If None, dtype will be inferred</dd>
+      <dt><span class="note">copy</span>: boolean, default False</dt>
+      <dd>Copy input data</dd>
+    </dl>
+  </section>
+  <section><h3>Create Series with Explicit Indexing</h3>
+    <dl class="fa">
+      <dt>The explicit index definition gives the Series object additional capabilities compared to numpy arrays</dt>
+      <dd class="note">i.e. the index need not to be an integer, but can consist of values of any desired type</dd>
+    </dl>
+    <pre><code rel="Python" class="python">
+      ds = pd.Series([1,2,3,4], index=['a', 'b', 'c', 'd'])
+      print(ds)
+    </code></pre>
+    <pre><code rel="Output" class="shell" data-noescape>
+      a    1
+      b    2
+      c    3
+      d    4
+      dtype: int64
+    </code></pre>
+  </section>
+  <section><h3>Create Series from dictionary</h3>
+    <dl class="fa">
+      <dt>The dict keys will be used for index</dt>
+      <dt>If an index is passed, the values in data corresponding to the labels in the index will be pulled out.</dt>
+    </dl>
+    <pre><code rel="Python" class="python">
+      ds = pd.Series({
+        "d":4,
+        "a":1,
+        "c":3,
+        "b":2,
+        "e":5
+      })
+      print(ds)
+    </code></pre>
+    <pre><code rel="Output" class="shell" data-noescape>
+      a    1
+      b    2
+      c    3
+      d    4
+      e    5
+      dtype: int64
+    </code></pre>
+  </section>
+  <section><h3 class="advanced">Note</h3>
+    <dl class="fa">
+      <dt>for Python version >= 3.6 and Pandas version >= 0.23:</dt>
+      <dd>the Series index will be ordered by the dict’s insertion order</dd>
+      <dt>for Python < 3.6 or Pandas < 0.23:</dt>
+      <dd>the Series index will be the lexically ordered list of dict keys</dd>
+    </dl>
+  </section>
+  <section><h3>Series Indexing</h3>
+    <dl class="fa">
+      <dt>You can use a single index value, or a list of indexes, or slicing</dt>
+      <dt>Note that, operations such as slicing will also slice the index.</dt>
+      <pre><code rel="Python" class="python">
+        ##get index object:
+        print(ds.index)
+        #Index(['apples', 'bananas', 'oranges'], dtype='object')
+
+        ## numerical or keyword indexes
+        print(ds["a"])
+        print(ds[0])
+
+        ## indexes as list:
+        print(ds[['a', 'c', 'e']])
+        #a    1
+        #c    3
+        #e    5
+        #dtype: int6
+      </code></pre>
+    </dl>
+  </section>
+  <section><h3>Series slicing</h3>
+    <dl class="fa">
+      <dt>the Series also supports array-style operations such as slicing</dt>
+    </dl>
+    <pre><code rel="Python" class="python">
+      ## slicing
+      print(ds["a":"d"])
+      #a    1
+      #b    2
+      #c    3
+      #d    4
+      #dtype: int64
+    </code></pre>
+  </section>
+  <section><h3>Altering index in place</h3>
+    <dl class="fa">
+      <dt>A Series’s index can be altered in place by assignment</dt>
+    </dl>
+    <pre><code rel="Python" class="python">
+      ds = pd.Series([1,2,3,4,5],index=["a","b","c","d","e"])
+
+      ds.index = ["A","B","C","D","E"]
+      print(ds)
+      #A    1
+      #B    2
+      #C    3
+      #D    4
+      #E    5
+      #dtype: int64
+    </code></pre>
+  </section>
+  <section><h3>NumPy operations on Series</h3>
+    <pre><code rel="Python" class="python">
+      ds = pd.Series([1,2,3,4,5],index=["a","b","c","d","e"])
+
+      ## filtering by value
+      ds[ds>2]
+      #c    3
+      #d    4
+      #e    5
+      #dtype: int64
+
+      ## multiplication
+      ds*2
+      #a     2
+      #b     4
+      #c     6
+      #d     8
+      #e    10
+      #dtype: int64
+    </code></pre>
+  </section>
+  <section><h3>Dictionary like operation on Series</h3>
+    <pre><code rel="Python" class="python">
+      ds = pd.Series([1,2,3,4,5],index=["a","b","c","d","e"])
+
+      "a" in ds
+      #True
+
+      "f" in ds
+      #False
+    </code></pre>
+  </section>
+  <section><h3>Missing Data</h3>
+    <dl class="fa">
+      <dt>Missing data can appear when we transform or make some operations on Series object. These data values are marked as NaN (Not A Number) values</dt>
+    </dl>
+    <pre><code rel="Python" class="python">
+      ds1 = pd.Series([1,3], index=["a","c"])
+      ds2 = pd.Series([2,3], index=["b","c"])
+
+      print(ds1+ds2)
+      #a    NaN
+      #b    NaN
+      #c    6.0
+      #dtype: float64
+    </code></pre>
+  </section>
+  <section><h3>All Examples</h3>
+    <dl class="fa">
+      <dt>Examples as html: <a href="examples/SeriesObject.html">SeriesObject.html</a></dt>
+      <dt>Examples as ipynb: <a href="https://raw.githubusercontent.com/ProgressBG-Python-Course/ProgressBG-MLwithPython-Code/code/data_wrangling_with_pandas/pandas/SeriesObject.ipynb">SeriesObject.ipynb</a></dt>
+    </dl>
+  </section>
+  <section><h3>References</h3>
+    <dl class="fa">
+      <dt><a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html">pandas.Series @pandas.pydata.org</a></dt>
+    </dl>
+  </section>
+</section>
+
+<section><h1>pandas - DataFrame Object</h1></section>
+<section><h2>pandas - DataFrame Object</h2>
+  <section><h3>Overview</h3>
+    <dl class="fa">
+      <dt>a DataFrame is an analogue of <span class="note">a two-dimensional array or table</span> with flexible <span class="note">row and column indices</span>.</dt>
+      <dt>You can think of a DataFrame as a sequence of <span class="note">aligned (sharing same index) Series objects </span></dt>
+      <dd>i.e. each column in a DataFrame is represented by a Series Object</dd>
+    </dl>
+  </section>
+  <section><h3>DataFrame as a collection of Series</h3>
+    <dl class="fa">
+      <dt>A DataFrame is a collection of Series objects, and a single-column DataFrame can be constructed from a single Series.</dt>
+    </dl>
+    <pre><code rel="Python" class="python" style="font-size: .9em;">
+      # create Series Object:
+      prices_ds = pd.Series([1.5, 2, 2.5, 3],
+                  index=["apples", "oranges", "bananas", "strawberries"])
+
+      # create DataFrame Object from prices Series:
+      prices_df = pd.DataFrame(prices_ds)
+      print(prices_df)
+
+      #                0
+      #apples        1.5
+      #oranges       2.0
+      #bananas       2.5
+      #strawberries  3
+    </code></pre>
+  </section>
+  <section><h3>DataFrame as a collection of Series</h3>
+    <dl class="fa">
+      <dt>A multi-column DataFrame can be thought as a dictionary of Series objects, where the dictionary <span class="note">keys</span> represent the <span class="note">columns names</span>. Note, thet the Series objects must be aligned, i.e. to have the same index.</dt>
+    </dl>
+    <pre><code rel="Python" class="python" style="width: 100%; font-size: .9em;">
+      prices_ds = pd.Series([1.5, 2, 2.5, 3],
+                  index=["apples", "oranges", "bananas", "strawberries"])
+
+      suppliers_ds = pd.Series(["supplier1", "supplier2", "supplier4", "supplier3"],
+                     index=["apples", "oranges", "bananas", "strawberries"])
+
+      fruits_df = pd.DataFrame({
+        "prices": prices_ds,
+        "suppliers": suppliers_ds
+      })
+      print(fruits_df)
+      #              prices  suppliers
+      #apples           1.5  supplier1
+      #oranges          2.0  supplier2
+      #bananas          2.5  supplier4
+      #strawberries     3.0  supplier3
+    </code></pre>
+  </section>
+  <section><h3>Create DataFrame</h3>
+    <a href="examples/DataFrame_create.html">DataFrame_create.html</a>
+  </section>
+  <section><h3>Create DataFrame form csv files</h3>
+     <dl class="fa">
+      <dt><code><a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html">read_csv()</a></code> is the preferred method for loading csv data into a DataFrame object</dt>
+      <dt>It provides a flourish amount of properties and methods for fine-tune loading, cleaning and manipulation of csv files.</dt>
+      <dt>The term <span class="note">csv</span> is used in its broader meaning - i.e. it will be used for <span class="note">tab/semicolon/whatsoever separated values</span></dt>
+    </dl>
+  </section>
+  <section><h3>Create DataFrame form csv files - Examples</h3>
+    <a href="examples/read_csv.html">read_csv.html</a>
+  </section>
+  <section><h3>DataFrame Indexing</h3>
+    <a href="examples/DataFrame_index.html">DataFrame_index.html</a>
+  </section>
+  <section><h3>DataFrames Manipulations</h3>
+    <a href="examples/DataFramesManipulations.html">DataFramesManipulations.html</a>
+  </section>
+  <section><h3>Useful properties and methods</h3>
+    <a href="examples/DataFrame_useful_properties_and_methods.html">DataFrame_useful_properties_and_methods.html</a>
+  </section>
+</section>
+
+
+<section data-min="1"><h1>References</h1></section>
+<section><h2>References</h2>
+  <section><h3>The Code Examples</h3>
+    <dl class="fa">
+      <dt>All Jupyter Notebooks used in this slides are available in the course Github repo: <a href="https://github.com/ProgressBG-Python-Course/ProgressBG-MLwithPython-Code/tree/code">ProgressBG-MLwithPython-Code</a></dt>
+      <dd>Check in <a href="https://github.com/ProgressBG-Python-Course/ProgressBG-MLwithPython-Code/tree/code/data_wrangling_with_pandas/">data_wrangling_with_pandas</a> folder</dd>
+      <dd></dd>
+    </dl>
+  </section>
+  <section><h3>Readings</h3>
+    <dl class="fa">
+      <dt><a href="https://media.readthedocs.org/pdf/pandasguide/latest/pandasguide.pdf">Pandas Guide PDF</a></dt>
+      <dt><a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html">class pandas.DataFrame() @pandas.pydata.org</a></dt>
+    </dl>
+  </section>
+  <section><h3>Pandas on YouTube</h3>
+    <p><a href="https://www.youtube.com/watch?v=0hsKLYfyQZc">Kevin Markham - Using pandas for Better (and Worse) Data Science - PyCon 2018</a></p>
+    <iframe src="https://www.youtube.com/embed/0hsKLYfyQZc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </section>
+</section>
+
+
+<!-- <section id="hw" data-min="4"><h1>Exercises</h1></section>
+<section><h2>Task1: Task1Title</h2>
+  <section><h3>The Task</h3>
+    <dl class="fa">
+      <dt></dt>
+    </dl>
+  </section>
+  <section><h3>Submission</h3>
+    <dl class="fa">
+      <dt>PLease, prefix your filenames/archive with your name initials, before sending.</dt>
+      <dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
+      <dt>Send files to <a href="mailto:ProgressBG.WWW.Courses@gmail.com?Subject=_data_wrangling_with_pandas_">ProgressBG.WWW.Courses@gmail.com</a></dt>
+    </dl>
+  </section>
+</section> -->
+
+
+<section class="disclaimer" data-background="/ProgressBG-MLwithPython-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
+  <p>These slides are based on</p>
+  <p>customised version of </p>
+  <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+   <p>framework</p>
+</section>
+<!--
+########################################################
+##################### SLIDES END   #####################
+########################################################
+-->
+    </div>
+  </div>
+  <!-- Custom processing -->
+  <script src="/ProgressBG-MLwithPython-Slides/outfit/js/slides.js"></script>
+  <!-- external scripts -->
+  <script src="/ProgressBG-MLwithPython-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+  <script src="/ProgressBG-MLwithPython-Slides/lib/reveal.js/js/reveal.js"></script>
+
+  <!-- init reveal -->
+  <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    var highlightjsTabSize = '  ';
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      keyboard: true,
+      history: true,
+
+      // display control
+      // center: true,
+      // width: '100%',
+      // height: '100%',
+      // // Factor of the display size that should remain empty around the content
+      // margin: 0.1,
+
+      // The "normal" size of the presentation, aspect ratio will be preserved
+      // when the presentation is scaled to fit different resolutions. Can be
+      // specified using percentage units.
+      width: 960,
+      height: 700,
+
+      // Factor of the display size that should remain empty around the content
+      margin: 0.1,
+
+      // Bounds for smallest/largest possible scale to apply to content
+      minScale: 0.2,
+      maxScale: 1.5,
+
+      // slide transition
+      transition: 'concave', // none/fade/slide/convex/concave/zoom
+      // shift+maous click to zoom in/out element
+      zoomKey: 'ctrl',
+      // theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      // transition: Reveal.getQueryHash().transition || 'default'
+      // Optional reveal.js plugins
+      dependencies: [
+        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure({tabReplace: highlightjsTabSize}); hljs.initHighlightingOnLoad(); } },
+        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+      ]
+    });
+  </script>
+  <!-- linkedin badge -->
+  <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+</body>
+</html>

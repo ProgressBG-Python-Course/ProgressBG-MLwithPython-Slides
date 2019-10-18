@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tennis Table data</title>
+  <style type="text/css">
+    body{
+      font-size: 1em;
+      margin: 0.5em 0 0 1em;
+    }
+    h1{
+      text-align: center;
+      color: #D196ED;
+    }
+    .play_tennis_table{
+      margin: 0 auto;
+      font-size: 1.5em;
+      border: 1px solid #999;
+      /* width: 90vw; */
+    }
+    tr:nth-of-type(odd){
+      background: #EEE;
+    }
+    tr:nth-of-type(1){
+      background: #999;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Are we going to play tennis?</h1>
+  <table class="play_tennis_table">
+    <tbody>
+      <colgroup>
+        <col  id="Day" style="width:3em;border-right: 1px solid #666;">
+        <col  id="Outlook" style="width:6em;">
+        <!-- <col  id="Temp" style="display: none; visibility: hidden;"> -->
+        <col  id="Humidity" style="width:6em;">
+        <col  id="Decision" style="width:6em;">
+      </colgroup>
+      <tr>
+        <th>Day</th>
+        <th>Outlook</th>
+        <!-- <th>Temp.</th> -->
+        <th>Humidity</th>
+        <th>Wind</th>
+        <th>Decision</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Sunny</td>
+        <!-- <td>Hot</td> -->
+        <td>High</td>
+        <td>Weak</td>
+        <td style="color:red">No</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Sunny</td>
+        <!-- <td>Hot</td> -->
+        <td>High</td>
+        <td>Strong</td>
+        <td style="color:red">No</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Overcast</td>
+        <!-- <td>Hot</td> -->
+        <td>High</td>
+        <td>Weak</td>
+        <td style="color:green">Yes</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Rain</td>
+        <!-- <td>Mild</td> -->
+        <td>High</td>
+        <td>Weak</td>
+        <td style="color:green">Yes</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Rain</td>
+        <!-- <td>Cool</td> -->
+        <td>Normal</td>
+        <td>Weak</td>
+        <td style="color:green">Yes</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Rain</td>
+        <!-- <td>Cool</td> -->
+        <td>Normal</td>
+        <td>Strong</td>
+        <td style="color:red">No</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Overcast</td>
+        <!-- <td>Cool</td> -->
+        <td>Normal</td>
+        <td>Strong</td>
+        <td style="color:green">Yes</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Sunny</td>
+        <!-- <td>Mild</td> -->
+        <td>High</td>
+        <td>Weak</td>
+        <td style="color:red">No</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Sunny</td>
+        <!-- <td>Cool</td> -->
+        <td>Normal</td>
+        <td>Weak</td>
+        <td style="color:green">Yes</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Rain</td>
+        <!-- <td>Mild</td> -->
+        <td>Normal</td>
+        <td>Weak</td>
+        <td style="color:green">Yes</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Sunny</td>
+        <!-- <td>Mild</td> -->
+        <td>Normal</td>
+        <td>Strong</td>
+        <td style="color:green">Yes</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Overcast</td>
+        <!-- <td>Mild</td> -->
+        <td>High</td>
+        <td>Strong</td>
+        <td style="color:green">Yes</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>Overcast</td>
+        <!-- <td>Hot</td> -->
+        <td>Normal</td>
+        <td>Weak</td>
+        <td style="color:green">Yes</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>Rain</td>
+        <!-- <td>Mild</td> -->
+        <td>High</td>
+        <td>Strong</td>
+        <td style="color:red">No</td>
+      </tr>
+      <!-- Rain & &High & &Weak ? -->
+      <tr style="background: #D196ED">
+        <td>15</td>
+        <td>Rain</td>
+        <!-- <td>Mild</td> -->
+        <td>High</td>
+        <td>Weak</td>
+        <td>???</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

@@ -12,6 +12,13 @@
 .slides h5, .slides h6{
   text-transform: none;
 }
+
+/*all internal sections*/
+.reveal>.slides>section>section{
+  font-size: .8em;
+  /*margin: -1em 0 0 0;*/
+}
+
 /*the presentation title ( all slides )*/
 .reveal>.slides h1{
   margin: 0;
@@ -250,17 +257,17 @@ a.home_link{
     vertical-align: middle;*/
     /*background-color:red;*/
 }
-.copyright>.note{
+section.copyright .note{
   text-align: center;
   margin: 0em 0 3em 0em;
 }
-.copyright>.company{
+section.copyright .company{
    text-align: center;
     /*margin: 0 0 2em 0;*/
     font-size: 1em;
     /*border: 1px solid red;*/
 }
-.copyright>.company img{
+section.copyright .company img{
     margin: 0;
     background: none;
     vertical-align: middle;
@@ -269,16 +276,16 @@ a.home_link{
     padding: 1em;
     box-shadow: none;
 }
-section.copyright>.author{
+section.copyright .author{
     text-align: center;
     vertical-align: middle;
     margin: 1em 0em 0.5em 0;
     font-size: 1.2em;
 }
-section.copyright>.author a{
+section.copyright .author a{
   vertical-align: middle;
 }
-section.copyright>.author img{
+section.copyright .author img{
   margin: 0;
 }
 

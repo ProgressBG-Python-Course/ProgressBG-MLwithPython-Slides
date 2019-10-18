@@ -1,5 +1,5 @@
  /*fonts*/
-@import url(https://fonts.googleapis.com/css?family=Noto+Sans|Roboto);
+/*@import url(https://fonts.googleapis.com/css?family=Noto+Sans|Roboto);*/
 /*other*/
 
 body{
@@ -7,7 +7,7 @@ body{
   color: #4d4b4d;
   background-color: #fff;
   font-size: .9em;
-  font-family: 'Noto Sans', sans-serif;
+  /*font-family: 'Noto Sans', sans-serif;*/
   font-weight: normal;
   font-style: normal;
   margin: 0;
@@ -65,7 +65,7 @@ footer{
   margin: 0em 0 0em 0;
   font-size: 1.15em;
   font-weight: normal;
-  font-family: 'Roboto', sans-serif;
+  /*font-family: 'Roboto', sans-serif;*/
   color: #333;
   line-height: 1.5em;
   letter-spacing: .1em;

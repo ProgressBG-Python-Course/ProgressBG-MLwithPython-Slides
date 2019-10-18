@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>machine_learning_techniques_overview</title>
+  <link rel="shortcut icon" href="/ProgressBG-MLwithPython-Slides/favicon.ico">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <!-- css & themes include -->
+  <link rel="stylesheet" href="/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="/ProgressBG-MLwithPython-Slides/outfit/css/themes/projector.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+
+
+  <!-- CUSTOM -->
+  <base target="_blank">
+</head>
+<body>
+  <div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+    <div class="top_links">
+      <a class="home_link" href="/ProgressBG-MLwithPython-Slides/index.html#machine_learning_techniques_overview" target="_top"><i class="fa fa-home"></i></a>
+      <span class="help_link" href="#"><i class="fa fa-question"></i></span>
+      <div class="help_text">
+        <div><span>N/Space</span><span>Next Slide</span></div>
+        <div><span>P</span><span>Previous Slide</span></div>
+        <div><span>O</span><span>Slides Overview</span></div>
+        <div><span>ctrl+left click</span><span>Zoom Element</span></div>
+      </div>
+    </div>
+    <div class="footer theme_switch">
+      <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+      <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+      <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+    </div>
+    <div class="slides">
+<!--
+########################################################
+##################### SLIDES START #####################
+########################################################
+-->
+<section data-min-total="40"><h1>Overview of Machine Learning Techniques</h1></section>
+<section class="copyright" data-transition="zoom">
+  <section >
+    <div class="note">
+      <p>Created for</p>
+    </div>
+    <div class="company">
+      <a href="http://progressbg.net/kurs-po-web-design/">
+      <img style="height:80%" src="/ProgressBG-MLwithPython-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+      </a>
+    </div>
+  </section>
+  <section>
+    <div class="note">
+      <p>Created by</p>
+    </div>
+    <div class="company">
+      <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova</a></div>
+    </div>
+    <div class="author">
+      <span>2018,</span>
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+    </div>
+  </section>
+</section>
+
+<section data-min="5"><h1>Types of ML Algorithms</h1></section>
+<section><h2>Types of ML Algorithms</h2>
+  <section><h3>Overview</h3>
+    <dl class="fa">
+      <dt>There are hundreds of Machine learning algorithms.</dt>
+      <dt>But how can we choose which one we should study and use in order to do our task?</dt>
+      <dt>Most classification of ML Algorithms types are based on</dt>
+      <dd>How the algorithm works?</dd>
+      <dd>What types of task is an algorithm suitable for?</dd>
+    </dl>
+  </section>
+  <section><h3>Classification map of ML Algorithms</h3>
+    <a href="images/MachineLearningAlgorithmsMiniMap.png"><img src="images/MachineLearningAlgorithmsMiniMap.png"></a>
+  </section>
+</section>
+
+<section data-min="10"><h1>Supervised Learning Algorithms</h1></section>
+<section><h2>Supervised Learning Algorithms</h2>
+  <section><h3>Overview</h3>
+    <dl class="fa">
+      <dt>The training data are <span class="note">labeled</span>:</dt>
+      <dd>We have a set of <span class="note">instances</span> represented by certain <span class="note">features</span> and with a particular <span class="note">target</span> attribute</dd>
+      <dd>I.e. we have historical data with mapped input => output pairs</dd>
+    </dl>
+  </section>
+  <section><h3>the goal</h3>
+    <dl class="fa">
+      <dt>approximating a mapping function (g) from input variables (X) to output variables (y).</dt>
+      <p>$$ {g:X\to Y} $$</p>
+      <dt>The job of modeling algorithm is to find the best mapping function, such that will minimize the error on prediction.
+      </dt>
+    </dl>
+  </section>
+  <section><h3>Problems that solves</h3>
+    <dl class="fa">
+      <dt>Two main problems categories:</dt>
+      <dt class="note">classification</dt>
+      <dd>predicting a <span class="note">discrete class label</span> output for an example.</dd>
+      <dt class="note">regression</dt>
+      <dd>predicting a <span class="note">continuous quantity (value)</span> output for an example.</dd>
+    </dl>
+  </section>
+  <section><h3>Popular Algorithms</h3>
+    <dl class="fa">
+      <dt>Nearest Neighbor Algorithm</dt>
+      <dt>Decision trees</dt>
+      <dt>Linear Regression</dt>
+      <dt>Logistic Regression</dt>
+      <dt>Support vector machines</dt>
+      <dt>Naive bayes classifier</dt>
+      <dt>Back Propagation Neural Network</dt>
+    </dl>
+  </section>
+</section>
+
+<section data-min="10"><h1>Unsupervised Learning</h1></section>
+<section><h2>Unsupervised Learning</h2>
+  <section><h3>What?</h3>
+    <dl class="fa">
+      <dt>We have only input data, that <span class="note">are not labeled</span></dt>
+      <dd>We don't know in advance the right answers to the training data. And our goal is not to find a mapping between input and output data at all. There is no "supervisor"</dd>
+      <dt>The learning algorithm can only use similarities between input data to group (cluster) it</dt>
+    </dl>
+  </section>
+  <section><h3>Overview - Picture</h3>
+    <a href="images/unsupervised_learning_clusterisation.jpeg"><img src="images/unsupervised_learning_clusterisation.jpeg"></a>
+  </section>
+  <section><h3>Why?</h3>
+    <dl class="fa">
+      <dt>To find <span class="note">clusters</span> (patterns, regularities) in the input data</dt>
+      <dt>Extract common rules(patterns)</dt>
+      <dt>To discover structures in the input space</dt>
+      <dd>Density estimation</dd>
+      <dt>Or just to <span class="note">explore</span> the dataset</dt>
+    </dl>
+  </section>
+  <section><h3>Popular Algorithms</h3>
+    <dl class="fa">
+        <dt>Apriori algorithm</dt>
+        <dt>k-Means</dt>
+        <dt>Neural Networks</dt>
+        <dd>Hebbian Learning</dd>
+        <dd>Self-organizing map</dd>
+    </dl>
+  </section>
+  <section>
+    <p>Applications</p>
+  </section>
+  <section><h3>Dimensionality reduction</h3>
+    <dl class="fa">
+      <dt>To project a high-dimensional data set into a lower-dimensional one</dt>
+    </dl>
+  </section>
+  <section><h3>Document Clusterization</h3>
+    <dl class="fa">
+      <dt>The cluster algorithm can find "similar" documents</dt>
+      <dd>most common, that similarity is according to a common words(tokens) in a predefined lexicon.</dd>
+    </dl>
+  </section>
+  <section><h3>Customer segmentation</h3>
+    <dl class="fa">
+      <dt>A telco company has huge amount of data of its customers</dt>
+      <dd>Demographic and personal data, how long they speak and with whom, ...</dd>
+      <dt>The company may use clustering algorithms to see the groups of customers with similar attributes</dt>
+    </dl>
+  </section>
+  <section><h3>Image compression</h3>
+    <dl class="fa">
+      <dt>The pixels of an image are the input data</dt>
+      <dt>The clustering algorithm can group pixels with similar colors</dt>
+      <dt>Can find groups of pixels, forming repeated components of the picture</dt>
+    </dl>
+  </section>
+  <section><h3>Bioinformatics and Gene Engineering</h3></section>
+</section>
+
+<section data-min="5"><h1>Semi-supervised Lerning</h1></section>
+<section><h2>Semi-supervised Lerning</h2>
+  <section><h3>Overview</h3>
+    <dl class="fa">
+      <dt>The same goal as of <span class="note">supervised</span> learning</dt>
+      <dt>But less amount of labeled input data, and large amount of unlabeled data.</dt>
+    </dl>
+  </section>
+</section>
+
+<section data-min="5"><h1>Reinforcement Learning</h1></section>
+<section><h2>Reinforcement Learning</h2>
+  <section><h3>Overview</h3>
+    <blockquote>
+      In reinforcement learning, the learner is a <span class="note">decision-making agent that takes actions</span>
+       in an environment and <span class="note">receives reward</span> (or penalty)
+      for its actions in trying to solve a problem. After a set of trial-and-
+      error runs, it should learn the best policy, which is the <span class="note">sequence of
+      actions</span> that maximize the total reward.
+    </blockquote>
+  </section>
+  <section>
+    <a href="images/Reinforcement_learning_diagram.svg.png"><img src="images/Reinforcement_learning_diagram.svg.png" width="500"></a>
+  </section>
+  <section>
+    <p>Reinforcement Learning is inspired and closely connected with Behaviorist psychology and finds application in most Ml tasks.</p>
+  </section>
+</section>
+
+
+<!-- <section data-min="1"><h1>References</h1></section>
+<section><h2>References</h2>
+  <section><h3>Readings</h3>
+    <dl class="fa">
+      <dt></dt>
+    </dl>
+  </section>
+</section>
+
+
+<section id="hw" data-min="4"><h1>Exercises</h1></section>
+<section><h2>Task1: Task1Title</h2>
+  <section><h3>The Task</h3>
+    <dl class="fa">
+      <dt></dt>
+    </dl>
+  </section>
+</section>
+
+<section><h3>Submission</h3>
+  <dl class="fa">
+    <dt>PLease, prefix your filenames/archive with your name initials, before sending.</dt>
+    <dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
+    <dt>Send files to <a href="mailto:ProgressBG.WWW.Courses@gmail.com?Subject=_machine_learning_techniques_overview_">ProgressBG.WWW.Courses@gmail.com</a></dt>
+  </dl>
+</section> -->
+
+
+<section class="disclaimer" data-background="/ProgressBG-MLwithPython-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
+  <p>These slides are based on</p>
+  <p>customised version of </p>
+  <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+   <p>framework</p>
+</section>
+<!--
+########################################################
+##################### SLIDES END   #####################
+########################################################
+-->
+    </div>
+  </div>
+  <!-- Custom processing -->
+  <script src="/ProgressBG-MLwithPython-Slides/outfit/js/slides.js"></script>
+  <!-- external scripts -->
+  <script src="/ProgressBG-MLwithPython-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+  <script src="/ProgressBG-MLwithPython-Slides/lib/reveal.js/js/reveal.js"></script>
+
+  <!-- init reveal -->
+  <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    var highlightjsTabSize = '  ';
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      keyboard: true,
+      history: true,
+
+      // display control
+      // center: true,
+      // width: '100%',
+      // height: '100%',
+      // // Factor of the display size that should remain empty around the content
+      // margin: 0.1,
+
+      // The "normal" size of the presentation, aspect ratio will be preserved
+      // when the presentation is scaled to fit different resolutions. Can be
+      // specified using percentage units.
+      width: 960,
+      height: 700,
+
+      // Factor of the display size that should remain empty around the content
+      margin: 0.1,
+
+      // Bounds for smallest/largest possible scale to apply to content
+      minScale: 0.2,
+      maxScale: 1.5,
+
+      // slide transition
+      transition: 'concave', // none/fade/slide/convex/concave/zoom
+      // shift+maous click to zoom in/out element
+      zoomKey: 'ctrl',
+      // theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      // transition: Reveal.getQueryHash().transition || 'default'
+      // Optional reveal.js plugins
+      dependencies: [
+        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure({tabReplace: highlightjsTabSize}); hljs.initHighlightingOnLoad(); } },
+        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+      ]
+    });
+  </script>
+  <!-- linkedin badge -->
+  <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+  <!-- mathjax -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script type="text/javascript" async src="/ProgressBG-MLwithPython-Slides/lib/MathJax/MathJax.js?config=TeX-AMS_HTML-full"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML-full" id=""></script> -->
+</body>
+</html>

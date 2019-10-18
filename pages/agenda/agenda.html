@@ -5,15 +5,16 @@
 	<title>Machine Learning with Python Agenda</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="generator" content="Sublime Text3, SASS">
-	<link rel="shortcut icon" href="/ProgressBG-MLwithPython/favicon.ico">
+	<link rel="shortcut icon" href="/ProgressBG-MLwithPython-Slides/favicon.ico">
 	<!-- VENDORs -->
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 	<!-- CUSTOMs -->
-	<link rel="stylesheet" type="text/css" media="screen" href="/ProgressBG-MLwithPython/outfit/css/master.css">
-	<link rel="stylesheet" type="text/css" media="screen" href="/ProgressBG-MLwithPython/outfit/css/agenda.css">
-	<link rel="stylesheet" type="text/css" media="print" href="/ProgressBG-MLwithPython/outfit/css/agenda_print.css">
-	<!-- <link rel="stylesheet" type="text/css" media="screen" href="/ProgressBG-MLwithPython/outfit/css/agenda_print.css"> -->
+	<link rel="stylesheet" type="text/css" media="screen" href="/ProgressBG-MLwithPython-Slides/outfit/css/master.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="/ProgressBG-MLwithPython-Slides/outfit/css/agenda.css">
+	<link rel="stylesheet" type="text/css" media="print" href="/ProgressBG-MLwithPython-Slides/outfit/css/agenda_print.css">
+	<!-- <link rel="stylesheet" type="text/css" media="screen" href="/ProgressBG-MLwithPython-Slides/outfit/css/agenda_print.css"> -->
 	<base target="_blank">
+	<meta name="robots" content="noindex, nofollow">
 </head>
 <body class="background_gradient_left_right">
 <header class="dark_centered_background_gradient">
@@ -22,51 +23,81 @@
 	<h3>Syllabus</h3>
 </header>
 <main>
-	<!-- <section class="course_about"><h1>About the course</h1></section> -->
-	<section class="syllabus">
+	<section id="what_is_ML" class="course_about"><h1>Какво е "Машинно обучение"?</h1>
+		<p>Машинното обучение (Machine Learning) е дисциплина, която се разглежда като  под-направление и неразделна част от Изкуствения Интелект. Едни от първите алгоритми в областта са разработени още през 50-те години на 20ти век, но едва през последните 20 години популярността й започна главоломно да нараства. И ще продължава - с още по-високи темпове. Всички големи софтуерни компании използват Machine Learning техники и инвестират огромни средства в разработката на нови алгоритми и приложения.</p>
+		<p>Задавали ли сте си въпроса как вашият лаптоп/телефон разпознава точно вашето лице? Или как Google успяха за толкова кратко време да дигитализират огромно количество книги? Отговорът се крие в едно от направленията на Machine Learning - Image Classification. <br>
+		Всички забелязваме как с всеки изминал ден търсачката на Google става все по "умна". Учудваме се, когато приложения като Netflix, Spotify и пр. доста бързо се "научават" да разпознават нашите вкусове и ни предлагат релевантни заглавия. Маркетинговите компании също използват "умни" системи за да "научат" нашите предпочитания и да ни предложат неустоими оферти... Да, зад всичко това отново се крият алгоритми от Machine Learning - т.нар. Recommendation Systems.<br>
+		Подобни алгоритми се използват на практика и в множеството модерни системи, които се опитват да "предскажат" цените на пазара на имоти, борсови акции и пр. (Predictive Analytics).
+		<br>Все по-често ставаме свидетели на "умни" програми, които побеждават професионалисти в игри като шахмат,  "<a href="https://en.wikipedia.org/wiki/Jeopardy!">Джепарди!</a>", дори и "<a href="https://en.wikipedia.org/wiki/Dota_2">Dota 2</a>" или <a href="https://en.wikipedia.org/wiki/StarCraft_II:_Wings_of_Liberty">StarCraft II</a>, където освен скорост се изисква и висока доза творчески интелект. Във всички тези, а и много други, примери се използват точно алгоритми от Machine Learning.</p>
+	</section>
+	<section id="about_the_course" class="course_about"><h1>За курса</h1>
+		<p>Темите, представени в настоящият курс са разработени от професионалист с повече от 10 години опит в областта.</p>
+
+		<p>Курсът е подходящ за хора с основни познания по програмиране (желателно на езика Python). Във въвеждащите теми се представят необходимите инструменти, които ще бъдат използвани: iPython, JupyterNotebook, Pandas, scikit-learn и др.</p>
+		<p>Разглеждат се основните алгоритми за Машинно Обучение с учител (Supervised Machine Learning), илюстрирани с множеството примери, но не оставаме на ниво "този код прави това". Опитваме се да разберем как и защо се случва "магията", като се обясняват математическите средства, които основополагат дадения алгоритъм. В края на всяка тема анализираме предимствата и недостатъците на разглеждания алгоритъм и дискутираме възможните му приложения за решаване на реални задачи.</p>
+
+		<p>В края на курса, се представят накратко и някои аспекти от обучението без учител (Unsupervised Learning), както и въведение в Изкуствените Неврони Мрежи (Artificial Neuron Networks), като модерни тенденции в развитието на т.нар. Deep Learning.<br>
+		Накратко се представят и основите на Обработка на Естествен Език (Natural Language Processing) - модерна дисциплина, в която Машинното Обучение намира изключително голямо приложение. Курсистите ще приложат на практика усвоените знания, като обучат собствен модел за разпознаване на емоциите (Sentiment Analyses) в коментарите на дадена Facebook страница.</p>
+
+		<p>По време на курса, курсистите ще имат възможност да разработят самостоятелно, като курсов проект, модел за машинно обучение върху избрана от тях тематика. Успешната защита на проекта, както и решаването на множеството задачи за самостоятелна подготовка давани след всяка тема, ще бъдат основание за издаване на сертификат.</p>
+	</section>
+
+	<section class="syllabus" id="syllabus"><h1>Програма</h1>
 		<div class="toggleButtons">
 			<span class="toggleSubThemes">Toggle sub-themes</span>
 		</div>
 		<div class="themes">
 			<article><h1>Getting Started</h1>
-				<section id="CourseOverview" data-hours="1" data-wip>
+				<section id="course_overview" data-hours="2">
 					<h3>Course Overview</h3>
 					<ol>
 						<li>About the course and the online resources being used.</li>
-						<li>What you have to know/recap before starting the course.</li>
+						<li>What you have to know/recap before starting the course?</li>
+						<li>Mathematics in Machine Learning - an Overview</li>
 						<li>What you'll learn and achieve.</li>
 					</ol>
 				</section>
-				<section id="introduction_to_machine_learning" data-hours="3" data-wip>
+				<section id="introduction_to_machine_learning" data-hours="2">
 					<h3>Introduction to Machine Learning</h3>
 					<ol>
 						<li>Machine Learning and Big Data, Deep Learning, Data Science and Artificial Intelligence - framing the concepts.</li>
 						<li>Machine Learning application in today's real world.</li>
 						<li>The Machine Learning process.</li>
-						<li>Overview of Machine Learning Techniques: Supervised, Unsupervised, Reinforcement Learning.</li>
-						<li>When Learning is feasible?</li>
+						<!-- <li>When Learning is feasible?</li> -->
 					</ol>
 				</section>
 				<section id="machine_learning_tools" data-hours="4" data-wip>
 					<h3>Machine Learning Tools - Set up the environment</h3>
 					<ol>
 						<li>Why Python?</li>
-						<li>Set up numpy, pandas, scikit-learn, Jupiter Notebooks, matplotlib.</li>
+						<li>Set up python, numpy, pandas, scikit-learn, Jupyter Notebooks, matplotlib.</li>
 						<li>Git && GitHub.</li>
 						<li>Test it with the Demo Project <!-- - Credit Card Fraud Detection. --></li>
 					</ol>
 				</section>
 				<section id="data_wrangling_with_pandas" data-hours="6" data-wip>
-					<h3>Data analysis with Pandas</h3>
+					<h3>Data analysis with NumPy and Pandas</h3>
 					<ol>
+						<li>NumPy Ndim Arrays</li>
 						<li>Pandas Data Structures (Series, DataFrame)</li>
 						<li>Create DataFrames from various data file formats (json, csv, sql)</li>
 						<li>Simple DataFrames manipulations.</li>
 					</ol>
 				</section>
-				<section id="data_visualization_with_mathplotlib_pandas_and_seaborn" data-hours="4" data-wip>
+				<section id="jupyter_notebooks" data-hours="4" data-wip>
+					<h3>Share and present your project with Jupyter Notebooks</h3>
+					<ol>
+						<li>Getting started.</li>
+						<li>Basic operations.</li>
+						<li>JupyterLab - the next-generation web-based user interface for Project Jupyter.</li>
+						<li>Upload your Jupyter Notebook to GitHub.</li>
+						<li>Interact and share your Notebooks through <a href="https://mybinder.org/">Binder</a></li>
+					</ol>
+				</section>
+				<section id="matplotlib_pandas_and_seaborn" data-hours="2" data-wip>
 					<h3>Data visualization with Mathplotlib, Pandas and Seaborn</h3>
 					<ol>
+						<li>Matplotlib overview (from really high perspective)</li>
 						<li>Histograms.</li>
 						<li>Density Plots.</li>
 						<li>Correlation Matrix Plot.</li>
@@ -74,46 +105,36 @@
 						<li>Customizing labels and colors.</li>
 					</ol>
 				</section>
-				<section id="share_and_present_your_project_with_jupiter_notebooks" data-hours="2" data-wip>
-					<h3>Share and present your project with Jupiter Notebooks</h3>
-					<ol>
-						<li>Getting started.</li>
-						<li>Basic operations.</li>
-						<li>Upload your Jupiter Notebook to GitHub.</li>
-					</ol>
-				</section>
 			</article>
 
 			<article><h1>Supervised Learning</h1>
-				<section id="supervised_learning_overview" data-hours="4" data-wip>
+				<section id="ML_Process_with_Iris_Classifier" data-hours="4" data-wip>
+					<h3>Get deep into ML Process - build our first model (Iris Flower Classifier)</h3>
+					<ol>
+						<li>Revise the ML Process</li>
+						<li>Check the prerequisites</li>
+						<li>Build our first model (Iris Flower Classifier) with scikit-learn</li>
+						<li>The k-Nearest Neighbors algorithm.</li>
+						<li>Pros and cons of k-Neighbors classification.</li>
+					</ol>
+				</section>
+				<section id="machine_learning_techniques_overview" data-hours="1" data-wip>
+					<h3>Overview of Machine Learning Techniques</h3>
+					<ol>
+						<li>Supervised, Unsupervised, Reinforcement Learning.</li>
+					</ol>
+				</section>
+				<section id="supervised_learning_overview" data-hours="3" data-wip>
 					<h3>Supervised Learning Overview</h3>
 					<ol>
 						<li>Classification models.</li>
 						<li>Predictions with Regression models.</li>
 						<li>Generalization in Machine Learning.</li>
+						<li>Feature Engineering</li>
 						<li>The problems of Overfitting and Underfitting.</li>
 					</ol>
 				</section>
-				<section id="k_neighbors_classification" data-hours="4" data-wip>
-					<h3>k-Neighbors classification</h3>
-					<ol>
-						<li>The k-Nearest Neighbors algorithm.</li>
-						<li>Sample usage of k-Neighbors classification with KNeighborsClassifier of Scikit-learn.</li>
-						<li>Pros and cons of k-Neighbors classification.</li>
-					</ol>
-				</section>
-				<section id="decision_trees" data-hours="4" data-wip>
-					<h3>Decision Trees</h3>
-					<ol>
-						<li>Representing algorithms with Decision Trees.</li>
-						<li>Selecting the best feature to split the tree on.</li>
-						<li>Recursive Binary Splitting.</li>
-						<li>DecisionTreeClassifier in Scikit-learn.</li>
-						<li>Building a Decision Trees Model for Credit Approval application.</li>
-						<li>Pros and cons of Decision Trees.</li>
-					</ol>
-				</section>
-				<section id="linear_models_for_classification_and_regression" data-hours="4" data-wip>
+				<section id="linear_models_for_classification_and_regression" data-hours="8" data-wip>
 					<h3>Linear models for Classification and Regression</h3>
 					<ol>
 						<li>Regression Models in Machine Learning.</li>
@@ -129,10 +150,24 @@
 				<section id="naive_bayes_classifiers" data-hours="4" data-wip>
 					<h3>Naive Bayes classifiers</h3>
 					<ol>
+						<li>A gentile introduction to probability theory</li>
+						<li>Conditional probability</li>
+						<li>The Bayes' theorem</li>
 						<li>Gaussian Naive Bayes.</li>
 						<li>Multinomial naive Bayes.</li>
 						<li>Bernoulli naive Bayes.</li>
 						<li>Pros and cons of Naive Bayes classifiers.</li>
+					</ol>
+				</section>
+				<section id="decision_trees" data-hours="4" data-wip>
+					<h3>Decision Trees</h3>
+					<ol>
+						<li>Representing algorithms with Decision Trees.</li>
+						<li>Selecting the best feature to split the tree on.</li>
+						<li>Recursive Binary Splitting.</li>
+						<li>DecisionTreeClassifier in Scikit-learn.</li>
+						<li>Building a Decision Trees Model for Credit Approval application.</li>
+						<li>Pros and cons of Decision Trees.</li>
 					</ol>
 				</section>
 				<section id="support_vector_machines" data-hours="4" data-wip>
@@ -144,7 +179,7 @@
 						<li>Pros and cons of SVM.</li>
 					</ol>
 				</section>
-				<section id="the_supervised_learning_flow" data-hours="4" data-wip>
+				<!-- <section id="the_supervised_learning_flow" data-hours="2" data-wip>
 					<h3>Practise the Supervised Learning Flow by building simple Animal Classification from scratch</h3>
 					<ol>
 						<li>Analyse the problem and the domain knowledge (Animal Classification)</li>
@@ -152,10 +187,10 @@
 						<li>Prepare the training and test datasets.</li>
 						<li>Train the classifier: choose a Machine Learning model.</li>
 						<li>Evaluating the accuracy of the model used.</li>
-						<li>Optimise your model.</li>
+						<li>Optimize your model.</li>
 					</ol>
-				</section>
-				<section id="the_art_of_features_engineering" data-hours="4" data-wip>
+				</section> -->
+				<section id="the_art_of_features_engineering" data-hours="2" data-wip>
 					<h3>The art of Features Engineering</h3>
 					<ol>
 						<li>Feature extraction.</li>
@@ -163,7 +198,7 @@
 						<li>Feature selection.</li>
 					</ol>
 				</section>
-				<section id="model_evaluation_and_optimization" data-hours="4" data-wip>
+				<section id="model_evaluation_and_optimization" data-hours="2" data-wip>
 					<h3>Model Evaluation and Optimization</h3>
 					<ol>
 						<li>Regularization.</li>
@@ -171,7 +206,7 @@
 						<li>Grid Search.</li>
 					</ol>
 				</section>
-				<section id="Unsupervised Learning" data-hours="4" data-wip>
+				<section id="unsupervised_learning" data-hours="2" data-wip>
 					<h3>Unsupervised Learning</h3>
 					<ol>
 						<li>What problems can we solve with Unsupervised Learning.</li>
@@ -180,7 +215,7 @@
 						<li>Demo for K-means Clustering with scikit-learn.</li>
 					</ol>
 				</section>
-				<section id="a_gentile_introduction_to_artificial_neural_networks" data-hours="4" data-wip>
+				<section id="a_gentile_introduction_to_artificial_neural_networks" data-hours="2" data-wip>
 					<h3>A gentile introduction to Artificial Neural Networks (ANN)</h3>
 					<ol>
 						<li>How ANN works?</li>
@@ -192,7 +227,7 @@
 			</article>
 
 			<article><h1>Real-world examples</h1>
-				<section id="Machine Learning for Natural Language Processing (NLP)" data-hours="4" data-wip>
+				<section id="machine_learning_for_NLP" data-hours="4" data-wip>
 					<h3>Machine Learning for Natural Language Processing (NLP)</h3>
 					<ol>
 						<li>Building feature vectors from text documents ("bags of words" representation).</li>
@@ -203,7 +238,7 @@
 						<li>Parameter tuning and optimisation.</li>
 					</ol>
 				</section>
-				<section id="Sentiment Analysis on Facebook Posts" data-hours="4" data-wip>
+				<section id="sentiment_analysis_on_facebook_posts" data-hours="4" data-wip>
 					<h3>Build from scratch: Sentiment Analysis on Facebook Posts</h3>
 					<ol>
 						<li>Get a Facebook group comments using the Facebook Graph API.</li>
@@ -215,16 +250,15 @@
 				</section>
 			</article>
 
-
-
-			<!-- <article><h2><span>Appendix</span></h2>
+			<article><h2><span></span></h2>
 				<section id="onlineFreeResources" data-hours="0" data-wip>
-					<h3>Online free resources</h3>
+					<h3>Appendix</h3>
 					<ol>
-						<li><a href="/ProgressBG-MLwithPython/pages/readings/UsefulResources.html"><i class="fa fa-link"></i>list</a></li>
+						<li><a href="/ProgressBG-MLwithPython-Code/Appendix/PythonCoding/index.html">Python code examples in ML context</a></li>
+						<li><a href="/ProgressBG-MLwithPython-Slides/pages/readings/UsefulResources.html">Useful Resources list</a></li>
 					</ol>
 				</section>
-			</article> -->
+			</article>
 		</div>
 		<div class="stats">
 			<div id="total_hours"></div>
@@ -241,8 +275,9 @@
 			This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/3.0/">Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License</a>.
 		</div>
 </footer>
-<script type="text/javascript" src="/ProgressBG-MLwithPython/outfit/js/CustomDOM.js"></script>
-<script type="text/javascript" src="/ProgressBG-MLwithPython/outfit/js/agenda.js"></script>
-<!-- <script type="text/javascript" src="/ProgressBG-MLwithPython/outfit/js/components/modalDialog.js"></script> -->
+<script type="text/javascript" src="/ProgressBG-MLwithPython-Slides/outfit/js/CustomDOM.js"></script>
+<script type="text/javascript" src="/ProgressBG-MLwithPython-Slides/outfit/js/agenda.js"></script>
+<!-- <script type="text/javascript" src="/ProgressBG-MLwithPython-Slides/outfit/js/components/modalDialog.js"></script> -->
+<!-- <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script> -->
 </body>
 </html>

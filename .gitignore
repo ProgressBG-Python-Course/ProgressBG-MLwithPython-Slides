@@ -29,10 +29,11 @@ node_modules/
 *.sublime-workspace
 *.sublime-project
 
-# all hidden folders:
+# folders:
 .*/**
 students/**
 
 # all hidden files, except .gitignore
 .*
 !/.gitignore
+___*

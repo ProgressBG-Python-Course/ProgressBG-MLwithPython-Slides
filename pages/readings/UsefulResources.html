@@ -1,59 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Course Resources</title>
-    <base target="_blank">
-    <!-- CUSTOM PAGE STYLES -->
-    <link rel="stylesheet" type="text/css" href="../../outfit/css/master.css">
-    <!-- <link rel="stylesheet" type="type/css" href="../../outfit/css/agenda.css"> -->
-    <link rel="stylesheet" type="text/css" href="../../outfit/css/readings.css">
-    <link rel="stylesheet" type="text/css" href="../../outfit/css/text_shadows.css">
+	<meta charset="UTF-8">
+	<title>Course Resources</title>
+	<base target="_blank">
+	<!-- CUSTOM PAGE STYLES -->
+	<link rel="stylesheet" type="text/css" href="../../outfit/css/master.css">
+	<!-- <link rel="stylesheet" type="type/css" href="../../outfit/css/agenda.css"> -->
+	<link rel="stylesheet" type="text/css" href="../../outfit/css/readings.css">
+	<link rel="stylesheet" type="text/css" href="../../outfit/css/text_shadows.css">
 </head>
 <body class="background_gradient_test">
-    <header>
-        <h2>Resources</h2>
-        <h3><a href="/index.html">Machine Learning with Python Course</a></h3>
-    </header>
-    <section class="disclaimer">This is a fluid, always changing list...if you want to add your fav. site - welcome!</section>
-    <section class="resources_list_container">
-        <ul>
-            <li><h2>Open Machine Learning Courses</h2>
-                <ol>
-                    <li><a href="http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=MachineLearning">Standford Machine Learning Course by Andrew Ng</a></li>
-                </ol>
-            </li>
-            <li><h2>Machine Learning Courses in Bulgaria</h2>
-                <ol>
-                    <li><a href="https://softuni.bg/trainings/1890/machine-learning-february-2018">СофтУни: Machine Learning - февруари 2018</a></li>
-                    <li><a href="https://www.facebook.com/pg/hyperscience/events/">hyperscience</a></li>
-                </ol>
-            </li>
-            <li><h2>Machine Learning Algorithms</h2></li>
-            <li><h2>Podcasts</h2>
-                <ol>
-                    <li><a href="https://dataskeptic.com/podcast">DataSkeptic Podcast</a></li>
-                </ol>
-            </li>
-            <li><h2>Tools, ecosystem</h2>
-                <ul>
-                    <li><h3>git</h3>
-                        <ol>
-                            <li><a href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/">Adding an existing project to GitHub using the command line</a></li>
-                            <li><a href="https://help.github.com/articles/adding-a-file-to-a-repository-using-the-command-line/">Adding a file to a repository using the command line</a></li>
-                        </ol>
-                    </li>
-                </ul>
-            </li>
+	<header>
+		<h2>Resources</h2>
+		<h3><a href="/index.html">Machine Learning with Python Course</a></h3>
+	</header>
+	<section class="disclaimer">This is a fluid, always changing list...if you want to add your fav. site - welcome!</section>
+	<section class="resources_list_container">
+		<ul>
+			<li><h2>Machine Learning Books (open/free)</h2>
+				<ol>
+					<li><a href="https://github.com/jakevdp/PythonDataScienceHandbook">PythonDataScienceHandbook</a> - just the perfect place to start, and stay in the deep...</li>
+				</ol>
+			</li>
+			<li><h2>Open Machine Learning Courses</h2>
+				<ol>
+					<li><a href="http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=MachineLearning">Standford Machine Learning Course by Andrew Ng</a> - classic!</li>
+					<!-- <li><a href="https://www.coursera.org/learn/machine-learning">Coursera - Standford University Course: Machine Learning (by Andrew Ng)</a> - classic (again)</li> -->
+				</ol>
+			</li>
+			<li><h2>Machine Learning Courses in Bulgaria</h2>
+				<ol>
+					<li><a href="http://2017.fmi.machine-learning.bg/lectures">Machine Learning с Python</a> - Курс във Факултета по Математика и Информатика към СУ (перфектни, както винаги)</li>
+					<li><a href="https://softuni.bg/trainings/1890/machine-learning-february-2018">СофтУни: Machine Learning - февруари 2018</a> - просто за информация</li>
+				   <!--  <li><a href="https://www.facebook.com/pg/hyperscience/events/">hyperscience</a></li> -->
+				</ol>
+			</li>
+			<li><h2>Machine Learning Algorithms</h2></li>
+			<li><h2>Podcasts</h2>
+				<ol>
+					<li><a href="https://dataskeptic.com/podcast">DataSkeptic Podcast</a></li>
+					<li><a href="http://lineardigressions.com/">Linear Digressions</a></li>
+					<li><a href="https://www.datacamp.com/community/podcast">DataCamp's DataFramed Podcast</a></li>
+					<li><a href="https://www.oreilly.com/topics/oreilly-data-show-podcast">O’Reilly Data Show Podcast</a></li>
+					<li><a href="https://twimlai.com/">This week in Machine Learning & AI</a></li>
+				</ol>
+			</li>
+			<li><h2>Tools, ecosystem</h2>
+				<ul>
+					<li id="git"><h3>git</h3>
+						<ol>
+							<li><a href="https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/">Adding an existing project to GitHub using the command line</a></li>
+							<li><a href="https://help.github.com/articles/adding-a-file-to-a-repository-using-the-command-line/">Adding a file to a repository using the command line</a></li>
+						</ol>
+					</li>
+					<li id="jupyter"><h3>Jupyter</h3>
+						<ol>
+							<li><a href="https://github.com/topics/jupyterlab-extension">jupyterlab-extension</a> - the official repository</li>
+							<li><a href="https://github.com/markusschanta/awesome-jupyter">A curated list of awesome Jupyter projects, libraries and resources</a> - nice collection in github for all kind of Jupyter related resources</li>
+							<li><a href="https://github.com/SamLau95/nbinteract">nbinteract</a> - a Python package that creates interactive webpages from Jupyter notebooks</li>
+							<li><a href="https://github.com/bhrutledge/jupyter-venv">Jupyter Notebooks and Virtual Environments</a> - if you have problems running Jupyter in a virtenv.</li>
+						</ol>
+					</li>
+					<li id="jupyter_extensions"><h3>JupyterLab - Extensions (my selection)</h3>
+						<ol>
+							<li><a href="https://github.com/mwouts/jupytext"><b>jupytext</b> - Jupyter notebooks as Markdown documents, Julia, Python or R scripts</a></li>
+							<li><a href="https://github.com/jupyterlab/jupyterlab-toc"><b>jupyterlab-toc</b> - Table of Contents extension for JupyterLab</a></li>
+							<li><a href="https://github.com/ijmbarr/jupyterlab_spellchecker">Spellchecker</a></li>
+						</ol>
+					</li>
+				</ul>
+			</li>
+			<li><h2>Datasets Sources</h2>
+				<ul>
+					<li><a href="https://www.kaggle.com/datasets">kaggle datasets</a></li>
+					<li><a href="http://archive.ics.uci.edu/ml/datasets.html">The UCI Machine Learning Repository</a></li>
+					<li><a href="http://users.stat.ufl.edu/~winner/datasets.html">Miscellaneous Datasets - Department of Statistics University of Florida</a></li>
+					<li><a href="http://mlg.ucd.ie/index.html#data">A collection of novel and benchmark datasets curated by UCD Researchers</a><span>useful for text classification projects</span></li>
+				</ul>
+			</li>
+			<li><h2>ML Process Templates</h2>
+				<ol>
+					<li><a href="https://github.com/ProgressBG-Python-Course/ProgressBG-MLwithPython-Code/blob/code/ML_Process_Template.ipynb">ML_Process_Template.ipynb</a></li>
+				</ol>
+			</li>
+			<li><h2>Other resources</h2>
+				<ol>
 
-        </ul>
-    </section>
-    <section class="disclaimer">to be continued...</section>
-    <footer><div class="license left">
-        <p><span>Iva E. Popova.</span>, 2018.
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a></p>
-        </div>
-        <div>Prepared for Machine Learning with Python Course <a href="http://progressbg.net>/">@progressbg</a></div>
-    </footer>
+				</ol>
+			</li>
+		</ul>
+	</section>
+	<section class="disclaimer">to be continued...</section>
+	<footer><div class="license left">
+		<p><span>Iva E. Popova.</span>, 2018.
+		<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a></p>
+		</div>
+		<div>Prepared for Machine Learning with Python Course <a href="http://progressbg.net>/">@progressbg</a></div>
+	</footer>
 </body>
 </html>

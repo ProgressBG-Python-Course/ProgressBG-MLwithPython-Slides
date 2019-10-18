@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>support_vector_machines</title>
+  <link rel="shortcut icon" href="/ProgressBG-MLwithPython-Slides/favicon.ico">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <!-- css & themes include -->
+  <link rel="stylesheet" href="/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="/ProgressBG-MLwithPython-Slides/outfit/css/themes/projector.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <!-- CUSTOM -->
+  <base target="_blank">
+</head>
+<body>
+  <div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+    <div class="top_links">
+      <a class="home_link" href="/ProgressBG-MLwithPython-Slides/index.html#support_vector_machines" target="_top"><i class="fa fa-home"></i></a>
+      <span class="help_link" href="#"><i class="fa fa-question"></i></span>
+      <div class="help_text">
+        <div><span>N/Space</span><span>Next Slide</span></div>
+        <div><span>P</span><span>Previous Slide</span></div>
+        <div><span>O</span><span>Slides Overview</span></div>
+        <div><span>ctrl+left click</span><span>Zoom Element</span></div>
+      </div>
+    </div>
+    <div class="footer theme_switch">
+      <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+      <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+      <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+    </div>
+    <div class="slides">
+<!--
+########################################################
+##################### SLIDES START #####################
+########################################################
+-->
+<section data-min-total="160"><h1>Support Vector Machines (SVM) Algorithms</h1></section>
+<section class="copyright" data-transition="zoom">
+  <section >
+    <div class="note">
+      <p>Created for</p>
+    </div>
+    <div class="company">
+      <a href="http://progressbg.net/kurs-po-web-design/">
+      <img style="height:80%" src="/ProgressBG-MLwithPython-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+      </a>
+    </div>
+  </section>
+  <section>
+    <div class="note">
+      <p>Created by</p>
+    </div>
+    <div class="company">
+      <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova</a></div>
+    </div>
+    <div class="author">
+      <span>2018,</span>
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+    </div>
+  </section>
+</section>
+
+
+<section data-min="20"><h1>Overview of Support Vector Machines</h1></section>
+<section><h2>Overview of Support Vector Machines</h2>
+  <section>
+    <dl class="fa">
+      <dt>Support Vector Machine (SMV) is a numerical binary classifier</dt>
+      <dt>Separates the classes by single decision boundary</dt>
+      <dt>The goal is to <span class="note">maximize the margin</span> between positive and negative classes</dt>
+    </dl>
+  </section>
+  <section><h3>Applications</h3>
+    <dl class="fa">
+      <dt>SVMs are helpful in text and hypertext categorization as their application can significantly reduce the need for labeled training instances in both the standard inductive and transductive settings.</dt>
+      <dt>Classification of images can also be performed using SVMs. Experimental results show that SVMs achieve significantly higher search accuracy than traditional query refinement schemes after just three to four rounds of relevance feedback.</dt>
+      <dt>Hand-written characters can be recognized using SVM</dt>
+    </dl>
+  </section>
+</section>
+
+
+<section data-min="5"><h1>Basic concepts</h1></section>
+<section><h2>Basic concepts</h2>
+  <section><h3>Finding the best decision boundary</h3>
+    <a href="images/many_separating_lines.png"><img src="images/many_separating_lines.png"></a>
+  </section>
+  <section>
+    <a href="images/best_decision_boundary.png"><img src="images/best_decision_boundary.png"></a>
+  </section>
+  <section>
+    <a href="images/svm_basic_concepts.jpg"><img src="images/svm_basic_concepts.jpg"></a>
+  </section>
+
+  <section><h3>Support Vectors</h3>
+    <dl class="fa">
+      <dt>The data points that lie closest to the decision hyperplane</dt>
+      <dt>They have direct bearing on the optimum location of the decision surface</dt>
+    </dl>
+  </section>
+  <section><h3>What is the best boundary?</h3>
+    <dl class="fa">
+      <dt>In <span class="note">1-D space</span> the boundary is a <span class="note">single dot</span></dt>
+      <dd>We need only two dots for support vectors</dd>
+      <dt>In <span class="note">2-D space</span> the boundary is a <span class="note">line</span></dt>
+      <dd class="note">Only 2 or 3 support vectors are needed</dd>
+      <dd>If there are 2 point across each other - then we need only these 2 points and the boundary will be the perpendicular bisector.</dd>
+      <dt>In <span class="note">3-D space</span> the boundary is a <span class="note">plane</span></dt>
+    </dl>
+  </section>
+  <section><h3>What is the best boundary?</h3>
+    <dl class="fa">
+      <dt>The Convex hull method helps to intuitively find the best boundary.</dt>
+      <dt>The Convex hull is a shape that doesn't have any concaveties</dt>
+      <dt><a href="https://en.wikipedia.org/wiki/Convex_hull">Convex hull</a></dt>
+    </dl>
+  </section>
+  <section><h3>The Convex hull method</h3>
+    <a href="images/convex_svm.png"><img src="images/convex_svm.png"></a>
+  </section>
+</section>
+
+<section data-min="40"><h1>Support Vector Machines Classification</h1></section>
+<section><h2>Support Vector Machines Classification</h2>
+  <section><h3>Calculate the best boundary</h3>
+    <p>A trained SVM is defined by two values:</p>
+    <dl class="fa">
+      <dt><b>$\overrightarrow{w}$</b> is a normal vector, which is perpendicular to the boundary</dt>
+      <dd>It solely determines the shape and direction of the decision boundary.</dd>
+      <dt><b>$b$</b> is a number, representing an offset</dt>
+      <dd>determines the position of the decision boundary with respect to the origin</dd>
+    </dl>
+  </section>
+  <section><h3>Calculate the best boundary</h3>
+    <dl class="fa">
+      <dt>Draw a boundary line</dt>
+      <dt>Write the equation of the boundary $f(x) = y$ </dt>
+      <dt>Re-write the equation   the $\overrightarrow{w}$ and $b$</dt>
+      <dd>$\overrightarrow{w} . \overrightarrow{x} + b = 0$ </dd>
+      <dt>Margin width = $\dfrac{2}{||w||}$</dt>
+      <dd>$||w||$ have to point toward the positive class!</dd>
+    </dl>
+  </section>
+  <section><h3>Calculate the best boundary</h3>
+    <a href="images/calc_boundary_equations.png"><img src="images/calc_boundary_equations.png"></a>
+  </section>
+  <section>
+    <a href="images/terms_and_formulas_vgv4.png"><img src="images/terms_and_formulas_vgv4.png"></a>
+  </section>
+  <section><h3>Calssification</h3>
+    <dl class="fa">
+      <dt>$class(\overrightarrow{x}) = sign(\overrightarrow{w} . \overrightarrow{x} + b)$ </dt>
+    </dl>
+  </section>
+  <section>
+    <a href="images/svm_classification_and_concepts.png"><img src="images/svm_classification_and_concepts.png"></a>
+  </section>
+  <section><h3>Kernel Function</h3>
+    <dl class="fa">
+      <dt>By Kernel function we can extend SVM algorithm to patterns that are not linearly separable by transformations of original data to <span class="note">map into new space</span></dt>
+    </dl>
+    </dl>
+  </section>
+  <section>
+    <a href="images/svm_kernel_trick.png"><img src="images/svm_kernel_trick.png"></a>
+  </section>
+  <section><h3>SVM in Scikit-learn</h3>
+    <a href="images/SVM_insklearn.png"><img src="images/SVM_insklearn.png"></a>
+  </section>
+  <section><h3>Parameters</h3>
+    <dl class="fa">
+      <dt>Kernel -  to transform the given dataset input data into the required form. </dt>
+      <dd> linear, polynomial, and radial basis function (RBF).</dd>
+      <dt>Regularization - the C parameter (penalty parameter) is used to maintain regularization</dt>
+      <dd>A smaller value of C creates a small-margin hyperplane and a larger value of C creates a larger-margin hyperplane.</dd>
+      <dt>Gamma</dt>
+      <dd>A lower value of Gamma will loosely fit the training dataset, whereas a higher value of gamma will exactly fit the training dataset, which causes over-fitting.</dd>
+    </dl>
+  </section>
+</section>
+
+
+
+<section data-min="20"><h1>Pros and cons of SVM</h1></section>
+<section><h2>Pros and cons of SVM</h2>
+  <section><h3>Pros</h3>
+    <dl class="fa">
+      <dt>Effective in high dimensional spaces.</dt>
+      <dt>Still effective in cases where number of dimensions is greater than the number of samples.</dt>
+      <dt>Uses a subset of training points in the decision function (called support vectors), so it is also memefficient.</dt>
+      <dt>Versatile: different Kernel functions can be specified for the decision function. Common kernels are provided, but it is also possible to specify custom kernels.</dt>
+      <dt>Higher speed and better performance with a limited number of samples (in the thousands) compared to neural networks</dt>
+    </dl>
+  </section>
+  <section><h3>Cons</h3>
+    <dl class="fa">
+      <dt>If the number of features is much greater than the number of samples, avoid over-fitting in choosing Kernel functions and regularization term is crucial.</dt>
+      <dt>SVMs do not directly provide probability estimates, these are calculated using an expensive five-fold cross-validation</dt>
+    </dl>
+  </section>
+</section>
+
+
+<section data-min="1"><h1>References</h1></section>
+<section><h2>References</h2>
+  <section><h3>Readings</h3>
+    <dl class="fa">
+      <dt><a href="http://www.cristiandima.com/basics-of-support-vector-machines/">Basics of support vector machines</a> by Cristian Dima</dt>
+    </dl>
+  </section>
+</section>
+
+
+<section id="hw" data-min="4"><h1>Exercises</h1></section>
+<section><h2>Task1: Task1Title</h2>
+  <section><h3>The Task</h3>
+    <dl class="fa">
+      <dt></dt>
+    </dl>
+  </section>
+</section>
+
+<section><h3>Submission</h3>
+  <dl class="fa">
+    <dt>PLease, prefix your filenames/archive with your name initials, before sending.</dt>
+    <dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
+    <dt>Send files to <a href="mailto:ProgressBG.WWW.Courses@gmail.com?Subject=_support_vector_machines_">ProgressBG.WWW.Courses@gmail.com</a></dt>
+  </dl>
+</section>
+
+
+<section class="disclaimer" data-background="/ProgressBG-MLwithPython-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
+  <p>These slides are based on</p>
+  <p>customised version of </p>
+  <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+   <p>framework</p>
+</section>
+<!--
+########################################################
+##################### SLIDES END   #####################
+########################################################
+-->
+    </div>
+  </div>
+  <!-- Custom processing -->
+  <script src="/ProgressBG-MLwithPython-Slides/outfit/js/slides.js"></script>
+  <!-- external scripts -->
+  <script src="/ProgressBG-MLwithPython-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+  <script src="/ProgressBG-MLwithPython-Slides/lib/reveal.js/js/reveal.js"></script>
+
+  <!-- init reveal -->
+  <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    var highlightjsTabSize = '  ';
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      keyboard: true,
+      history: true,
+
+      // display control
+      // center: true,
+      // width: '100%',
+      // height: '100%',
+      // // Factor of the display size that should remain empty around the content
+      // margin: 0.1,
+
+      // The "normal" size of the presentation, aspect ratio will be preserved
+      // when the presentation is scaled to fit different resolutions. Can be
+      // specified using percentage units.
+      width: 960,
+      height: 700,
+
+      // Factor of the display size that should remain empty around the content
+      margin: 0.1,
+
+      // Bounds for smallest/largest possible scale to apply to content
+      minScale: 0.2,
+      maxScale: 1.5,
+
+      // slide transition
+      transition: 'concave', // none/fade/slide/convex/concave/zoom
+      // shift+maous click to zoom in/out element
+      zoomKey: 'ctrl',
+      // theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      // transition: Reveal.getQueryHash().transition || 'default'
+      // Optional reveal.js plugins
+      dependencies: [
+        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure({tabReplace: highlightjsTabSize}); hljs.initHighlightingOnLoad(); } },
+        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+      ]
+    });
+  </script>
+  <!-- linkedin badge -->
+  <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+
+  <!-- MathJax -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script type="text/javascript" async src="/ProgressBG-MLwithPython-Slides/lib/MathJax/MathJax.js?config=TeX-AMS_HTML-full"></script>
+</body>
+</html>

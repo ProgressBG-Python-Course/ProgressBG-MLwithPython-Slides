@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>linear_models_for_classification_and_regression</title>
+  <link rel="shortcut icon" href="/ProgressBG-MLwithPython-Slides/favicon.ico">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <!-- css & themes include -->
+  <link rel="stylesheet" href="/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="/ProgressBG-MLwithPython-Slides/outfit/css/themes/projector.css" id="theme">
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"> -->
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <!-- CUSTOM -->
+
+  <base target="_blank">
+</head>
+<body>
+  <div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+    <div class="top_links">
+      <a class="home_link" href="/ProgressBG-MLwithPython-Slides/index.html#linear_models_for_classification_and_regression" target="_top"><i class="fa fa-home"></i></a>
+      <span class="help_link" href="#"><i class="fa fa-question"></i></span>
+      <div class="help_text">
+        <div><span>N/Space</span><span>Next Slide</span></div>
+        <div><span>P</span><span>Previous Slide</span></div>
+        <div><span>O</span><span>Slides Overview</span></div>
+        <div><span>ctrl+left click</span><span>Zoom Element</span></div>
+      </div>
+    </div>
+    <div class="footer theme_switch">
+      <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+      <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+      <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+    </div>
+    <div class="slides">
+<!--
+########################################################
+##################### SLIDES START #####################
+########################################################
+-->
+<section data-min-total="160"><h1>Linear models for Classification and Regression</h1></section>
+<section class="copyright" data-transition="zoom">
+  <section >
+    <div class="note">
+      <p>Created for</p>
+    </div>
+    <div class="company">
+      <a href="http://progressbg.net/kurs-po-web-design/">
+      <img style="height:80%" src="/ProgressBG-MLwithPython-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+      </a>
+    </div>
+  </section>
+  <section>
+    <div class="note">
+      <p>Created by</p>
+    </div>
+    <div class="company">
+      <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova</a></div>
+    </div>
+    <div class="author">
+      <span>2018,</span>
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+    </div>
+  </section>
+</section>
+
+
+<section data-min="5"><h1>Regression Models in Machine Learning.</h1></section>
+<section><h2>Regression Models in Machine Learning.</h2>
+  <section><h3>Overview</h3>
+    <dl class="fa">
+      <dt>Regression analysis is a form of <span class="note">predictive modelling technique</span> which investigates <span class="note">the relationship between a dependent (target) and independent (predictor) variables</span>.</dt>
+      <p>$$ {g:X\to Y} $$</p>
+      <dt>I.e. it fits a line (or curve) to the data points, such that the differences between the distances of data points from the line/curve is minimized.</dt>
+    </dl>
+  </section>
+  <section><h3>Types of regression techniques</h3>
+    <p>We classify them by</p>
+    <dl class="fa">
+      <dt class="note">Number of independent variables</dt>
+      <dd>Simple Regression</dd>
+      <dd>Multiple Regression</dd>
+      <dt class="note">Shape of the regression line</dt>
+      <dd>Linear Regression</dd>
+      <dd>Non-linear regression (like Polynomial regression)</dd>
+      <dt class="note">The type of the dependent variable (continuous or binary(categorical))</dt>
+      <dd>Linear regression</dd>
+      <dd>Logistic regression</dd>
+    </dl>
+  </section>
+  <section><h3>Why the term "Regression"</h3>
+    <dl class="fa">
+      <dt>According to Conspiracy theories:</dt>
+      <dd>Blame ICSSNN (The International Committee for Sadistic Statistical Nomenclature and Numerophobia) <span class="note">😉</span></dd>
+      <dt>The reality:</dt>
+      <dd><a href="http://galton.org/essays/1880-1889/galton-1886-jaigi-regression-stature.pdf">Galton, F. "Regression towards Mediocrity in Hereditary Stature.", 1886</a></dd>
+      <dt>Reference: <a href="http://blog.minitab.com/blog/statistics-and-quality-data-analysis/so-why-is-it-called-regression-anyway">So Why Is It Called "Regression," Anyway?</a></dt>
+    </dl>
+  </section>
+</section>
+
+
+<section data-min="5"><h1>Linear Regression</h1></section>
+<section><h2>Linear Regression</h2>
+  <section><h3>Overview</h3>
+    <dl class="fa">
+      <dt>Linear regression is used to model and predict <span class="note">continuous</span> outcomes.</dt>
+      <dt>It's a <b>predictive model</b> to predict future values $Y$ of $X_i$, using a <span class="note">linear</span> equation</dt>
+       <a href="images/linear_regression_wikipedia.png"><img src="images/linear_regression_wikipedia.png" style="width: 50%;"></a>
+      <dt>Do not confuse it with <b>logistic regression</b>, which is used to model binary outcomes (i.e. it concerns classification tasks)</dt>
+    </dl>
+  </section>
+  <section><h3>Formal definition</h3>
+    <dl class="fa">
+      <dt><a href="http://en.wikipedia.org/wiki/Linear_regression">Linear Regression</a> is a method to model the relationship between a set of <span class="note">independent variables $X$</span> (also known as <span class="note">features</span>) and a <span class="note">dependent variable $Y$</span>.</dt>
+      <dt>This method assumes the relationship between each feature $X$ is <span class="note">linearly related</span> to the dependent variable $Y$.
+      <p>$$ Y = \beta_0 + \beta_1 X + \epsilon$$</p>
+      </dt>
+      <dd>where $\epsilon$ is considered as an unobservable random variable that adds <span class="note">noise</span> to the linear relationship.</dd>
+      <dd>$\beta_0$ is the <span class="note">intercept</span> of the linear model</dd>
+      <dd>$\beta 1$ is the <span class="note">co-efficient</span> of the model</dd>
+      <dt>This is the simplest form of linear regression (i.e. with one variable).</dt>
+    </dl>
+  </section>
+  <section><h3>The general prediction formula for a linear model</h3>
+    <dl class="fa">
+      <p>From: $ Y = \beta_0 + \beta_1 X_1 + \ldots + \beta_p X_p + \epsilon $</p>
+      <p>Find: $ \hat{y} = \hat{\beta}_0 + \hat{\beta}_1 X_1 + \ldots + \hat{\beta}_p X_p $</p>
+      <dt>$ X_1 ... X_p$ are the $p$ features used in the model</dt>
+      <dt>The <span class="note">estimated</span> values are represented with a "hat" on top of the letter</dt>
+      <dt>$\hat{\beta}_0 ... \hat{\beta}_p$ are the model <span class="note">parameters</span> that are learned.</dt>
+      <dd>$\hat{\beta_0}$ is the <span class="note">intercept</span> of the linear model</dd>
+      <dd>$\hat{\beta_1} ... \hat{\beta_p}$ are the <span class="note">co-efficients</span> of the model</dd>
+      <dt>$\hat{y}$ is the <span class="note">prediction</span> that model makes</dt>
+      <dt>Once you estimate the parameters $\hat{\beta}_0$ ... $\hat{\beta}_p$, you can use these to predict new values of $Y$</dt>
+    </dl>
+  </section>
+  <section><h3>Simple vs Multiple Linear Regression</h3>
+    <dl class="fa">
+      <p>$ \hat{y} = \hat{\beta}_0 + \hat{\beta}_1 X_1 + \ldots + \hat{\beta}_p X_p $</p>
+      <dt>When $p$ = 1, we have the equation for a line.</dt>
+      <dd>Simple Linear Regression</dd>
+      <dt>When $p$ >= 2, we have the equation for plane/hyperplane </dt>
+      <dd>Multiple linear regression</dd>
+    </dl>
+  </section>
+  <section><h3>Estimate the coefficients (fit the model)</h3>
+    <dl class="fa">
+      <dt>Find the best fitting straight line through a set of points</dt>
+      <dt>How do we calculate the error (also known as the <span class="note">residual</span>) for each point?</dt>
+      <dt>Two main ways: Standard Least Squares (discussed next) or Orthogonal Distance (presented in the picture)</dt>
+      <a href="images/least_squares_vs_orthogonal_distance.png"><img src="images/least_squares_vs_orthogonal_distance.png"></a>
+    </dl>
+  </section>
+</section>
+
+<section data-min="5"><h1>Least Squares Method</h1></section>
+<section><h2>Least Squares Method</h2>
+  <section><h3>Least Squares Method - Overview</h3>
+    <p>$$ S = \sum_{i=1}^N r_i = \sum_{i=1}^N (y_i - (\beta_0 + \beta_1 x_i))^2 $$</p>
+    <dl class="fa">
+      <dt>where $N$ is the number of observations.</dt>
+      <dt>the least squares estimates $\hat{\beta}_0$ and $\hat{\beta}_1$, that <span class="note">minimize the sum of the squared residuals</span> $r_i = y_i - (\beta_0 + \beta_1 x_i)$ in the model. I.e. makes the difference between the observed $y_i$ and linear model $\beta_0 + \beta_1 x_i$ as small as possible. </dt>
+    </dl>
+  </section>
+  <section><h3>Least Squares Method - Overview</h3>
+    <dl class="fa">
+       <a href="images/linear_regression_distances.jpeg"><img src="images/linear_regression_distances.jpeg"></a>
+       <dt>There are different metrics used to calculate the Square Error.</dt>
+    </dl>
+  </section>
+  <section><h3>Mean Absolute Error</h3>
+    <dl class="fa">
+      <dt>Mean Absolute Error (MAE) is is the mean of the absolute value of the errors</dt>
+      <p>$$\frac 1n\sum_{i=1}^n|y_i-\hat{y}_i|$$</p>
+      <dt>Mean Absolute Error (MAE) is the average vertical/horizontal distance between each point and the identity line.</dt>
+    </dl>
+  </section>
+  <section><h3>Mean Squared Error</h3>
+   <dl class="fa">
+     <dt>Mean Squared Error (MSE) is the mean of the squared errors:</dt>
+     <p>${MSE} ={\frac {1}{n}}\sum _{i=1}^{n}(Y_{i}-{\hat {Y_{i}}})^{2} $</p>
+     <dt>MSE "punishes" larger errors, which is quite useful in the real world</dt>
+   </dl>
+  </section>
+  <section><h3>Root Mean Squared Error</h3>
+    <dl class="fa">
+      <dt>Root Mean Squared Error (RMSE) is the square root of the mean of the squared errors:</dt>
+      <p>$$\sqrt{\frac 1n\sum_{i=1}^n(y_i-\hat{y}_i)^2}$$</p>
+      <dt>RMSE is interpretable in the "y" units.</dt>
+    </dl>
+  </section>
+</section>
+
+<section data-min="20"><h1>Scikit-learn Demo</h1></section>
+<section><h2>Scikit-learn Demo</h2>
+  <section><h3>Advertising && Sales</h3>
+    <a href="examples/linear_models_for_classification_and_regression (Advertising Demo).html">Advertising && Sales Demo with Linear Regression</a>
+  </section>
+</section>
+
+
+<section data-min="5"><h1>The Logistic Regression Algorithm</h1></section>
+<section><h2>The Logistic Regression Algorithm</h2>
+  <section><h3>Overview</h3>
+    <dl class="fa">
+      <dt>Used to predict a categorical dependent variable</dt>
+      <dt>I.e. the output is binary/discrete</dt>
+      <dd>{0 or 1} / {True or False} / {High and Low} ...</dd>
+    </dl>
+  </section>
+  <section><h3>Overview</h3>
+    <a href="images/logistic_regression_example.jpeg"><img src="images/logistic_regression_example.jpeg"></a>
+  </section>
+  <section>
+    <dl class="fa">
+      <dt>Logistic regression uses the same equation as Linear Regression, but here we need the target (ouput) $y$ to be in the range of 0..1, not infinite.</dt>
+      <dt>But if we pass it to the sigmoid function, we can manage to do that</dt>
+    </dl>
+  </section>
+  <section><h3>The sigmoid Function</h3>
+    <p>$$ S(x)={\frac {1}{1+e^{-x}}}={\frac {e^{x}}{e^{x}+1}}. $$</p>
+    <a href="images/sigmuid_function.png"><img src="images/sigmuid_function.png"></a>
+  </section>
+  <section><h3>Demos/Task</h3>
+    <dl class="fa">
+      <dt>Titanic Survivals</dt>
+      <dd>Get the data from here: <a href="HW/all.zip">all.zip</a></dd>
+      <dt>Task:</dt>
+      <dd>Get familiar with the dataset: <a href="https://www.kaggle.com/c/titanic/data">Titanic dataset</a> @kaggle</dd>
+      <dd>Try to clean and wrangle the data, so that we have <span class="note">only numbers</span> in each feature column.</dd>
+    </dl>
+  </section>
+  <section><h3>LogisticRegression - TitanicDemo Solution</h3>
+    <dl class="fa">
+      <dt>View as html: <a href="examples/LogisticRegression - TitanicDemo.html">LogisticRegression - TitanicDemo.html</a></dt>
+    </dl>
+  </section>
+</section>
+
+<section data-min="5"><h1>Multi-class classification with Linear models.</h1></section>
+<section><h2>Multi-class classification with Linear models.</h2>
+  <section><h3>Overview</h3>
+    <a href="images/multiclass_classification2.png"><img src="images/multiclass_classification2.png"></a>
+  </section>
+</section>
+
+<section data-min="5"><h1>Optimizations - Gradient Descent Algorithm</h1></section>
+<section><h2>Optimizations - Gradient Descent Algorithm</h2>
+  <section>
+    <a href="https://en.wikipedia.org/wiki/Gradient_descent">Gradient descent</a>
+  </section>
+</section>
+
+
+<section data-min="5"><h1>The Bias–Variance tradeoff</h1></section>
+<section><h2>The Bias–Variance tradeoff</h2>
+  <section><h3>Overview</h3>
+    <a href="images/bias-and-variance.jpg"><img src="images/bias-and-variance.jpg"></a>
+    <a href="https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff">Bias–Variance tradeoff</a>
+  </section>
+</section>
+
+
+<section data-min="5"><h1>Pros and Cons of Linear Models</h1></section>
+<section><h2>Pros and Cons of Linear Models</h2>
+  <section><h3>Pros</h3>
+    <dl class="fa">
+      <dt>Simple to explain</dt>
+      <dt>Model training and prediction are fast</dt>
+      <dt>No tuning is required (could be Cons, as well)</dt>
+      <dt>Features don't need scaling</dt>
+      <dt>Can perform well with a small number of observations</dt>
+      <dt>Easy to interpret the results</dt>
+    </dl>
+  </section>
+  <section><h3>Cons</h3>
+    <dl class="fa">
+      <dt>Presumes a linear relationship between the features and the target - not a usual real-world situation.</dt>
+      <dt>Performance is not competitive with the best supervised learning methods due to high bias</dt>
+      <dt>Sensitive to irrelevant features</dt>
+      <dt>Can't automatically learn feature interactions</dt>
+    </dl>
+  </section>
+</section>
+
+
+
+
+
+
+<!-- <section data-min="1"><h1>References</h1></section>
+<section><h2>References</h2>
+  <section><h3>Readings</h3>
+    <dl class="fa">
+      <dt></dt>
+    </dl>
+  </section>
+</section>
+
+
+<section id="hw" data-min="4"><h1>Exercises</h1></section>
+<section><h2>Task1: Task1Title</h2>
+  <section><h3>The Task</h3>
+    <dl class="fa">
+      <dt></dt>
+    </dl>
+  </section>
+</section>
+
+<section><h3>Submission</h3>
+  <dl class="fa">
+    <dt>PLease, prefix your filenames/archive with your name initials, before sending.</dt>
+    <dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
+    <dt>Send files to <a href="mailto:ProgressBG.WWW.Courses@gmail.com?Subject=_linear_models_for_classification_and_regression_">ProgressBG.WWW.Courses@gmail.com</a></dt>
+  </dl>
+</section> -->
+
+
+<section class="disclaimer" data-background="/ProgressBG-MLwithPython-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
+  <p>These slides are based on</p>
+  <p>customised version of </p>
+  <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+   <p>framework</p>
+</section>
+<!--
+########################################################
+##################### SLIDES END   #####################
+########################################################
+-->
+    </div>
+  </div>
+  <!-- Custom processing -->
+  <script src="/ProgressBG-MLwithPython-Slides/outfit/js/slides.js"></script>
+  <!-- external scripts -->
+  <script src="/ProgressBG-MLwithPython-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+  <script src="/ProgressBG-MLwithPython-Slides/lib/reveal.js/js/reveal.js"></script>
+
+  <!-- init reveal -->
+  <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    var highlightjsTabSize = '  ';
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      slideNumber: 'c/t',
+      keyboard: true,
+      history: true,
+
+      // display control
+      // center: true,
+      // width: '100%',
+      // height: '100%',
+      // // Factor of the display size that should remain empty around the content
+      // margin: 0.1,
+
+      // The "normal" size of the presentation, aspect ratio will be preserved
+      // when the presentation is scaled to fit different resolutions. Can be
+      // specified using percentage units.
+      width: 960,
+      height: 700,
+
+      // Factor of the display size that should remain empty around the content
+      margin: 0.1,
+
+      // Bounds for smallest/largest possible scale to apply to content
+      minScale: 0.2,
+      maxScale: 1.5,
+
+      // slide transition
+      transition: 'concave', // none/fade/slide/convex/concave/zoom
+      // shift+maous click to zoom in/out element
+      zoomKey: 'ctrl',
+      // theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      // transition: Reveal.getQueryHash().transition || 'default'
+      // Optional reveal.js plugins
+      dependencies: [
+        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure({tabReplace: highlightjsTabSize}); hljs.initHighlightingOnLoad(); } },
+        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+      ]
+    });
+  </script>
+  <!-- linkedin badge -->
+  <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+
+  <!-- MathJax -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+  </script>
+  <script type="text/javascript" async src="/ProgressBG-MLwithPython-Slides/lib/MathJax/MathJax.js?config=TeX-AMS_HTML-full"></script>
+</body>
+</html>
