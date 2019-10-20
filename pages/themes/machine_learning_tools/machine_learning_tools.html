@@ -98,6 +98,10 @@
 </section>
 
 <section data-min="5"><h1>Setting up Python</h1></section>
+<section><h1>Anaconda users notes</h1>
+  <p>Next slides guides you trhough the process of installing the needed tools for DataScience/ML in Python.</p>
+  <p>But if you are already comfortable with <a href="https://www.anaconda.com">Anaconda</a> (i.e. you know what your $PYTHON_PATH is) you should skip the next slides.</p>
+</section>
 <section>
   <section><h3>Install Python on Windows - HowTo</h3>
     <p class="note">Note, we'll be using Python <b>3</b>!</p>
@@ -107,7 +111,7 @@
       <dd>Select 32-bit and 64-bit versions according to your system</dd>
       <dt>Customize installation:</dt>
       <dd>installation location:
-        <code>C:/Python36</code> or whatever you like</dd>
+        <code>C:/Python3</code> or whatever you like</dd>
       <dd class="note">Select "Add Python to PATH"</dd>
     </dl>
   </section>
@@ -178,7 +182,8 @@
     <dl class="fa">
       <dt>Virtual environments create an isolated Python environment for your project.</dt>
       <dt>Keep workflows between projects independent.</dt>
-      <dt>There are many tools for working with virtual environments in Python (virtualenv, pyenv, venv, virtualenvwrapper)</dt>
+      <dt>There are many tools for working with virtual environments in Python (virtualenv, pyenv, venv, pipenv, poetry, conda, etc.)</dt>
+      <dt>During this course we'll be using <span class="note">pipenv</span>!</dt>
     </dl>
   </section>
   <section><h3>Higher-level tools (pipenv)</h3>
@@ -204,9 +209,10 @@
       <dt class="note">A dependency and virtual environments manager combined into one.</dt>
       <dt>Automatically creates and manages a virtualenvs for your projects.</dt>
       <dt>Functionally similar to npm and other modern package managers.</dt>
-      <dt><a href="https://docs.pipenv.org/">docs.pipenv.org</a></dt>
-      <dt><a href="https://medium.com/@rgalbo/simple-python-environments-for-data-science-globe-with-meridians-2b952a3f497f">Simple Python Environments For Data Science</a></dt>
-    </dl>
+      <dt>Useful/advanced readings:</dt>
+      <dd><a href="https://docs.pipenv.org/">docs.pipenv.org</a></dd>
+      <dd><a href="https://medium.com/@rgalbo/simple-python-environments-for-data-science-globe-with-meridians-2b952a3f497f">Simple Python Environments For Data Science</a></dd>
+    </dl>    
   </section>
   <section><h3>Install/Update/Remove</h3>
     <pre><code rel="Install" class="bash">
@@ -242,9 +248,21 @@
       <dd>You may need to log out for the PATH changes to take effect.</dd>
     </dl>
   </section>
+</section>
+
+<section data-min="5"><h1>Manage virtualenv with pipenv</h1></section>
+<section><h2>Manage virtualenv with pipenv</h2>  
+  <section><h3>Notes</h3>
+    <dl class="fa">
+      <dt>A virtual envorinment is asociated with your project folder (and subfolders with max.depth 3, by default.)</dt>
+      <dd>If you need more - set <a href="https://pipenv.kennethreitz.org/en/latest/advanced/#pipenv.environments.PIPENV_MAX_DEPTH">PIPENV_MAX_DEPTH</a></dd>
+      <dt>You don't have to care where the virtualenv really lives.</dt>
+      <dt>But you should be sure that you <span class="note">execute next commands in your project folder</span>.</dt>
+    </dl>
+  </section>
   <section><h3>Create Virtual Environment</h3>
     <dl class="fa">
-      <dt>Pipenv automatically creates a virtual environment when you run:</dt>
+      <dt>Pipenv can automatically creates a virtual environment (if there isn't any) and install a package in it, when you run:</dt>
       <pre><code rel="Terminal" class="bash" data-noescape>
         pipenv install <i>packagename</i>
       </code></pre>
@@ -254,7 +272,7 @@
   <section><h3>Manage virtualenv</h3>
     <pre><code rel="Terminal" class="bash">
         ### Create virtualenv with system Python3:
-        $ pipenv Pipfile--three
+        $ pipenv Pipfile --three
         Creating a virtualenv for this project…
 
         ### Spawn (activate) a shell within the virtualenv
@@ -285,7 +303,7 @@
   <section><h3>Manage packages for your project</h3>
     <pre><code rel="Terminal" class="bash">
 
-      ### install requests package and create a virenv, if there is no one
+      ### install requests package and create a virtenv, if there is no one
       $ pipenv install requests
       Installing requests…
 
@@ -312,6 +330,13 @@
       </code></pre>
       <dt>Execute your program within the pipenv shell:</dt>
       <pre><code rel="Terminal" class="bash">
+        # go to your project folder:
+        $ cd your/project/folder
+
+        # activate the virtenv:
+        $ pipenv shell
+
+        # run the program within the virtenv:
         (course_intro-SmgljMaj) $ python my_ip.py
       </code></pre>
     </dl>
@@ -338,7 +363,7 @@
       echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bash_profile
     </code></pre>
   </section>
-  <section><h3>Let pipenv install Python distribution</h3>
+  <section><h3 class="advanced">Let pipenv install Python distribution</h3>
     <dl class="fa">
       <dt class="note">Install <a href="https://github.com/pyenv/pyenv/wiki/Common-build-problems">the Requirements</a>!</dt>
       <dt>Now, you can make pipenv to create a virtualenv with any Python version:</dt>
@@ -354,7 +379,7 @@
     <p><a href="https://www.youtube.com/watch?v=tRmmjlVHzno">Intro to Pipenv - A Package Manager for Python</a> by <a href="https://www.youtube.com/channel/UC-QDfvrRIDB6F0bIO4I4HkQ">Pretty Printed</a></p>
     <iframe src="https://www.youtube.com/embed/tRmmjlVHzno" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </section>
-  <section><h3>Useful video</h3>
+  <section><h3 class="advanced">Useful video</h3>
     <p><a href="https://www.youtube.com/watch?v=GBQAKldqgZs">Kenneth Reitz - Pipenv: The Future of Python Dependency Management - PyCon 2019</a></p>
     <iframe src="https://www.youtube.com/embed/GBQAKldqgZs" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </section>
@@ -448,9 +473,7 @@
   </section>
 </section>
 
-<section><h1>Anaconda notes</h1>
-  <p>Next sections demonstrate the usage of various Python's Data Science related packages. You can install them separatelly, as given in the slides, or you can skip the installations, and use the <a href="https://docs.anaconda.com/anaconda/install/">Anaconda</a> Python's distribution</a>, bundled with data science and machine learning related applications</p>
-</section>
+
 
 <section><h1>Set up numpy, pandas, matplotlib, Jupyter Notebooks, scikit-learn</h1></section>
 <section><h2>Meet your tools</h2>
