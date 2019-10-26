@@ -37,3 +37,7 @@ students/**
 .*
 !/.gitignore
 ___*
+
+# virtenv:
+.venv
+Pipfile.lock
