@@ -47,7 +47,7 @@
 ##################### SLIDES START #####################
 ########################################################
 -->
-<section data-min-total="__X__"><h1>Data analysis with NumPy and Pandas</h1></section>
+<section data-min-total="320"><h1>Data analysis with NumPy and Pandas</h1></section>
 <section class="copyright" data-transition="zoom">
   <section >
     <div class="note">
@@ -145,71 +145,6 @@
   </section>
 </section>
 
-<section><h1>ndarray attributes</h1></section>
-<section><h2>basic attributes</h2>
-  <section>
-    <pre><code rel="Python" class="python">
-      import numpy as np
-
-      a1 = np.array([[1,2,3], [4,5,6]],dtype="int8")
-      print(a1)
-
-      #[[1 2 3]
-      # [4 5 6]]
-    </code></pre>
-    <pre><code class="bash">
-      # shape - tuple of array dimensions
-      a1.shape:   (2, 3)
-
-      # ndim - number of array dimensions
-      a1.ndim:    2
-
-      # dtype - data-type of the array’s elements
-      a1.dtype:   int8
-
-      # size - number of elements in the array
-      a1.size:    6
-
-      # itemsize - length of one array element in bytes
-      a1.itemsize:1
-
-      # nbytes - total bytes consumed by the elements of the array
-      a1.nbytes:  6
-    </code></pre>
-  </section>
-</section>
-
-<section><h1>Point to point (element-wise) Operations</h1></section>
-<section><h2>Point to point (element-wise) Operations</h2>
-  <section>
-    <dl class="fa">
-      <dt>All arithmetic operations are <span class="note">point to point</span> (element by element) operations</dt>
-      <pre><code rel="Python" class="python">
-        import numpy as np
-
-        l1 = list(range(1,11))
-        l2 = list(range(11,21))
-        a1 = np.arange(1,11)
-        a2 = np.arange(11,21)
-
-        print("\nPlus operator on NumPy Arrays")
-        print("a1 + a2 = {}".format(a1+a2))
-
-        print("\nPlus operator on Python Lists")
-        print("l1 + l2 = {}".format(l1+l2))
-      </code></pre>
-      <pre><code rel="Output" class="bash" data-noescape>
-        Plus operator on NumPy Arrays
-        a1 + a2 = [12 14 16 18 20 22 24 26 28 30]
-
-        Plus operator on Python Lists
-        l1 + l2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-      </code></pre>
-    </dl>
-  </section>
-</section>
-
-
 <section><h1>ndarray create methods</h1></section>
 <section><h2>ndarray create methods</h2>
   <section><h3>numpy.array()</h3>
@@ -304,10 +239,76 @@
        [2 2]
        [2 2]]
     </code></pre>
-
   </section>
   <section><h3>Reference</h3>
     <a href="https://docs.scipy.org/doc/numpy/reference/routines.array-creation.html">Array creation routines @official docs</a>
+  </section>
+</section>
+
+<section><h1>ndarray attributes</h1></section>
+<section><h2>basic attributes</h2>
+  <section>
+    <pre><code rel="Python" class="python">
+      import numpy as np
+
+      a1 = np.array([[1,2,3], [4,5,6]],dtype="int8")
+      print(a1)
+
+      #[[1 2 3]
+      # [4 5 6]]
+    </code></pre>
+    <pre><code class="bash">
+      # shape - tuple of array dimensions
+      a1.shape:   (2, 3)
+
+      # ndim - number of array dimensions
+      a1.ndim:    2
+
+      # dtype - data-type of the array’s elements
+      a1.dtype:   int8
+
+      # size - number of elements in the array
+      a1.size:    6
+
+      # itemsize - length of one array element in bytes
+      a1.itemsize:1
+
+      # nbytes - total bytes consumed by the elements of the array
+      a1.nbytes:  6
+    </code></pre>
+  </section>
+  <section><h3>Reference:</h3>
+    <a href="https://docs.scipy.org/doc/numpy/reference/arrays.ndarray.html#array-attributes">Array attributes @official docs</a>
+  </section>
+</section>
+
+<section><h1>Point to point (element-wise) Operations</h1></section>
+<section><h2>Point to point (element-wise) Operations</h2>
+  <section>
+    <dl class="fa">
+      <dt>All arithmetic operations are <span class="note">point to point</span> (element by element) operations</dt>
+      <pre><code rel="Python" class="python">
+        import numpy as np
+
+        l1 = list(range(1,11))
+        l2 = list(range(11,21))
+        a1 = np.arange(1,11)
+        a2 = np.arange(11,21)
+
+        print("\nPlus operator on NumPy Arrays")
+        print("a1 + a2 = {}".format(a1+a2))
+
+        print("\nPlus operator on Python Lists")
+        print("l1 + l2 = {}".format(l1+l2))
+      </code></pre>
+      <pre><code rel="Output" class="bash" data-noescape>
+        Plus operator on NumPy Arrays
+        a1 + a2 = [12 14 16 18 20 22 24 26 28 30]
+
+        Plus operator on Python Lists
+        l1 + l2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+      </code></pre>
+    </dl>
   </section>
 </section>
 
@@ -404,7 +405,7 @@
     <dl class="fa">
       <dt>numpy array examples in Jupyter Notebook:</dt>
       <dd><a href="examples/NDArrays.html">See as html</a></dd>
-      <dd>Or download the <a href="https://raw.githubusercontent.com/ProgressBG-Python-Course/ProgressBG-MLwithPython-Code/code/data_wrangling_with_pandas/numpy/NDArrays.ipynb">NDArrays.ipynb</a> (make sure to save it as .ipynb)</dd>
+      <dd>Or download the <a href="https://raw.githubusercontent.com/ProgressBG-Python-Course/ProgressBG-MLwithPython-Code/Code/data_wrangling_with_pandas/numpy/NDArrays.ipynb">NDArrays.ipynb</a> (make sure to save it as .ipynb)</dd>
     </dl>
   </section>
   <section><h3>References</h3>
@@ -628,7 +629,7 @@
   <section><h3>All Examples</h3>
     <dl class="fa">
       <dt>Examples as html: <a href="examples/SeriesObject.html">SeriesObject.html</a></dt>
-      <dt>Examples as ipynb: <a href="https://raw.githubusercontent.com/ProgressBG-Python-Course/ProgressBG-MLwithPython-Code/code/data_wrangling_with_pandas/pandas/SeriesObject.ipynb">SeriesObject.ipynb</a></dt>
+      <dt>Examples as ipynb: <a href="https://raw.githubusercontent.com/ProgressBG-Python-Course/ProgressBG-MLwithPython-Code/Code/data_wrangling_with_pandas/pandas/SeriesObject.ipynb">SeriesObject.ipynb</a></dt>
     </dl>
   </section>
   <section><h3>References</h3>
