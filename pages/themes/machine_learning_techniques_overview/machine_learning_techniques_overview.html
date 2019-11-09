@@ -96,13 +96,18 @@
   <section><h3>Overview</h3>
     <dl class="fa">
       <dt>The training data are <span class="note">labeled</span>:</dt>
-      <dd>We have a set of <span class="note">instances</span> represented by certain <span class="note">features</span> and with a particular <span class="note">target</span> attribute</dd>
-      <dd>I.e. we have historical data with mapped input => output pairs</dd>
+      <dt>We have a set of <span class="note">instances</span> represented by certain <span class="note">features</span> and with a particular <span class="note">target</span> attribute</dt>
+      <dd>The <span class="note">features</span> are also called <b>predictors</b> or <b>independent variables</b></dd>
+      <dd>The <span class="note">target</span> is also known as <b>dependent variable</b> or <b>outcome</b></dd>
+      <dt>I.e. we have historical data with mapped input => output pairs</dt>
     </dl>
+  </section>
+  <section>
+    <a href="images/features_target_ml_process.png"><img src="images/features_target_ml_process.png" width="70%"></a>
   </section>
   <section><h3>the goal</h3>
     <dl class="fa">
-      <dt>approximating a mapping function (g) from input variables (X) to output variables (y).</dt>
+      <dt>approximating a mapping function (g) from input variables (<span class="note">X</span>) to output variable/s (<span class="note">y</span>).</dt>
       <p>$$ {g:X\to Y} $$</p>
       <dt>The job of modeling algorithm is to find the best mapping function, such that will minimize the error on prediction.
       </dt>
@@ -142,15 +147,6 @@
   <section><h3>Overview - Picture</h3>
     <a href="images/unsupervised_learning_clusterisation.jpeg"><img src="images/unsupervised_learning_clusterisation.jpeg"></a>
   </section>
-  <section><h3>Why?</h3>
-    <dl class="fa">
-      <dt>To find <span class="note">clusters</span> (patterns, regularities) in the input data</dt>
-      <dt>Extract common rules(patterns)</dt>
-      <dt>To discover structures in the input space</dt>
-      <dd>Density estimation</dd>
-      <dt>Or just to <span class="note">explore</span> the dataset</dt>
-    </dl>
-  </section>
   <section><h3>Popular Algorithms</h3>
     <dl class="fa">
         <dt>Apriori algorithm</dt>
@@ -160,9 +156,18 @@
         <dd>Self-organizing map</dd>
     </dl>
   </section>
-  <section>
-    <p>Applications</p>
+  <section><h3>Problems that solves</h3>
+    <dl class="fa">
+      <dt>To find <span class="note">clusters</span> (patterns, regularities) in the input data</dt>
+      <dt>Extract common rules(patterns)</dt>
+      <dt>To discover structures in the input space</dt>
+      <dd>Density estimation</dd>
+      <dt>Or just to <span class="note">explore</span> the dataset</dt>
+    </dl>
   </section>
+
+<!--   <section><h3>Applications</h3>
+  </section> -->
   <section><h3>Dimensionality reduction</h3>
     <dl class="fa">
       <dt>To project a high-dimensional data set into a lower-dimensional one</dt>
@@ -216,7 +221,7 @@
     <a href="images/Reinforcement_learning_diagram.svg.png"><img src="images/Reinforcement_learning_diagram.svg.png" width="500"></a>
   </section>
   <section>
-    <p>Reinforcement Learning is inspired and closely connected with Behaviorist psychology and finds application in most Ml tasks.</p>
+    <p>Reinforcement Learning is inspired and closely connected with Behaviorist psychology and finds application in most ML tasks.</p>
   </section>
 </section>
 

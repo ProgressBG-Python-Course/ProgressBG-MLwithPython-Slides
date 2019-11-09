@@ -103,14 +103,34 @@
   </section>
 </section>
 
+<section data-min="5"><h1>KNN Algorithm Overview</h1></section>
+<section><h2>KNN Algorithm Overview</h2>
+  <section>    
+    <p>The training set consists of data, each belonging (labelled) to some class.</p>
+    <p>The goal is to classify a new data (P) to one of the given classes.</p>
+    <dl class="fa">      
+      <dt>Identify the K data (the K “neighbours”) in the training set that are closest to P</dt>
+      <dt>Count the number of “neighbours” that belong to each class of the target variable</dt>
+      <dt>Classify P by the most common class to which its neighbours belong</dt>
+    </dl>
+  </section>
+  <section>
+    <a href="images/knn_overview.png"><img src="images/knn_overview.png"></a>  
+  </section>
+  <section><h3>Calculating Distance</h3>
+    <a href="images/knn_EuclideanDistance.png"><img src="images/knn_EuclideanDistance.png"></a>
+    <p>Other popular mesures are Hamming distance, Manhattan distance and Minkowski distance</p>
+  </section>
+</section>
+
 
 <section data-min="5"><h1>Build our first model (Iris Flower Classifier) with scikit-learn</h1></section>
 <section><h2>Build our first model (Iris Flower Classifier) with scikit-learn</h2>
   <section>
-    <dl class="fa">
-      <dt>Let's go into the Jupyter Notebook</dt>
-      <dt>You can view it on nbviewer : <a href="http://nbviewer.jupyter.org/github/ProgressBG-Python-Course/ProgressBG-MLwithPython-Code/blob/Code/ML_Process_with_Iris_Classifier/ML_Process_with_Iris_kNN.ipynb">as html</a></dt>
-      <dt>Or download the <a href="https://raw.githubusercontent.com/ProgressBG-Python-Course/ProgressBG-MLwithPython-Code/Code/ML_Process_with_Iris_Classifier/ML_Process_with_Iris_kNN.ipynb">ipynb</a> file</dt>
+    <p>The presentation is in Jupyter Notebook format:</p>
+    <dl class="fa">      
+      <dt>On GitHub: <a href="https://github.com/ProgressBG-Python-Course/JupyterNotebooksExamples/blob/master/Notebooks/ML_Process_with_Iris_Classifier/ML_Process_with_Iris_kNN.ipynb">ML_Process_with_Iris_kNN.ipynb</a></dt>
+      <dt>On nbviewer: <a href="https://nbviewer.jupyter.org/github/ProgressBG-Python-Course/JupyterNotebooksExamples/blob/master/Notebooks/ML_Process_with_Iris_Classifier/ML_Process_with_Iris_kNN.ipynb">ML_Process_with_Iris_kNN.ipynb</a></dt>
     </dl>
   </section>
 </section>

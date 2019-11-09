@@ -88,7 +88,7 @@
   <section><h3>The Process</h3>
     <a href="images/SubpervisedLearningProcess.png"><img src="images/SubpervisedLearningProcess.png"></a>
     <dl class="fa">
-      <dt>You can use this <a href="https://raw.githubusercontent.com/ProgressBG-Python-Course/ProgressBG-MLwithPython-Code/code/ML_Process_Template.ipynb">Jupyter Notebook template</a>  for a starting point.</dt>
+      <dt>You can use this <a href="https://github.com/ProgressBG-Python-Course/JupyterNotebooksExamples/blob/master/Notebooks/Appendix/ML_Process_Template.ipynb">ML_Process_Template.ipynb</a>  for a starting point.</dt>
     </dl>
   </section>
 </section>
@@ -124,7 +124,7 @@
 <section><h3>Loss function</h3>
   <dl class="fa">
     <dt> In order to measure how well a function fits the training data, the <span class="note">loss</span> function is defined:
-      <p>$$L: Y \times Y \to \Bbb{R}^{\ge 0}$$</p>
+      <p>$$L: Y \times Y \to \Bbb{R} ^{\ge 0}$$</p>
     </dt>
     <dt>I.e. if we have the training samples ${(x_{i},\;y_{i})}$, then the the loss of predicting the value ${{\hat {y}}}$ is ${L(y_i,\hat{y})}$.</dt>
     <dt>Usually, in the same context, is used the term <span class="note">cost</span>  function, which can be regarded as a generalization of the lost function </dt>
@@ -132,7 +132,7 @@
 </section>
 </section>
 
-
+<!-- 
 <section data-min="5"><h1>Classification models.</h1></section>
 <section><h2>Classification models.</h2>
   <section><h3>Algorithms</h3>
@@ -150,7 +150,7 @@
 <section data-min="5"><h1>Predictions with Regression models.</h1></section>
 <section><h2>Predictions with Regression models.</h2>
 
-</section>
+</section> -->
 
 
 <section data-min="5"><h1>Important Concepts</h1></section>
@@ -159,25 +159,30 @@
     <dl class="fa">
       <dt>Features are chosen with a <span class="note">specific task</span> in mind</dt>
       <dt><span class="note">Curse of Dimensionality</span>: The more features you include, the more data you need (exponentially) to produce an equally accurate model</dt>
-      <dt><span class="note"><a href="https://en.wikipedia.org/wiki/No_free_lunch_theorem">'No Free Lunch' theorem</a></span>: "If an algorithm performs better than random search on some class of problems then in must perform worse than random search on the remaining problems".</dt>
+      <dt><span class="note"><a href="https://en.wikipedia.org/wiki/No_free_lunch_theorem">'No Free Lunch' theorem</a></span>: "If an algorithm performs better than random search on some class of problems then it must perform worse than random search on the remaining problems".</dt>
     </dl>
   </section>
   <section><h3>Generalization</h3>
     <dl class="fa">
-      <dt>The ability of algorithm to perform well on new (not-seeing) data</dt>
+      <dt>The ability of algorithm to perform well on new (not-seeing before) data</dt>
     </dl>
   </section>
   <section><h3>Overfitting and Underfitting</h3>
     <dl class="fa">
-      <dt><span class="note">Overfitting</span> happens when a model learns the detail and noise in the training data to the extent that it negatively impacts the performance of the model on new data.</dt>
-      <dt>An <span class="note">underfit</span> machine learning model is not a suitable model and will be obvious as it will have poor performance on the training data.</dt>
+      <dt><span class="note">Overfitting</span> happens when a model learns all the detail (and noise) in the training data to the extent that it negatively impacts the performance of the model on new data.</dt>
+      <dt><span class="note">Underfitting</span> is the case where the model has "not learned enough", resulting in low generalization and unreliable predictions.</dt>
       <dt>Overfitting and underfitting are the two biggest causes for poor performance of machine learning algorithms</dt>
     </dl>
+  </section>
+  <section><h3>Overfitting vs Underfitting</h3>
+    <a href="images/overfitting_vs_underfitting.png"><img src="images/overfitting_vs_underfitting.png"></a>
   </section>
 
   <section><h3>Cross-validation</h3>
     <dl class="fa">
-      <dt></dt>
+      <dt>Cross validation is a technique for testing the effectiveness of a machine learning models.</dt>
+      <dt>Cross validation can give an insight on how the model will generalize to an independent dataset</dt>
+      <dt>The goal of cross-validation is to test the model's ability to predict new data, that was not used in estimating it, in order to flag problems like overfitting</dt>
     </dl>
   </section>
 </section>
