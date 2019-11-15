@@ -158,9 +158,14 @@
   <section><h3>Feature Selection</h3>
     <dl class="fa">
       <dt>Features are chosen with a <span class="note">specific task</span> in mind</dt>
-      <dt><span class="note">Curse of Dimensionality</span>: The more features you include, the more data you need (exponentially) to produce an equally accurate model</dt>
+      <dt><span class="note">Curse of Dimensionality</span>: The more features you include, the more data you need (exponentially) to produce an equally accurate model</dt>      
+    </dl>
+  </section>
+  <section><h3>No Free Lunch' theorem</h3>
+    <dl class="fa">
       <dt><span class="note"><a href="https://en.wikipedia.org/wiki/No_free_lunch_theorem">'No Free Lunch' theorem</a></span>: "If an algorithm performs better than random search on some class of problems then it must perform worse than random search on the remaining problems".</dt>
     </dl>
+    <img src="images/NoFreeLunchTheorem.png">
   </section>
   <section><h3>Generalization</h3>
     <dl class="fa">
@@ -176,8 +181,19 @@
   </section>
   <section><h3>Overfitting vs Underfitting</h3>
     <a href="images/overfitting_vs_underfitting.png"><img src="images/overfitting_vs_underfitting.png"></a>
+  </section> 
+  <section><h3>Bias and Variance</h3>
+    <dl class="fa">
+      <dt><span class="note">Bias</span> is the difference between this estimator's expected value and the true value of the parameter being estimated. In ML, biased results are usually due to faulty assumptions</dt>      
+      <dd>In ML, bias is inevitable - remember the 'No Free Lunch theorem'.</dd>
+      <dt><span class="note">Variance is the expectation of the squared deviation of a random variable from its mean.</span></dt>
+    </dl>
+  </section> 
+  <section><h3>The Bias–Variance tradeoff</h3>
+      <a href="images/bias-and-variance.jpg"><img src="images/bias-and-variance.jpg"></a><br>
+      <p><a href="https://towardsdatascience.com/the-bias-variance-tradeoff-8818f41e39e9">The Bias-Variance Tradeoff</a> by Giorgos Papachristoudis</p>
+      <!-- <a href="https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff">Bias–Variance tradeoff</a> -->
   </section>
-
   <section><h3>Cross-validation</h3>
     <dl class="fa">
       <dt>Cross validation is a technique for testing the effectiveness of a machine learning models.</dt>

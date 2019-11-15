@@ -80,7 +80,7 @@
 <section><h2>Regression Models in Machine Learning.</h2>
   <section><h3>Overview</h3>
     <dl class="fa">
-      <dt>Regression analysis is a form of <span class="note">predictive modelling technique</span> which investigates <span class="note">the relationship between a dependent (target) and independent (predictor) variables</span>.</dt>
+      <dt>Regression analysis is a form of <span class="note">predictive</span> modelling technique which investigates <span class="note">the relationship between a dependent (target) and independent (predictor) variables</span>.</dt>
       <p>$$ {g:X\to Y} $$</p>
       <dt>I.e. it fits a line (or curve) to the data points, such that the differences between the distances of data points from the line/curve is minimized.</dt>
     </dl>
@@ -123,19 +123,19 @@
   </section>
   <section><h3>Formal definition</h3>
     <dl class="fa">
-      <dt><a href="http://en.wikipedia.org/wiki/Linear_regression">Linear Regression</a> is a method to model the relationship between a set of <span class="note">independent variables $X$</span> (also known as <span class="note">features</span>) and a <span class="note">dependent variable $Y$</span>.</dt>
-      <dt>This method assumes the relationship between each feature $X$ is <span class="note">linearly related</span> to the dependent variable $Y$.
-      <p>$$ Y = \beta_0 + \beta_1 X + \epsilon$$</p>
+      <dt><a href="http://en.wikipedia.org/wiki/Linear_regression">Linear Regression</a> is a method to model the relationship between a set of <span class="note">independent variables $X$</span> (also known as <span class="note">features</span>) and a <span class="note">dependent variable $y$</span>.</dt>
+      <dt>This method assumes the relationship between each feature $X$ is <span class="note">linearly related</span> to the dependent variable $y$.
+      <p>$$ y = \beta_0 + \beta_1 X + \epsilon$$</p>
       </dt>
       <dd>where $\epsilon$ is considered as an unobservable random variable that adds <span class="note">noise</span> to the linear relationship.</dd>
       <dd>$\beta_0$ is the <span class="note">intercept</span> of the linear model</dd>
-      <dd>$\beta 1$ is the <span class="note">co-efficient</span> of the model</dd>
+      <dd>$\beta 1$ is the <span class="note">co-efficient</span> of the model (the <span class="note">slope</span> of the line)</dd>
       <dt>This is the simplest form of linear regression (i.e. with one variable).</dt>
     </dl>
   </section>
   <section><h3>The general prediction formula for a linear model</h3>
     <dl class="fa">
-      <p>From: $ Y = \beta_0 + \beta_1 X_1 + \ldots + \beta_p X_p + \epsilon $</p>
+      <p>From: $ y = \beta_0 + \beta_1 X_1 + \ldots + \beta_p X_p + \epsilon $</p>
       <p>Find: $ \hat{y} = \hat{\beta}_0 + \hat{\beta}_1 X_1 + \ldots + \hat{\beta}_p X_p $</p>
       <dt>$ X_1 ... X_p$ are the $p$ features used in the model</dt>
       <dt>The <span class="note">estimated</span> values are represented with a "hat" on top of the letter</dt>
@@ -165,13 +165,13 @@
   </section>
 </section>
 
-<section data-min="5"><h1>Least Squares Method</h1></section>
+<section data-min="5"><h1>Calculate the error</h1></section>
 <section><h2>Least Squares Method</h2>
   <section><h3>Least Squares Method - Overview</h3>
     <p>$$ S = \sum_{i=1}^N r_i = \sum_{i=1}^N (y_i - (\beta_0 + \beta_1 x_i))^2 $$</p>
     <dl class="fa">
-      <dt>where $N$ is the number of observations.</dt>
-      <dt>the least squares estimates $\hat{\beta}_0$ and $\hat{\beta}_1$, that <span class="note">minimize the sum of the squared residuals</span> $r_i = y_i - (\beta_0 + \beta_1 x_i)$ in the model. I.e. makes the difference between the observed $y_i$ and linear model $\beta_0 + \beta_1 x_i$ as small as possible. </dt>
+      <dt>where $N$ is the number of observations.</dt>      
+      <dt>the least squares estimates $\hat{\beta}_0$ and $\hat{\beta}_1$, that <span class="note">minimize the sum of the squared residuals</span> $r_i = y_i - (\beta_0 + \beta_1 x_i)$ in the model. <br> I.e. makes the difference between the observed $y_i$ and linear model $\beta_0 + \beta_1 x_i$ as small as possible. </dt>
     </dl>
   </section>
   <section><h3>Least Squares Method - Overview</h3>
@@ -260,15 +260,6 @@
 <section><h2>Optimizations - Gradient Descent Algorithm</h2>
   <section>
     <a href="https://en.wikipedia.org/wiki/Gradient_descent">Gradient descent</a>
-  </section>
-</section>
-
-
-<section data-min="5"><h1>The Bias–Variance tradeoff</h1></section>
-<section><h2>The Bias–Variance tradeoff</h2>
-  <section><h3>Overview</h3>
-    <a href="images/bias-and-variance.jpg"><img src="images/bias-and-variance.jpg"></a>
-    <a href="https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff">Bias–Variance tradeoff</a>
   </section>
 </section>
 
