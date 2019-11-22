@@ -104,10 +104,36 @@
   <section><h3>Probability Rules</h3>
     <dl class="fa">
       <dt>The probability of an event A  is: $0 \lt A \leq 1$</dt>
-      <dt>The sum of probabilities of all possible events equals 1.</dt>
-      <dt>Subtraction Rule: The probability that event A will occur is equal to 1 minus the probability that event A will not occur: $P(A) = 1 - P(A')$</dt>
-      <dt>All probability rules: <a href="http://www.probabilityformula.org/probability-rules.html">Probability Rules @probabilityformula.org</a></dt>
+      <dt>The sum of probabilities of all possible events equals 1.</dt>      
+      <!-- <dt>All probability rules: <a href="http://www.probabilityformula.org/probability-rules.html">Probability Rules @probabilityformula.org</a></dt> -->
     </dl>
+  </section>
+  <section><h3>Subtraction Rule</h3>
+    <p>The probability that event A will occur is equal to 1 minus the probability that event A will not occur</p>
+    <pre><code rel="Subtraction Rule" class="js">
+      P(A) = 1 - P(A')
+    </code></pre>
+  </section>
+  <section><h3>Rules of Addition</h3>
+   <pre><code rel="Rule 1 (Mutually Exclusive Events)" class="ascii">
+      P(A or B) = P(A) + P(B)
+
+      P(A + B) = 1
+   </code></pre>
+   <pre><code rel="Rule 2 (Non-mutually Exclusive Events)" class="ascii">
+      P(A or B) = P(A) + P(B) − P(A and B)
+   </code></pre>
+  </section>
+  <section><h3>Rules of Multiplication</h3>
+   <pre><code rel="Rule 1 (Mutually Exclusive Events)" class="ascii">
+      P(A and B) = 0
+   </code></pre>
+   <pre><code rel="Rule 2 (Independent Events)" class="ascii">
+      P(A and B)  = P(A)× P(B)
+   </code></pre>
+   <pre><code rel="Rule 3 (Dependent Events)" class="ascii">
+      P(A and B)  = P(A) × P(B|A)
+   </code></pre>
   </section>
   <section><h3>Example - One Dice toss</h3>
     <dl class="fa">
@@ -130,15 +156,19 @@
   <section><h3>Random Variable</h3>
     <dl class="fa">
       <dt>$X$ is variable which holds an outcome of experiment, $X \in \Omega$</dt>
+      <dt>Random variables can be discrete or continuous</dt>          
+    </dl>
+  </section>
+  <section><h3 class="advanced">Random Variable as a Function</h3>
+    <dl class="fa">
       <dt>In practise, $X$ is defined as function that maps the outcomes</dt>
       <dd>$X : \Omega \to \mathbb{R}$</dd>
       <dt>Example: given: 5 coin toss</dt>
       <dd>$\omega = \{H, T, H, H, T\} \subseteq \Omega$</dd>
-      <dd>In practice, we are not interested of the concrete values, but for instance, what as the number of heads that appear among our 5 tosses</dd>
-      <dt>Random variables can be discrete or continuous</dt>
+      <dd>In practice, we are not interested of the concrete values, but for instance, what is the number of heads that appear among our 5 tosses</dd> 
     </dl>
   </section>
-  <section><h3>Probability Distribution</h3>
+  <section><h3 class="advanced">Probability Distribution</h3>
     <dl class="fa" style="font-size: .9em">
       <dt><span class="note">Probability Distribution</span> is a function that describes all the possible values that a random variable can take within a given sample space. </dt>
       <dt>Two types of Probability Distribution, depending of the type of Random Variable:</dt>
@@ -149,19 +179,20 @@
     <!--   <dt>Reference: <a href="https://support.minitab.com/en-us/minitab-express/1/help-and-how-to/basic-statistics/probability-distributions/supporting-topics/basics/continuous-and-discrete-probability-distributions/"></a></dt> -->
     </dl>
   </section>
-   <section><h3>Discrete distribution</h3>
+   <section><h3 class="advanced">Discrete distribution</h3>
     <a href="images/discrete_distribution.png.png"><img src="images/discrete_distribution.png.png"></a>
   </section>
-  <section><h3>Continuous distribution</h3>
+  <section><h3 class="advanced">Continuous distribution</h3>
     <a href="images/continuous_distribution.png"><img src="images/continuous_distribution.png"></a>
   </section>
-  <section><h3>Probability Density Function (PDF)</h3>
+  <section><h3 class="advanced">Probability Density Function (PDF)</h3>
     <dl class="fa">
       <dt>The <i>absolute likelihood</i> for a continuous random variable to take on any particular value is 0 (since there are an infinite set of possible values to begin with)</dt>
       <dt>So, we use PDF which  provides a <i>relative likelihood</i> that the value of the random variable would equal that sample.</dt>
     </dl>
-  </section>
+  </section>  
   <section><h3>References</h3>
+    <h3></h3>
     <iframe width="713" height="401" src="https://www.youtube.com/embed/wG_gQpXJNGU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </section>
 </section>
@@ -172,10 +203,19 @@
   <section><h3>Basics</h3>
     <dl class="fa">
       <dt>Let's have to events: A and B</dt>
-      <dt>$P(A|B)$ is the probability measure of the event A <span class="note">after</span> observing the occurrence of event B </dt>
-      <dt>The conditional probability of any event <span class="note">A given B</span> is defined as: </dt>
+      <dt>$P(A|B)$ (read as <span class="note">A given B</span>) is the probability measure of the event A <span class="note">after</span> observing the occurrence of event B.</dt>
+      <dt>The conditional probability of any event A given B is defined as: </dt>
       <p>$$ P(A\mid B)={\frac {P(A\cap B)}{P(B)}} $$</p>
       <dd>Where  $ P(A\cap B) $ is the probability that both events A and B occur</dd>
+    </dl>
+  </section>
+  <section><h3>Example</h3>
+    <p>Let's have next statistical data</p>
+    <dl class="fa">
+      <dt>40% of male have pets</dt>
+      <dt>10% of male does not have pets</dt>
+      <dt>40% of male have pets</dt>
+      <dt>10% of male does not have pets</dt>
     </dl>
   </section>
   <section><h3>References</h3>
@@ -185,17 +225,26 @@
 
 
 <section data-min="5"><h1>Probability vs Likelihood</h1></section>
-<section><h2>Probability vs Likelihood</h2>
+<section><h2>Probability vs Likelihood</h2>  
   <section><h3>The difference</h3>
     <dl class="fa">
-      <dt>Probability attaches to possible results</dt>
-      <dt>likelihood attaches to hypotheses</dt>
+      <dt><span class="note">Probability</span> attaches to possible results.</dt>
+      <dt><span class="note">Likelihood</span> is a notion, that attaches to hypotheses.</dt>
+      <dd>In data analysis, the "hypotheses" are most often a possible value or a range of possible values for the mean of a distribution.</dd>
+      <dd>Hypotheses, unlike possible results, are neither mutually exclusive nor exhaustive.</dd>      
     </dl>
-  </section>
-  <section><h3>Reference</h3>
-    <iframe width="713" height="401" src="https://www.youtube.com/embed/pYxNSUDSFH4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </section>
+  </section>  
 </section>
+<section><h2>Reference</h2>
+    <section><h3>Readings</h3>
+      <dl class="fa">
+        <dt><a href="https://stats.stackexchange.com/questions/2641/what-is-the-difference-between-likelihood-and-probability">What is the difference between “likelihood” and “probability”?</a></dt>
+      </dl>
+    </section>
+    <section><h3>Videos</h3>
+      <iframe width="713" height="401" src="https://www.youtube.com/embed/pYxNSUDSFH4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+  </section>
 
 <section data-min="10"><h1>The Bayes' theorem</h1></section>
 <section><h2>The Bayes' theorem</h2>
@@ -205,6 +254,22 @@
     </dl>
   </section>
   <section>
+    <hr>
+    <p>$$ P(A\mid B) = {\frac {P(B\mid A)*P(A)}{P(B)}} $$</p>
+    <hr>
+    <!-- <p style="text-align: left; font-size: 0.7em; margin: 0">Where:</p> -->
+    <dl class="fa" style="font-size: 0.8em">
+      <dt>A and B are events and $P(B)\neq 0$</dt>
+      <dt><b>P(A|B)</b> - the probability of A being True, given that B is True.</dt>
+      <dd>the likelihood of event A occurring given that B is true.</dd>
+      <dt><b>P(B|A)</b> - the probability of B being True, given that A is True.</dt>
+      <dd>the likelihood of event B occurring given that A is true</dd>
+      <dt><b>P(A)</b> - the probability of A being True.</dt>
+      <dt><b>P(B)</b> - the probability of B being True.</dt>
+      <dt>P(A) and P(B) are independent.</dt>
+    </dl>
+  </section>
+  <section><h3>In ML terminology</h3>
     <a href="images/Bayes_Theorem.png"><img src="images/Bayes_Theorem.png"></a>
   </section>
   <section><h3>Example - "a boy or a girl?"</h3>
@@ -212,11 +277,20 @@
       <dt>In a school yard there are <span class="note">40 girls</span> and <span class="note">60 boys</span>. All of the boys wear trousers, half of the girls wear trousers, and the other half - wear skirts.</dt>
       <dt>An observer sees a student from a distance, but she can only see that this student wears trousers.</dt>
       <dt>What is the probability that student to be a girl?</dt>
-      <dd>$p(g|t) = p(t|g)*p(g) / p(t)$</dd>
-      <dd>or with Python naming convention: <code>pgt = (ptg * pg) / pt</code></dd>
+      <!-- <dd>$p(g|t) = p(t|g)*p(g) / p(t)$</dd>       -->
+    </dl>    
+  </section>
+  <section><h3>Task</h3>
+    <dl class="fa">
+      <dt>Formalize and answer the question using the Bayes' Theorem</dt>
+      <dt>Write a Python function, that solves the problem.</dt>
     </dl>
   </section>
-  <section><h3>Solution - "a boy or a girl?"</h3>
+  <section><h3>Example - "cancer test"</h3>
+    <a href="https://github.com/ProgressBG-Python-Course/ProgressBG-MLwithPython-Labs/blob/Code/naive_bayes_classifiers/cancer_probability.ipynb">cancer_probability.ipynb</a>
+  </section>
+  <!-- <section><h3>Solution - "a boy or a girl?"</h3>
+    <p>Bayes' Theorem with Python naming convention: <code>pgt = (ptg * pg) / pt</code></p>
     <pre><code rel="Python" class="python">
       def boys_and_girls():
         # the probability that the student is a girl
@@ -241,7 +315,11 @@
     <pre><code rel="Output" class="python">
       P(g|t):  0.25
     </code></pre>
-  </section>
+  </section> -->
+  <!-- <section><h3>Reference</h3>
+    <dt><a href="https://sites.google.com/site/artificialcortext/others/mathematics/bayes-theorem">Bayes' theorem</a> @artificialcortext blog</dt>
+    <dt><a href="https://www.khanacademy.org/math/ap-statistics/probability-ap/stats-conditional-probability/a/tree-diagrams-conditional-probability">Tree diagrams and conditional probability</a></dt>
+  </section> -->
 </section>
 
 
@@ -258,31 +336,33 @@
   <section><h3>Why <span class="note">Naive</span>?</h3>
     <dl class="fa">
       <dt>It use the <i>naive independence assumption</i> - the probability of each feature belonging to a given class is independent of all other features.</dt>
-      <dd>$P(xi|y,x1,...,xi−1,xi+1,...xn)=P(xi|y)$</dd>
-      <dt>Using this naive independence assumption we can simplify our first expression to consider the probability of features independently.</dt>
-      <dd>$$ {\rm{P}}\left( {y|{x_1},...,{x_n}} \right) = \frac{{\prod\nolimits_{i = 1}^n {{\rm{P}}\left( {{x_i}|y} \right) {\rm{P}}\left( y \right)} }} {{{\rm{P}}\left( {{x_1},...,{x_n}} \right)}} $$</dd>
+      <!-- <dd>$P(xi|y,x1,...,xi−1,xi+1,...xn)=P(xi|y)$</dd> -->
+      <dt>Using this naive independence assumption we re-express the Bayes' theorem to consider the probability of features independently: <br>
+        $$ {\rm{P}}\left( {y|{x_1},...,{x_n}} \right) = \frac{{\prod\nolimits_{i = 1}^n {{\rm{P}}\left( {{x_i}|y} \right) {\rm{P}}\left( y \right)} }} {{{\rm{P}}\left( {{x_1},...,{x_n}} \right)}} $$
+      </dt>
     </dl>
   </section>
-  <section>
+  <section>    
     <dl class="fa">
-      <dl class="fa">
-        <dt>The denominator ${{\rm{P}}\left( {{x_1},...,{x_n}} \right)}$ will be constant for all the classes, so we can ignore it in the calculations. Finally, the prediction output will be evaluated as:</dt>
-        <dd>$$
-          \hat y = \arg \mathop {\max }\limits_y \prod\nolimits_{i = 1}^n {{\rm{P}}\left( {{x_i}|y} \right) {\rm{P}}\left( y \right)}
-
-        $$</dd>
-      </dl>
+      <dt>The denominator ${{\rm{P}}\left( {{x_1},...,{x_n}} \right)}$ will be constant for all the classes, so we can ignore it in the calculations.</dt>
+      <dt>Finally, the prediction output will be evaluated as: <br>
+        $$ \hat y = \arg \mathop {\max }\limits_y \prod\nolimits_{i = 1}^n {{\rm{P}}\left( {{x_i}|y} \right) {\rm{P}}\left( y \right)} $$</dt>              
     </dl>
   </section>
-  <section><h3>Reference</h3>
+  <!-- <section><h3>Reference</h3>
     <dl class="fa">
       <dt><a href="https://betterexplained.com/articles/an-intuitive-and-short-explanation-of-bayes-theorem/">An Intuitive (and Short) Explanation of Bayes’ Theorem</a></dt>
     </dl>
-  </section>
+  </section> -->
+
   <section><h3>Reference</h3>
     <iframe width="535" src="https://www.youtube.com/embed/-RiNctT0lS8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </section>
-  <section><h3>Types of Naive Bayes Classifiers</h3>
+</section>
+
+<section data-min="5"><h1>Types of Naive Bayes Classifiers</h1></section>
+<section><h2>Overview</h2>
+  <section>
     <dl class="fa">
       <p>Another assumption made is about the probability distribution of the input features. Depending of that, there are several types of Naive Bayes Classifier</p>
       <dt>Bernoulli Naive Bayes Classifier</dt>
@@ -291,31 +371,12 @@
       <dd>Featres are discrete (usualy representing a count), and <a href="https://en.wikipedia.org/wiki/Multinomial_distribution">Multinomial distribution</a> is used</dd>
       <dt>Gaussian Naive Bayes Classifier</dt>
       <dd>Features are continuous and the <a href="https://en.wikipedia.org/wiki/Normal_distribution">normal ( Gaussian) distribution</a> is used</dd>
-
     </dl>
   </section>
 </section>
 
 
-<section data-min="__Y__"><h1>Gaussian Naive Bayes.</h1></section>
-<section><h2>Gaussian Naive Bayes.</h2>
-  <section>
-    <dl class="fa">
-      <dt>Description and examples are given in the notebook: <a href="examples/slides/NaiveBayes.html">NaiveBayes.html</a></dt>
-    </dl>
-  </section>
-</section>
-
-<section data-min="__Y__"><h1>Multinomial naive Bayes.</h1></section>
-<section><h2>Multinomial naive Bayes.</h2>
-  <section>
-    <dl class="fa">
-      <dt>Description and examples are given in the notebook: <a href="examples/slides/MultinomialNaiveBayes.html">MultinomialNaiveBayes.html</a></dt>
-    </dl>
-  </section>
-</section>
-
-<section data-min="__Y__"><h1>Bernoulli naive Bayes.</h1></section>
+<section data-min="5"><h1>Bernoulli naive Bayes.</h1></section>
 <section><h2>Bernoulli naive Bayes.</h2>
   <section><h3>Overview</h3>
     <dl class="fa">
@@ -325,6 +386,26 @@
     </dl>
   </section>
 </section>
+
+<section data-min="5"><h1>Gaussian Naive Bayes.</h1></section>
+<section><h2>Gaussian Naive Bayes.</h2>
+  <section>
+    <dl class="fa">
+      <dt>Description and examples are given in the notebook: <a href="examples/slides/NaiveBayes.html">NaiveBayes.html</a></dt>
+    </dl>
+  </section>
+</section>
+
+<section data-min="5"><h1>Multinomial naive Bayes.</h1></section>
+<section><h2>Multinomial naive Bayes.</h2>
+  <section>
+    <dl class="fa">
+      <dt>Description and examples are given in the notebook: <a href="examples/slides/MultinomialNaiveBayes.html">MultinomialNaiveBayes.html</a></dt>
+    </dl>
+  </section>
+</section>
+
+
 
 <section data-min="5"><h1>Pros and cons of Naive Bayes classifiers.</h1></section>
 <section><h2>Pros and cons of Naive Bayes classifiers.</h2>
