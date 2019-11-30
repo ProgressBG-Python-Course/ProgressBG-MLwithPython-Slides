@@ -95,23 +95,15 @@
 
 <section data-min="5"><h1>Basic concepts</h1></section>
 <section><h2>Basic concepts</h2>
-  <section><h3>Finding the best decision boundary</h3>
-    <a href="images/many_separating_lines.png"><img src="images/many_separating_lines.png"></a>
+  <section><h3>Probem: find the best decision boundary</h3>    
+    <a href="./images/SVM_math_demos/1_which_is_the_best_line.png"><img src="./images/SVM_math_demos/1_which_is_the_best_line.png"></a>
   </section>
-  <section>
-    <a href="images/best_decision_boundary.png"><img src="images/best_decision_boundary.png"></a>
-  </section>
-  <section>
-    <a href="images/svm_basic_concepts.jpg"><img src="images/svm_basic_concepts.jpg"></a>
+  <section><h3>Solution: overview</h3>
+    <a href="images/SVM_math_demos/2_finding_best_line_with_max_margin.png"><img src="images/SVM_math_demos/2_finding_best_line_with_max_margin.png" style="height:70vh"></a>
+    <p>we choose the line so that the distance from it to the nearest data point on each side (<span class="note">support vectors</span>) is maximized.</p>
   </section>
 
-  <section><h3>Support Vectors</h3>
-    <dl class="fa">
-      <dt>The data points that lie closest to the decision hyperplane</dt>
-      <dt>They have direct bearing on the optimum location of the decision surface</dt>
-    </dl>
-  </section>
-  <section><h3>What is the best boundary?</h3>
+  <section><h3>How many support vectors?</h3>
     <dl class="fa">
       <dt>In <span class="note">1-D space</span> the boundary is a <span class="note">single dot</span></dt>
       <dd>We need only two dots for support vectors</dd>
@@ -121,20 +113,25 @@
       <dt>In <span class="note">3-D space</span> the boundary is a <span class="note">plane</span></dt>
     </dl>
   </section>
-  <section><h3>What is the best boundary?</h3>
+  <section><h3>How many support vectors - the Convex Hull Method?</h3>
+    <a href="images/ConvexHullmethod_in_SVM.png"><img src="images/ConvexHullmethod_in_SVM.png" style="height: 60vh;"></a>
+    <p>Two sets are linearly separable if and only if their convex hulls don’t intersect</p>
+  </section>
+  <section><h3>What is the Convex Hull Method?</h3>
+    <a href="images/ConvexHull_on_finite_set.png"><img src="images/ConvexHull_on_finite_set.png" style="height: 30vh;"></a>
     <dl class="fa">
       <dt>The Convex hull method helps to intuitively find the best boundary.</dt>
-      <dt>The Convex hull is a shape that doesn't have any concaveties</dt>
+      <dt>The Convex hull is a shape that doesn't have any concavities</dt>
       <dt><a href="https://en.wikipedia.org/wiki/Convex_hull">Convex hull</a></dt>
     </dl>
-  </section>
-  <section><h3>The Convex hull method</h3>
-    <a href="images/convex_svm.png"><img src="images/convex_svm.png"></a>
-  </section>
+  </section>  
 </section>
 
-<section data-min="40"><h1>Support Vector Machines Classification</h1></section>
-<section><h2>Support Vector Machines Classification</h2>
+<section data-min="40"><h1>Support Vector Machine Algorithm Overview</h1></section>
+<section><h2>SVM Algorithm Overview</h2>
+  <section>
+    <a href="images/SVM_math_demos/3_best_line_equation.png.png"><img src="images/SVM_math_demos/3_best_line_equation.png.png"></a>
+  </section>
   <section><h3>Calculate the best boundary</h3>
     <p>A trained SVM is defined by two values:</p>
     <dl class="fa">
@@ -180,19 +177,40 @@
   <section><h3>SVM in Scikit-learn</h3>
     <a href="images/SVM_insklearn.png"><img src="images/SVM_insklearn.png"></a>
   </section>
-  <section><h3>Parameters</h3>
+  <section><h3>Parameters - Kernel</h3>
     <dl class="fa">
-      <dt>Kernel -  to transform the given dataset input data into the required form. </dt>
-      <dd> linear, polynomial, and radial basis function (RBF).</dd>
-      <dt>Regularization - the C parameter (penalty parameter) is used to maintain regularization</dt>
-      <dd>A smaller value of C creates a small-margin hyperplane and a larger value of C creates a larger-margin hyperplane.</dd>
-      <dt>Gamma</dt>
-      <dd>A lower value of Gamma will loosely fit the training dataset, whereas a higher value of gamma will exactly fit the training dataset, which causes over-fitting.</dd>
+      <dt>Specify how to transform the given input data into the required form.</dt>
+      <dt>Kernel types: linear, polynomial, and radial basis function (RBF).</dt>     
+      <dt>In <a href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html">sklearn.svm.SVC</a> the values are:  ‘linear’, ‘poly’, ‘rbf’, ‘sigmoid’, ‘precomputed’ or a callable. If none is given, ‘rbf’ will be used. If a callable is given it is used to pre-compute the kernel matrix from data matrices; that matrix should be an array of shape (n_samples, n_samples).</dt>
+      
     </dl>
+  </section>
+  <section><h3>Parameters - C parameter</h3>
+    <dl class="fa">
+      <dt>The C parameter (penalty parameter) is used to maintain regularization</dt>
+      <dt>C parameter represent <span class="note"> the cost of misclassification</span></dt>
+      <dt>Large C value makes the cost of misclassification high (known as "<span class="note">hard margin</span>"), which  results in <span class="note">small margin.</span></dt>     
+      <dd>A large C gives us low bias and high variance</dd> 
+      <dd>A large value of C basically tells our model that we do not have that much faith in our data’s distribution, and will only consider points close to line of separation.</dd>
+      <dt>A small value of C includes more/all the observations, allowing the margins to be calculated using all the data in the area.</dt>   
+    </dl>
+  </section>
+  <section><h3>Parameters - Gamma</h3>
+    <dl class="fa">     
+      <dt>A lower value of Gamma will <span class="note">loosely fit</span> the training dataset</dt>
+      <dt>A higher value of gamma will <span class="note">exactly fit</span> the training dataset, which causes <span class="note"> over-fitting</span>.</dt>
+    </dl>
+    <p>More reading: <a href="https://www.quora.com/What-are-C-and-gamma-with-regards-to-a-support-vector-machine">What are C and gamma with regards to a support vector machine</a></p>
   </section>
 </section>
 
-
+<section><h2>Examples</h2>
+  <section>
+    <dl class="fa">
+      <dt>You can check the example Notebook at: <a href="https://github.com/ProgressBG-Python-Course/JupyterNotebooksExamples/blob/master/Notebooks/support_vector_machines/SVM_Overview.ipynb">SVM_Overview</a></dt>
+    </dl>    
+  </section>
+</section>
 
 <section data-min="20"><h1>Pros and cons of SVM</h1></section>
 <section><h2>Pros and cons of SVM</h2>
@@ -224,7 +242,7 @@
 </section>
 
 
-<section id="hw" data-min="4"><h1>Exercises</h1></section>
+<!-- <section id="hw" data-min="4"><h1>Exercises</h1></section>
 <section><h2>Task1: Task1Title</h2>
   <section><h3>The Task</h3>
     <dl class="fa">
@@ -239,7 +257,7 @@
     <dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
     <dt>Send files to <a href="mailto:ProgressBG.WWW.Courses@gmail.com?Subject=_support_vector_machines_">ProgressBG.WWW.Courses@gmail.com</a></dt>
   </dl>
-</section>
+</section> -->
 
 
 <section class="disclaimer" data-background="/ProgressBG-MLwithPython-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
