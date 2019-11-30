@@ -137,7 +137,7 @@
     <dl class="fa">
       <dt><b>$\overrightarrow{w}$</b> is a normal vector, which is perpendicular to the boundary</dt>
       <dd>It solely determines the shape and direction of the decision boundary.</dd>
-      <dt><b>$b$</b> is a number, representing an offset</dt>
+      <dt><b>$b$</b> (in other notations: $w_{0}$) is a number, representing an offset</dt>
       <dd>determines the position of the decision boundary with respect to the origin</dd>
     </dl>
   </section>
@@ -149,6 +149,8 @@
       <dd>$\overrightarrow{w} . \overrightarrow{x} + b = 0$ </dd>
       <dt>Margin width = $\dfrac{2}{||w||}$</dt>
       <dd>$||w||$ have to point toward the positive class!</dd>
+      <dd>we need the smallest $w$ in order to maximize the margin</dd>
+      <dt>Reference: <a href="https://medium.com/@ankitnitjsr13/math-behind-support-vector-machine-svm-5e7376d0ee4d">Math behind SVM  @medium.com</a></dt>
     </dl>
   </section>
   <section><h3>Calculate the best boundary</h3>
@@ -162,9 +164,9 @@
       <dt>$class(\overrightarrow{x}) = sign(\overrightarrow{w} . \overrightarrow{x} + b)$ </dt>
     </dl>
   </section>
-  <section>
+  <!-- <section>
     <a href="images/svm_classification_and_concepts.png"><img src="images/svm_classification_and_concepts.png"></a>
-  </section>
+  </section> -->
   <section><h3>Kernel Function</h3>
     <dl class="fa">
       <dt>By Kernel function we can extend SVM algorithm to patterns that are not linearly separable by transformations of original data to <span class="note">map into new space</span></dt>
@@ -207,7 +209,8 @@
 <section><h2>Examples</h2>
   <section>
     <dl class="fa">
-      <dt>You can check the example Notebook at: <a href="https://github.com/ProgressBG-Python-Course/JupyterNotebooksExamples/blob/master/Notebooks/support_vector_machines/SVM_Overview.ipynb">SVM_Overview</a></dt>
+      <dt><a href="https://github.com/ProgressBG-Python-Course/JupyterNotebooksExamples/blob/master/Notebooks/support_vector_machines/SVM_Overview.ipynb">SVM_Overview</a></dt>
+      <dt><a href="https://github.com/ProgressBG-Python-Course/JupyterNotebooksExamples/blob/master/Notebooks/support_vector_machines/SVM_Iris.ipynb">SVM_Iris</a></dt>
     </dl>    
   </section>
 </section>
