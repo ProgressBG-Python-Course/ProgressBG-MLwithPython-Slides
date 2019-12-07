@@ -67,26 +67,49 @@
       <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova</a></div>
     </div>
     <div class="author">
-      <span>2019,</span>
+      <span>2018 - 2021,</span>
       <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
     </div>
   </section>
 </section>
 
 
-<section data-min="5"><h1>Overview</h1></section>
-<section><h2>Overview</h2>
+<section data-min="5"><h1>Supervised Learning Overview</h1></section>
+<section><h2>Supervised Learning Overview</h2>
+  <section>
+    <dl class="fa">
+      <dt>The training data are <span class="note">labeled</span>:</dt>
+      <dt>We have a set of <span class="note">instances</span> represented by certain <span class="note">features</span> and with a particular <span class="note">target</span> attribute</dt>
+      <dd>The <span class="note">features</span> are also called <b>predictors</b> or <b>independent variables</b> (X)</dd>
+      <dd>The <span class="note">target</span> is also known as <b>dependent variable</b> or <b>outcome</b> (Y)</dd>
+      <a href="images/features_target_ml_process.png">
+        <img src="images/features_target_ml_process.png" style="display: block; margin:1em 0 0 2em; width:40vw;">
+      </a>
+      <dt>I.e. we have historical data with mapped input => output pairs</dt>
+    </dl>
+  </section>
+  <section><h3>the goal</h3>
+    <dl class="fa">
+      <dt>approximating a mapping function (g) from input variables (<span class="note">X</span>) to output variable/s (<span class="note">y</span>).</dt>
+      <p>$$ {g:X\to Y} $$</p>
+      <dt>The job of modeling algorithm is to find the best mapping function, such that will minimize the error on prediction.
+      </dt>
+    </dl>
+  </section>
   <section><h3>Problems that solves</h3>
     <dl class="fa">
       <dt>Two main problems categories:</dt>
       <dt class="note">classification</dt>
       <dd>predicting a <span class="note">discrete class label</span> output for an example.</dd>
+      <dd>example: determining if an email is spam or not</dd>
       <dt class="note">regression</dt>
       <dd>predicting a <span class="note">continuous quantity (value)</span> output for an example.</dd>
-     </dl>
+      <dd>example: predict the price of a house</dd>
+    </dl>
   </section>
+  <section><h3>classification tasks</h3></section>
   <section><h3>The Process</h3>
-    <a href="images/SubpervisedLearningProcess.png"><img src="images/SubpervisedLearningProcess.png"></a>
+    <a href="images/SubpervisedLearningProcess.png"><img src="images/SubpervisedLearningProcess.png" style="display: block; margin: 1em auto;"></a>
     <dl class="fa">
       <dt>You can use this <a href="https://github.com/ProgressBG-Python-Course/JupyterNotebooksExamples/blob/master/Notebooks/Appendix/ML_Process_Template.ipynb">ML_Process_Template.ipynb</a>  for a starting point.</dt>
     </dl>
@@ -132,7 +155,7 @@
 </section>
 </section>
 
-<!-- 
+<!--
 <section data-min="5"><h1>Classification models.</h1></section>
 <section><h2>Classification models.</h2>
   <section><h3>Algorithms</h3>
@@ -158,7 +181,7 @@
   <section><h3>Feature Selection</h3>
     <dl class="fa">
       <dt>Features are chosen with a <span class="note">specific task</span> in mind</dt>
-      <dt><span class="note">Curse of Dimensionality</span>: The more features you include, the more data you need (exponentially) to produce an equally accurate model</dt>      
+      <dt><span class="note">Curse of Dimensionality</span>: The more features you include, the more data you need (exponentially) to produce an equally accurate model</dt>
     </dl>
   </section>
   <section><h3>No Free Lunch' theorem</h3>
@@ -181,14 +204,14 @@
   </section>
   <section><h3>Overfitting vs Underfitting</h3>
     <a href="images/overfitting_vs_underfitting.png"><img src="images/overfitting_vs_underfitting.png"></a>
-  </section> 
+  </section>
   <section><h3>Bias and Variance</h3>
     <dl class="fa">
-      <dt><span class="note">Bias</span> is the difference between this estimator's expected value and the true value of the parameter being estimated. In ML, biased results are usually due to faulty assumptions</dt>      
+      <dt><span class="note">Bias</span> is the difference between the estimator's expected value and the true value of the parameter being estimated. In ML, biased results are usually due to faulty assumptions</dt>
       <dd>In ML, bias is inevitable - remember the 'No Free Lunch theorem'.</dd>
       <dt><span class="note">Variance is the expectation of the squared deviation of a random variable from its mean.</span></dt>
     </dl>
-  </section> 
+  </section>
   <section><h3>The Bias–Variance tradeoff</h3>
       <a href="images/bias-and-variance.jpg"><img src="images/bias-and-variance.jpg"></a><br>
       <p><a href="https://towardsdatascience.com/the-bias-variance-tradeoff-8818f41e39e9">The Bias-Variance Tradeoff</a> by Giorgos Papachristoudis</p>
@@ -274,8 +297,8 @@
       // The "normal" size of the presentation, aspect ratio will be preserved
       // when the presentation is scaled to fit different resolutions. Can be
       // specified using percentage units.
-      width: 960,
-      height: 700,
+      width: "100%",
+      height: "100%",
 
       // Factor of the display size that should remain empty around the content
       margin: 0.1,
@@ -302,7 +325,7 @@
     });
   </script>
   <!-- linkedin badge -->
-  <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+  <!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
   <!-- MathJax -->
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});

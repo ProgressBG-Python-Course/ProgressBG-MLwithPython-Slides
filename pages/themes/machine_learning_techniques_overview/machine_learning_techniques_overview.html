@@ -75,19 +75,41 @@
   </section>
 </section>
 
+<section data-min="5"><h1>ML Algorithm vs Model - concepts clarification</h1></section>
+<section><h2>ML Algorithm vs Model - concepts clarification</h2>
+  <section><h3>What is Algorithm in ML?</h3>
+    <dl class="fa">
+      <dt>The word "algorithm" in machine learning denotes the same concept as in Computer Science.</dt>
+      <dt>ML algorithms basically performs "pattern recognition". They "learn" from data (i.e. "fit" on a dataset).</dt>
+      <dt>ML algorithms are used to create a machine learning "model".</dt>
+    </dl>
+  </section>
+  <section><h3>What is "model" in ML?</h3>
+    <dl class="fa">
+      <dt>An ML "model" <span class="note">is the output of a ML algorithm</span> run on particular data</dt>
+      <dt>The model is the "thing" that is produced after running a ML algorithm on particular training data.</dt>
+      <dt>The model represents the rules, numbers, and any other algorithm-specific data structures required to make predictions</dt>
+      <dd>For example, the "decision tree" algorithm run on particular data results in a model comprised of a tree of if-then statements with specific values.</dd>
+    </dl>
+  </section>
+</section>
+
 <section data-min="5"><h1>Types of ML Algorithms</h1></section>
 <section><h2>Types of ML Algorithms</h2>
   <section><h3>Overview</h3>
     <dl class="fa">
-      <dt>There are hundreds of Machine learning algorithms.</dt>
-      <dt>But how can we choose which one we should study and use in order to do our task?</dt>
+      <dt>There are hundreds of Machine learning algorithms. But we can group them in three basic types:</dt>
+      <a href="./images/ML_algorithms_types.png"><img src="./images/ML_algorithms_types.png" alt=""></a>
+    </dl>
+  </section>
+  <section><h3>Classification map of ML Algorithms</h3>
+    <dl class="fa">
+      <!-- <dt>But how can we choose which one we should study and use in order to do our task?</dt> -->
       <dt>Most classification of ML Algorithms types are based on</dt>
       <dd>How the algorithm works?</dd>
       <dd>What types of task is an algorithm suitable for?</dd>
     </dl>
-  </section>
-  <section><h3>Classification map of ML Algorithms</h3>
-    <a href="images/MachineLearningAlgorithmsMiniMap.png"><img src="images/MachineLearningAlgorithmsMiniMap.png"></a>
+    <a href="images/MachineLearningAlgorithmsMiniMap.png"><img src="images/MachineLearningAlgorithmsMiniMap.png" style="height: 60vh;"></a>
   </section>
 </section>
 
@@ -95,22 +117,14 @@
 <section><h2>Supervised Learning Algorithms</h2>
   <section><h3>Overview</h3>
     <dl class="fa">
-      <dt>The training data are <span class="note">labeled</span>:</dt>
-      <dt>We have a set of <span class="note">instances</span> represented by certain <span class="note">features</span> and with a particular <span class="note">target</span> attribute</dt>
-      <dd>The <span class="note">features</span> are also called <b>predictors</b> or <b>independent variables</b></dd>
-      <dd>The <span class="note">target</span> is also known as <b>dependent variable</b> or <b>outcome</b></dd>
-      <dt>I.e. we have historical data with mapped input => output pairs</dt>
-    </dl>
-  </section>
-  <section>
-    <a href="images/features_target_ml_process.png"><img src="images/features_target_ml_process.png" width="70%"></a>
-  </section>
-  <section><h3>the goal</h3>
-    <dl class="fa">
-      <dt>approximating a mapping function (g) from input variables (<span class="note">X</span>) to output variable/s (<span class="note">y</span>).</dt>
-      <p>$$ {g:X\to Y} $$</p>
+      <dt>Supervised ML algorithms are the most used algorithms in practice.</dt>
+      <dt>Supervised ML is when we have <span class="note">historical data with mapped input => output pairs</span> and we use an algorithm to learn the mapping function from the input to the output.</dt>
+      <dt>Input data are called <i>input variables (X)</i>, or <i>free variables</i> </dt>
+      <dt>Output data is called <i>target</i> or <i>dependent variable (Y)</i></dt>
+      <dt>The goal is to approximate the mapping function: <span>$ {Y = f(X)} $</span>, so well that when we have new input data (X) we can predict the output variables (Y) for that data.</dt>
+      <dt>The model is trained until it can detect the underlying patterns and relationships between the input data and the output labels, enabling it to yield accurate labeling results when presented with never-before-seen data</dt>
       <dt>The job of modeling algorithm is to find the best mapping function, such that will minimize the error on prediction.
-      </dt>
+
     </dl>
   </section>
   <section><h3>Problems that solves</h3>
@@ -118,8 +132,10 @@
       <dt>Two main problems categories:</dt>
       <dt class="note">classification</dt>
       <dd>predicting a <span class="note">discrete class label</span> output for an example.</dd>
+      <dd>example: determining if an email is spam or not</dd>
       <dt class="note">regression</dt>
       <dd>predicting a <span class="note">continuous quantity (value)</span> output for an example.</dd>
+      <dd>example: predict the price of a house</dd>
     </dl>
   </section>
   <section><h3>Popular Algorithms</h3>
@@ -140,12 +156,13 @@
   <section><h3>What?</h3>
     <dl class="fa">
       <dt>We have only input data, that <span class="note">are not labeled</span></dt>
-      <dd>We don't know in advance the right answers to the training data. And our goal is not to find a mapping between input and output data at all. There is no "supervisor"</dd>
-      <dt>The learning algorithm can only use similarities between input data to group (cluster) it</dt>
+      <dd>We don't know in advance the right answers to the training data.</dd>
+      <dd>Our goal is not to find a mapping between input and output data at all. There is no "supervisor"</dd>
+      <dt>The learning algorithm can <span class="note">only use similarities between input data to group (cluster) it</span></dt>
     </dl>
   </section>
   <section><h3>Overview - Picture</h3>
-    <a href="images/unsupervised_learning_clusterisation.jpeg"><img src="images/unsupervised_learning_clusterisation.jpeg"></a>
+    <a href="images/unsupervised_learning_clusterisation.jpeg"><img src="images/unsupervised_learning_clusterisation.jpeg" style="height: 60vh;"></a>
   </section>
   <section><h3>Popular Algorithms</h3>
     <dl class="fa">
@@ -168,40 +185,38 @@
 
 <!--   <section><h3>Applications</h3>
   </section> -->
-  <section><h3>Dimensionality reduction</h3>
+  <section><h3>Applications</h3>
     <dl class="fa">
-      <dt>To project a high-dimensional data set into a lower-dimensional one</dt>
-    </dl>
-  </section>
-  <section><h3>Document Clusterization</h3>
-    <dl class="fa">
-      <dt>The cluster algorithm can find "similar" documents</dt>
-      <dd>most common, that similarity is according to a common words(tokens) in a predefined lexicon.</dd>
-    </dl>
-  </section>
-  <section><h3>Customer segmentation</h3>
-    <dl class="fa">
-      <dt>A telco company has huge amount of data of its customers</dt>
+      <dt><i>Dimensionality reduction</i></dt>
+      <dd>To project a high-dimensional data set into a lower-dimensional one</dd>
+      <dt><i>Document Clusterization</i></dt>
+      <dd>The cluster algorithm can find "similar" documents. Most common, that similarity is according to a common words(tokens) in a predefined lexicon</dd>
+      <dt><i>Customer segmentation</i></dt>
+      <dd>A telco company has huge amount of data of its customers</dd>
       <dd>Demographic and personal data, how long they speak and with whom, ...</dd>
-      <dt>The company may use clustering algorithms to see the groups of customers with similar attributes</dt>
+      <dd>The company may use clustering algorithms to see the groups of customers with similar attributes</dd>
     </dl>
   </section>
-  <section><h3>Image compression</h3>
+  <section><h3>Applications: </h3>
     <dl class="fa">
-      <dt>The pixels of an image are the input data</dt>
-      <dt>The clustering algorithm can group pixels with similar colors</dt>
-      <dt>Can find groups of pixels, forming repeated components of the picture</dt>
+      <dt><i>Image compression</i></dt>
+      <dd>The pixels of an image are the input data</dd>
+      <dd>The clustering algorithm can group pixels with similar colors</dd>
+      <dd>Can find groups of pixels, forming repeated components of the picture</dd>
+      <dt><i>Bioinformatics and Gene Engineering</i></dt>
     </dl>
   </section>
-  <section><h3>Bioinformatics and Gene Engineering</h3></section>
 </section>
 
-<section data-min="5"><h1>Semi-supervised Lerning</h1></section>
-<section><h2>Semi-supervised Lerning</h2>
+<section data-min="5"><h1>Semi-supervised Learning</h1></section>
+<section><h2>Semi-supervised Learning</h2>
   <section><h3>Overview</h3>
+    <blockquote>Semi-supervised learning has tremendous practical value. In many tasks, there is a paucity of labeled data. The labels y may be difficult to obtain because they require human annotators, special devices, or expensive and slow experiments.
+      <br><cite><a href="https://www.amazon.com/Introduction-Semi-Supervised-Synthesis-Artificial-Intelligence/dp/1598295470/ref=as_li_ss_tl?_encoding=UTF8">Introduction to Semi-Supervised Learning, 2009</a>.</cite>
+    </blockquote>
     <dl class="fa">
-      <dt>The same goal as of <span class="note">supervised</span> learning</dt>
-      <dt>But less amount of labeled input data, and large amount of unlabeled data.</dt>
+      <dt>Semi-supervised Learning is performed when <span class="note"> we have a small number of labeled examples and a large number of unlabeled examples</span>.</dt>
+      <dt>The goal of Semi-supervised Learning is the same as of supervised learning</dt>
     </dl>
   </section>
 </section>
@@ -216,12 +231,12 @@
       error runs, it should learn the best policy, which is the <span class="note">sequence of
       actions</span> that maximize the total reward.
     </blockquote>
-  </section>
-  <section>
     <a href="images/Reinforcement_learning_diagram.svg.png"><img src="images/Reinforcement_learning_diagram.svg.png" width="500"></a>
   </section>
   <section>
-    <p>Reinforcement Learning is inspired and closely connected with Behaviorist psychology and finds application in most ML tasks.</p>
+    <dl class="fa">
+      <dt>Reinforcement Learning is inspired and closely connected with Behaviorist psychology and finds application in most ML tasks.</dt>
+    </dl>
   </section>
 </section>
 
