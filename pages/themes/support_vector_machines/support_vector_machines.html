@@ -67,7 +67,7 @@
       <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova</a></div>
     </div>
     <div class="author">
-      <span>2019,</span>
+      <span>2018 - 2021,</span>
       <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
     </div>
   </section>
@@ -95,7 +95,7 @@
 
 <section data-min="5"><h1>Basic concepts</h1></section>
 <section><h2>Basic concepts</h2>
-  <section><h3>Probem: find the best decision boundary</h3>    
+  <section><h3>Probem: find the best decision boundary</h3>
     <a href="./images/SVM_math_demos/1_which_is_the_best_line.png"><img src="./images/SVM_math_demos/1_which_is_the_best_line.png"></a>
   </section>
   <section><h3>Solution: overview</h3>
@@ -124,7 +124,7 @@
       <dt>The Convex hull is a shape that doesn't have any concavities</dt>
       <dt><a href="https://en.wikipedia.org/wiki/Convex_hull">Convex hull</a></dt>
     </dl>
-  </section>  
+  </section>
 </section>
 
 <section data-min="40"><h1>Support Vector Machine Algorithm Overview</h1></section>
@@ -182,23 +182,23 @@
   <section><h3>Parameters - Kernel</h3>
     <dl class="fa">
       <dt>Specify how to transform the given input data into the required form.</dt>
-      <dt>Kernel types: linear, polynomial, and radial basis function (RBF).</dt>     
+      <dt>Kernel types: linear, polynomial, and radial basis function (RBF).</dt>
       <dt>In <a href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html">sklearn.svm.SVC</a> the values are:  ‘linear’, ‘poly’, ‘rbf’, ‘sigmoid’, ‘precomputed’ or a callable. If none is given, ‘rbf’ will be used. If a callable is given it is used to pre-compute the kernel matrix from data matrices; that matrix should be an array of shape (n_samples, n_samples).</dt>
-      
+
     </dl>
   </section>
   <section><h3>Parameters - C parameter</h3>
     <dl class="fa">
       <dt>The C parameter (penalty parameter) is used to maintain regularization</dt>
       <dt>C parameter represent <span class="note"> the cost of misclassification</span></dt>
-      <dt>Large C value makes the cost of misclassification high (known as "<span class="note">hard margin</span>"), which  results in <span class="note">small margin.</span></dt>     
-      <dd>A large C gives us low bias and high variance</dd> 
+      <dt>Large C value makes the cost of misclassification high (known as "<span class="note">hard margin</span>"), which  results in <span class="note">small margin.</span></dt>
+      <dd>A large C gives us low bias and high variance</dd>
       <dd>A large value of C basically tells our model that we do not have that much faith in our data’s distribution, and will only consider points close to line of separation.</dd>
-      <dt>A small value of C includes more/all the observations, allowing the margins to be calculated using all the data in the area.</dt>   
+      <dt>A small value of C includes more/all the observations, allowing the margins to be calculated using all the data in the area.</dt>
     </dl>
   </section>
   <section><h3>Parameters - Gamma</h3>
-    <dl class="fa">     
+    <dl class="fa">
       <dt>A lower value of Gamma will <span class="note">loosely fit</span> the training dataset</dt>
       <dt>A higher value of gamma will <span class="note">exactly fit</span> the training dataset, which causes <span class="note"> over-fitting</span>.</dt>
     </dl>
@@ -211,7 +211,7 @@
     <dl class="fa">
       <dt><a href="https://github.com/ProgressBG-Python-Course/JupyterNotebooksExamples/blob/master/Notebooks/support_vector_machines/SVM_Overview.ipynb">SVM_Overview</a></dt>
       <dt><a href="https://github.com/ProgressBG-Python-Course/JupyterNotebooksExamples/blob/master/Notebooks/support_vector_machines/SVM_Iris.ipynb">SVM_Iris</a></dt>
-    </dl>    
+    </dl>
   </section>
 </section>
 
@@ -304,8 +304,8 @@
       // The "normal" size of the presentation, aspect ratio will be preserved
       // when the presentation is scaled to fit different resolutions. Can be
       // specified using percentage units.
-      width: 960,
-      height: 700,
+      width: "100%",
+      height: "100%",
 
       // Factor of the display size that should remain empty around the content
       margin: 0.1,

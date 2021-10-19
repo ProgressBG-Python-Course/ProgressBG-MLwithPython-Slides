@@ -312,9 +312,11 @@ section.copyright>.license{
 
 .reveal section iframe{
   display: block;
-  width: 80%;
-  height: 60vh;
+  /* width: 80%; */
+  /* height: 60vh; */
   margin: 0 auto;
+  margin-top: 1em;
+  padding-left: 2em;
   text-align: center;
 }
 .reveal section iframe.resultFrame{
@@ -322,6 +324,7 @@ section.copyright>.license{
   margin: .5em 0;
   width: 80%;
   height: 60vh;
+  /* border:5px solid red; */
   /*height: auto;*/
 }
 

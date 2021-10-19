@@ -67,7 +67,7 @@
       <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova</a></div>
     </div>
     <div class="author">
-      <span>2019,</span>
+      <span>2018 - 2021,</span>
       <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
     </div>
   </section>
@@ -173,12 +173,22 @@
   <section><h3>Start the server</h3>
     <dl class="fa">
       <dt>Make sure you are in the folder, containing your project files</dt>
+      <dt>Activate the virtual environment</dt>
     </dl>
     <pre><code rel="Terminal" class="bash" data-noescape>
-      jupyter lab
+      cd /your/project/folder
+
+      # activate the virtual environment:
+      pipenv shell
+
+      # start the Jupyter server:
+      jupyter notebook
+
+      # in case of problems: start the Jupyter server with a clean config:
+      jupyter notebook --generate-config
     </code></pre>
     <dl class="fa">
-      <dt>JupyterLab will open automatically in your browser</dt>
+      <dt>Jupyter Notebook will be opened automatically in your browser</dt>
     </dl>
   </section>
   <section><h3>Stop the server</h3>
@@ -211,7 +221,7 @@
 </section>
 
 <section data-min="10"><h1>Upload your Jupyter Notebook to GitHub</h1></section>
-<section><h2 class="advanced">Upload your Jupyter Notebook to GitHub</h2>
+<section><h2>Upload your Jupyter Notebook to GitHub</h2>
   <section>
     <dl class="fa">
       <dt>There is nothing different than pushing any other file to your github account:</dt>
@@ -232,14 +242,9 @@
     <dl class="fa">
       <dt>You can use <a href="https://github.com">github.com</a> to host your .ipynb files for free</dt>
       <dt>GitHub can render .ipynb files. For more details check <a href="https://help.github.com/articles/working-with-jupyter-notebook-files-on-github/">github docs</a></dt>
-    </dl>
-    <p class="note">
-    <dl class="fa">
-      <dt>Go to your github.com account and navigate to the notebook file you want to see/share.</dt>
       <dd>when you click on it (the <code>.ipynb</code> extension) github will try to render the notebook in your browse</dd>
       <dd>You can copy that URL and share it with anybody</dd>
-      <dd>Like that: <a href="https://github.com/ProgressBG-Python-Course/JupyterNotebooksExamples/blob/master/JupyterNotebook_introduction.ipynb">JupyterNotebook_introduction</a></dd>
-
+      <dd>Like that: <a href="https://github.com/ProgressBG-Python-Course/JupyterNotebooksExamples/blob/master/Notebooks/JupyterNotebook_basics.ipynb">JupyterNotebook_basics</a></dd>
     </dl>
   </section>
   <section><h3>Share/Render your JupyterNotebooks (nbviewer)</h3>
@@ -247,7 +252,7 @@
     <dl class="fa">
       <dt><a href="https://nbviewer.jupyter.org/">nbviewer.jupyter.org</a> is a Web Service to render .ipynb files</dt>
       <dt>You can render there your .ipynb files, hosted on github, or GoogleDrive, Dropbox, ...</dt>
-      <dt>Like that: <a href="https://nbviewer.jupyter.org/github/ProgressBG-Python-Course/JupyterNotebooksExamples/blob/master/JupyterNotebook_introduction.ipynb">JupyterNotebook_introduction</a></dt>
+      <dt>Like that: <a href="https://nbviewer.org/github/ProgressBG-Python-Course/JupyterNotebooksExamples/blob/master/Notebooks/JupyterNotebook_basics.ipynb">JupyterNotebook_introduction</a></dt>
     </dl>
   </section>
 </section>
@@ -259,7 +264,7 @@
       <dt><a href="https://mybinder.org/">binder</a> - Turn a GitHub repo into a collection of interactive notebooks</dt>
       <dd>Builds a docker images from a git repository</dd>
       <dd>Uses <a href="https://github.com/jupyterhub/jupyterhub">JupyterHub</a> - Multi-user server for Jupyter notebooks - to execute the notebook</dd>
-      <dt><a href="https://mybinder.org/v2/gh/ProgressBG-Python-Course/JupyterNotebooksExamples/master">JupyterNotebooksExamples Repo</a> - <a href="https://mybinder.org/v2/gh/ProgressBG-Python-Course/JupyterNotebooksExamples/master"><img src="https://mybinder.org/badge_logo.svg" style="vertical-align: middle;"></a></dt>      
+      <dt><a href="https://mybinder.org/v2/gh/ProgressBG-Python-Course/JupyterNotebooksExamples/master">JupyterNotebooksExamples Repo</a> - <a href="https://mybinder.org/v2/gh/ProgressBG-Python-Course/JupyterNotebooksExamples/master"><img src="https://mybinder.org/badge_logo.svg" style="vertical-align: middle;"></a></dt>
       <dd class="note">You have to be patient in order binder to build the Docker image and start the server...</dd>
     </dl>
   </section>
@@ -292,8 +297,11 @@
 
 <section data-min="0"><h1>References</h1></section>
 <section><h2>References</h2>
-  <section><h3>Videos</h3>
-    <iframe src="https://www.youtube.com/embed/Gzun8PpyBCo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <section><h3>Video: Getting Started with JupyterLab (Beginner Level) | SciPy 2018 Tutorial | Jason Grout</h3>
+    <iframe src="https://www.youtube.com/embed/Gzun8PpyBCo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="width: 70vw;height: 70vh;"></iframe>
+  </section>
+  <section><h3 class="advanced">Video: Binder 2.0: Next Gen of Reproducible Scientific Environments w/ repo2docker & BinderH | SciPy 2018</h3>
+    <iframe width="1280" height="720" src="https://www.youtube.com/embed/KcC0W5LP9GM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </section>
   <section><h3>Docs</h3>
     <dl class="fa">
@@ -374,8 +382,8 @@
       // The "normal" size of the presentation, aspect ratio will be preserved
       // when the presentation is scaled to fit different resolutions. Can be
       // specified using percentage units.
-      width: 960,
-      height: 700,
+      width: "100%",
+      height: "100%",
 
       // Factor of the display size that should remain empty around the content
       margin: 0.1,
