@@ -316,7 +316,7 @@ section.copyright>.license{
   /* height: 60vh; */
   margin: 0 auto;
   margin-top: 1em;
-  padding-left: 2em;
+  padding-left: .2em;
   text-align: center;
 }
 .reveal section iframe.resultFrame{
