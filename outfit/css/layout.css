@@ -27,7 +27,10 @@ header>h2{
     font-size: 1.2em;
     top:1em;left: .8em;
     color: #C56E78;
-    opacity: .5;
+    /* opacity: .8; */
+}
+header>h2>img{
+    width: 15vw;
 }
 header>h3{
     position: absolute;
