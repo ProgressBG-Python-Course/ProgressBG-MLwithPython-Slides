@@ -1,47 +1,47 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Introduction to Machine Learning</title>
-  <link rel="shortcut icon" href="/ProgressBG-MLwithPython-Slides/favicon.ico">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <!-- css & themes include -->
-  <link rel="stylesheet" href="/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/reveal.css">
-  <link rel="stylesheet" href="/ProgressBG-MLwithPython-Slides/outfit/css/themes/projector.css" id="theme">
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-  <!--[if lt IE 9]>
-  <script src="lib/js/html5shiv.js"></script>
-  <![endif]-->
-  <!-- CUSTOM -->
-  <base target="_blank">
+	<meta charset="utf-8">
+	<title>Introduction to Machine Learning</title>
+	<link rel="shortcut icon" href="/ProgressBG-MLwithPython-Slides/favicon.ico">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<!-- css & themes include -->
+	<link rel="stylesheet" href="/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="/ProgressBG-MLwithPython-Slides/outfit/css/themes/projector.css" id="theme">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+	<!-- CUSTOM -->
+	<base target="_blank">
 </head>
 <body>
-  <div class="reveal default center" data-transition-speed="default" data-background-transition="default">
-    <div class="top_links">
-      <a class="home_link" href="/ProgressBG-MLwithPython-Slides/index.html#introduction_to_machine_learning" target="_top"><i class="fa fa-home"></i></a>
-      <span class="help_link" href="#"><i class="fa fa-question"></i></span>
-      <div class="help_text">
-        <div><span>N/Space</span><span>Next Slide</span></div>
-        <div><span>P</span><span>Previous Slide</span></div>
-        <div><span>O</span><span>Slides Overview</span></div>
-        <div><span>ctrl+left click</span><span>Zoom Element</span></div>
-      </div>
-    </div>
-    <div class="footer theme_switch">
-      <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
-      <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/light.css'); return false;">Light</a>
-      <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
-    </div>
-    <div class="slides">
+	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+		<div class="top_links">
+			<a class="home_link" href="/ProgressBG-MLwithPython-Slides/index.html#introduction_to_machine_learning" target="_top"><i class="fa fa-home"></i></a>
+			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
+			<div class="help_text">
+				<div><span>N/Space</span><span>Next Slide</span></div>
+				<div><span>P</span><span>Previous Slide</span></div>
+				<div><span>O</span><span>Slides Overview</span></div>
+				<div><span>ctrl+left click</span><span>Zoom Element</span></div>
+			</div>
+		</div>
+		<div class="footer theme_switch">
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+		</div>
+		<div class="slides">
 <!--
 ########################################################
 ##################### SLIDES START #####################
@@ -49,341 +49,341 @@
 -->
 <section data-min-total="80"><h1>Introduction to Machine Learning</h1></section>
 <section class="copyright" data-transition="zoom">
-  <section >
-    <div class="note">
-      <p>Created for</p>
-    </div>
-    <div class="company">
-      <a href="http://progressbg.net/kurs-po-web-design/">
-      <img style="height:80%" src="/ProgressBG-MLwithPython-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
-      </a>
-    </div>
-  </section>
-  <section>
-    <div class="note">
-      <p>Created by</p>
-    </div>
-    <div class="company">
-      <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova</a></div>
-    </div>
-    <div class="author">
-      <span>2018 - 2021,</span>
-      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-    </div>
-  </section>
+	<section >
+		<div class="note">
+			<p>Created for</p>
+		</div>
+		<div class="company">
+			<a href="http://progressbg.net/kurs-po-web-design/">
+			<img style="height:80%" src="/ProgressBG-MLwithPython-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+			</a>
+		</div>
+	</section>
+	<section>
+		<div class="note">
+			<p>Created by</p>
+		</div>
+		<div class="company">
+			<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova</a></div>
+		</div>
+		<div class="author">
+			<span>2018 - 2021,</span>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+		</div>
+	</section>
 </section>
 
 
 <section data-min="15"><h1>Framing the concepts</h1></section>
 <section><h2>Framing the concepts</h2>
-  <section><h3>The concepts mess</h3>
-    <a href="images/concepts_circle_relations.png"><img src="images/concepts_circle_relations.png"></a>
-  </section>
-  <section><h3>Machine Learning - Definition</h3>
-    <abbr>ML</abbr><dfn id="ML"><span>Machine</span><span>Learning</span></dfn>
-    <p>The original definition from the "father" of ML:</p>
-    <blockquote>Machine learning is a field of study that gives computers the ability to learn without being explicitly programmed.
-      —Arthur Samuel, 1959
-    </blockquote>
-  </section>
-  <section><h3>Machine Learning - Definition</h3>
-    <p>The same, expressed in wikipedia:</p>
-    <!-- <abbr>ML</abbr><dfn id="ML"><span>Machine</span><span>Learning</span></dfn> -->
-    <blockquote cite="https://en.wikipedia.org/wiki/Machine_learning">Machine learning is a field of computer science that uses statistical techniques to give computer systems the ability to "learn" (i.e., progressively improve performance on a specific task) from data, without being explicitly programmed</blockquote>
-    <a href="https://en.wikipedia.org/wiki/Machine_learning">https://en.wikipedia.org/wiki/Machine_learning</a>
-  </section>
-  <section><h3>Machine Learning - Overview</h3>
-    <dl class="fa">
-      <dt>Coined in 1959 by Arthur Samuel</dt>
-      <dt>Algorithms that can learn from data and predict new data states</dt>
-      <dt>Supervised and Unsupervised Learning</dt>
-      <dt>Interweaves the advantages in computational statistics, data mining, big data, neural networks, logic programming and rule-based computing, psychology</dt>
-    </dl>
-  </section>
-  <section><h3>Big Data - Definition</h3>
-    <dl class="fa">
-      <dt>Collection of datasets being so large, that its difficult to process with the traditional techniques, like RDBMS</dt>
-      <dt>The rule of <b>V</b>s:</dt>
-      <dd>Volume - or how much are the data?</dd>
-      <dd>Variety - how diverse are different types of data?</dd>
-      <dd>Velocity - at what speed are the new data generated?</dd>
-      <dd>(Veracity - how accurate is the data?)</dd>
-    </dl>
-  </section>
-  <section><h3>Natural Language Processing (NLP)</h3>
-    <dl class="fa">
-      <dt>Conceptualized in the 1950s</dt>
-      <dd>ELIZA by by Joseph Weizenbaum</dd>
-      <dd>MARGIE by Schank et all., 1975</dd>
-      <dt>Evolves rapidly with evolution of Machine Learning and Deep Learning</dt>
-      <dd>Google Translate</dd>
-      <dd>Intelligent Chat Bots (check <a href="https://www.pandorabots.com/mitsuku/">Mitsuku</a>)</dd>
-    </dl>
-  </section>
+	<section><h3>The concepts mess</h3>
+		<a href="images/concepts_circle_relations.png"><img src="images/concepts_circle_relations.png"></a>
+	</section>
+	<section><h3>Machine Learning - Definition</h3>
+		<abbr>ML</abbr><dfn id="ML"><span>Machine</span><span>Learning</span></dfn>
+		<p>The original definition from the "father" of ML:</p>
+		<blockquote>Machine learning is a field of study that gives computers the ability to learn without being explicitly programmed.
+			—Arthur Samuel, 1959
+		</blockquote>
+	</section>
+	<section><h3>Machine Learning - Definition</h3>
+		<p>The same, expressed in wikipedia:</p>
+		<!-- <abbr>ML</abbr><dfn id="ML"><span>Machine</span><span>Learning</span></dfn> -->
+		<blockquote cite="https://en.wikipedia.org/wiki/Machine_learning">Machine learning is a field of computer science that uses statistical techniques to give computer systems the ability to "learn" (i.e., progressively improve performance on a specific task) from data, without being explicitly programmed</blockquote>
+		<a href="https://en.wikipedia.org/wiki/Machine_learning">https://en.wikipedia.org/wiki/Machine_learning</a>
+	</section>
+	<section><h3>Machine Learning - Overview</h3>
+		<dl class="fa">
+			<dt>Coined in 1959 by Arthur Samuel</dt>
+			<dt>Algorithms that can learn from data and predict new data states</dt>
+			<dt>Supervised and Unsupervised Learning</dt>
+			<dt>Interweaves the advantages in computational statistics, data mining, big data, neural networks, logic programming and rule-based computing, psychology</dt>
+		</dl>
+	</section>
+	<section><h3>Big Data - Definition</h3>
+		<dl class="fa">
+			<dt>Collection of datasets being so large, that its difficult to process with the traditional techniques, like RDBMS</dt>
+			<dt>The rule of <b>V</b>s:</dt>
+			<dd>Volume - or how much are the data?</dd>
+			<dd>Variety - how diverse are different types of data?</dd>
+			<dd>Velocity - at what speed are the new data generated?</dd>
+			<dd>(Veracity - how accurate is the data?)</dd>
+		</dl>
+	</section>
+	<section><h3>Natural Language Processing (NLP)</h3>
+		<dl class="fa">
+			<dt>Conceptualized in the 1950s</dt>
+			<dd>ELIZA by by Joseph Weizenbaum</dd>
+			<dd>MARGIE by Schank et all., 1975</dd>
+			<dt>Evolves rapidly with evolution of Machine Learning and Deep Learning</dt>
+			<dd>Google Translate</dd>
+			<dd>Intelligent Chat Bots (check <a href="https://www.pandorabots.com/mitsuku/">Mitsuku</a>)</dd>
+		</dl>
+	</section>
 </section>
 
 <section data-min="30"><h1>A Brief History of AI and ML</h1></section>
 <section><h2>A Brief History of AI and ML</h2>
-  <section style="font-size: .7em"><h3>The beginning</h3>
-    <dl class="fa" >
-      <dt><span class="note">1950</span> - <a href="https://en.wikipedia.org/wiki/Turing_test">The Turing Test</a></dt>
-      <dt><span class="note">1956</span> - <a href="https://en.wikipedia.org/wiki/Dartmouth_workshop">Dartmouth Conference: the birth of AI</a></dt>
-      <dt><span class="note">1958</span> - <a href="https://en.wikipedia.org/wiki/Perceptron">F. Rosenblatt created the Perceptron algorithm</a></dt>
-      <dt><span class="note">1959</span> - <a href="https://en.wikipedia.org/wiki/Arthur_Samuel">A.Samuel coined the term "machine learning"</a></dt>
-      <dt><span class="note">1964</span> - <a href="https://en.wikipedia.org/wiki/ELIZA">Joseph Weizenbaum created ELIZA (the first chat bot)</a></dt>
-      <dt><span class="note">1958 - 1972</span> - <a href="https://en.wikipedia.org/wiki/History_of_artificial_intelligence#The_optimism">AI Optimism</a></dt>
-      <dt><span class="note">1970 - 1973</span> - <a href="http://www.humanoid.waseda.ac.jp/booklet/kato_2.html">The WABOT-1</a> (the first fun-scale anthropomorphic robot developed in the world.)</dt>
-      <dt><span class="note">1974 - 1980</span> - <a href="https://en.wikipedia.org/wiki/AI_winter">The first AI winter </a></dt>
-      <dt><span class="note">1969 - 1986</span> - <a href="https://en.wikipedia.org/wiki/History_of_artificial_intelligence#Perceptrons_and_the_dark_age_of_connectionism">The dark age of connectionism</a></dt>
-      <dt><span class="note">1986</span> - <a href="https://en.wikipedia.org/wiki/Mobile_robot">Ernst Dickmanns at Bundeswehr University Munich builds the first robot cars</a></dt>
-      <dt><span class="note">1980–1987</span> - <a href="https://en.wikipedia.org/wiki/Expert_system">The Boom of Expert Systems</a></dt>
-      <!-- <dt><span class="note"></span> - <a href=""></a></dt> -->
-    </dl>
-  </section>
-  <section style="font-size: .7em"><h3>History - The Modern Times</h3>
-    <dl class="fa">
-      <dt><span class="note">1996</span> - <a href="https://en.wikipedia.org/wiki/Deep_Blue_(chess_computer)">"Deep Blue"</a> became the first machine to win a chess game against a reigning world champion (Garry Kasparov)</dt>
-      <dt><span class="note">2007</span> - Facebook started working on <a href="https://en.wikipedia.org/wiki/DeepFace">DeepFace</a></dt>
-      <dt><span class="note">2009</span> - Google starts the <a href="https://www.google.com/selfdrivingcar/">self-driving car project</a></dt>
-      <dt><span class="note">2011</span> - IBM's <a href="https://en.wikipedia.org/wiki/Watson_(computer)">Watson</a> computer defeated television game show Jeopardy! champions</dt>
-      <dt><span class="note">2011 - 2014</span> - The boom of virtual assistants: sApple's <a href="https://en.wikipedia.org/wiki/Siri">Siri</a> (2011), Google's <a href="https://en.wikipedia.org/wiki/Google_Now">Google Now</a>(2012) and Microsoft's <a href="https://en.wikipedia.org/wiki/Cortana">Cortana</a>(2014)</dt>
-      <dt><span class="note">2014</span> - Google aquares <a href="https://en.wikipedia.org/wiki/DeepMind">DeepMind</a></dt>
-      <dt><span class="note">2015</span> - Elon Musk and other tech giants donated 1 billion dollars  for <a href="https://openai.com/">Open AI</a><a href=""></a></dt>
-      <dt><span class="note">2016</span> - Google's <a href="https://en.wikipedia.org/wiki/AlphaGo">AlphaGo</a> program beat a human professional Go player for the first time</dt>
-    </dl>
-  </section>
-  <section><h3>Miles vs. Watson: The Complete Man Against Machine Showdown</h3>
-    <iframe width="693" height="390" src="https://www.youtube.com/embed/YgYSv2KSyWg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  </section>
-  <section style="font-size: .7em"><h3>AI and ML in Bulgaria</h3>
-    <dl class="fa">
-      <dt><span class="note">1969 – 1978</span> - Institute of Engineering Cybernetics</dt>
-      <dd><a href="http://www.iit.bas.bg/">Bulgarian Academy of Sciences</a></dd>
-      <dt><span class="note">1978 – 1990</span> -  Institute of Engineering Cybernetics and Robotics (BAS)</dt>
-      <dd><a href="http://www.iit.bas.bg/">Bulgarian Academy of Sciences</a></dd>
-      <dt><span class="note">1983 - 1991</span> - First Bulgarian Scientific Laboratory for AI and International Academy "Artificial Intelligence and Expert Systems"</dt>
-      <dd><a href="http://oldweb.tu-sofia.bg/eng_new/index.html">Technical University - Sofia</a>, <a href="https://bg.wikipedia.org/wiki/%D0%9B%D1%8E%D0%B4%D0%BC%D0%B8%D0%BB_%D0%94%D0%B0%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B8">prof. Lyudmil Dakovski and co.</a></dd>
-      <dt>From 1990s until today, the Technical University and Sofia University (FMI) have many disciplines connected with AI, ML and Robotics.</dt>
-    </dl>
-  </section>
+	<section style="font-size: .7em"><h3>The beginning</h3>
+		<dl class="fa" >
+			<dt><span class="note">1950</span> - <a href="https://en.wikipedia.org/wiki/Turing_test">The Turing Test</a></dt>
+			<dt><span class="note">1956</span> - <a href="https://en.wikipedia.org/wiki/Dartmouth_workshop">Dartmouth Conference: the birth of AI</a></dt>
+			<dt><span class="note">1958</span> - <a href="https://en.wikipedia.org/wiki/Perceptron">F. Rosenblatt created the Perceptron algorithm</a></dt>
+			<dt><span class="note">1959</span> - <a href="https://en.wikipedia.org/wiki/Arthur_Samuel">A.Samuel coined the term "machine learning"</a></dt>
+			<dt><span class="note">1964</span> - <a href="https://en.wikipedia.org/wiki/ELIZA">Joseph Weizenbaum created ELIZA (the first chat bot)</a></dt>
+			<dt><span class="note">1958 - 1972</span> - <a href="https://en.wikipedia.org/wiki/History_of_artificial_intelligence#The_optimism">AI Optimism</a></dt>
+			<dt><span class="note">1970 - 1973</span> - <a href="http://www.humanoid.waseda.ac.jp/booklet/kato_2.html">The WABOT-1</a> (the first fun-scale anthropomorphic robot developed in the world.)</dt>
+			<dt><span class="note">1974 - 1980</span> - <a href="https://en.wikipedia.org/wiki/AI_winter">The first AI winter </a></dt>
+			<dt><span class="note">1969 - 1986</span> - <a href="https://en.wikipedia.org/wiki/History_of_artificial_intelligence#Perceptrons_and_the_dark_age_of_connectionism">The dark age of connectionism</a></dt>
+			<dt><span class="note">1986</span> - <a href="https://en.wikipedia.org/wiki/Mobile_robot">Ernst Dickmanns at Bundeswehr University Munich builds the first robot cars</a></dt>
+			<dt><span class="note">1980–1987</span> - <a href="https://en.wikipedia.org/wiki/Expert_system">The Boom of Expert Systems</a></dt>
+			<!-- <dt><span class="note"></span> - <a href=""></a></dt> -->
+		</dl>
+	</section>
+	<section style="font-size: .7em"><h3>History - The Modern Times</h3>
+		<dl class="fa">
+			<dt><span class="note">1996</span> - <a href="https://en.wikipedia.org/wiki/Deep_Blue_(chess_computer)">"Deep Blue"</a> became the first machine to win a chess game against a reigning world champion (Garry Kasparov)</dt>
+			<dt><span class="note">2007</span> - Facebook started working on <a href="https://en.wikipedia.org/wiki/DeepFace">DeepFace</a></dt>
+			<dt><span class="note">2009</span> - Google starts the <a href="https://www.google.com/selfdrivingcar/">self-driving car project</a></dt>
+			<dt><span class="note">2011</span> - IBM's <a href="https://en.wikipedia.org/wiki/Watson_(computer)">Watson</a> computer defeated television game show Jeopardy! champions</dt>
+			<dt><span class="note">2011 - 2014</span> - The boom of virtual assistants: sApple's <a href="https://en.wikipedia.org/wiki/Siri">Siri</a> (2011), Google's <a href="https://en.wikipedia.org/wiki/Google_Now">Google Now</a>(2012) and Microsoft's <a href="https://en.wikipedia.org/wiki/Cortana">Cortana</a>(2014)</dt>
+			<dt><span class="note">2014</span> - Google aquares <a href="https://en.wikipedia.org/wiki/DeepMind">DeepMind</a></dt>
+			<dt><span class="note">2015</span> - Elon Musk and other tech giants donated 1 billion dollars  for <a href="https://openai.com/">Open AI</a><a href=""></a></dt>
+			<dt><span class="note">2016</span> - Google's <a href="https://en.wikipedia.org/wiki/AlphaGo">AlphaGo</a> program beat a human professional Go player for the first time</dt>
+		</dl>
+	</section>
+	<section><h3>Miles vs. Watson: The Complete Man Against Machine Showdown</h3>
+		<iframe width="693" height="390" src="https://www.youtube.com/embed/YgYSv2KSyWg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	</section>
+	<section style="font-size: .7em"><h3>AI and ML in Bulgaria</h3>
+		<dl class="fa">
+			<dt><span class="note">1969 – 1978</span> - Institute of Engineering Cybernetics</dt>
+			<dd><a href="http://www.iit.bas.bg/">Bulgarian Academy of Sciences</a></dd>
+			<dt><span class="note">1978 – 1990</span> -  Institute of Engineering Cybernetics and Robotics (BAS)</dt>
+			<dd><a href="http://www.iit.bas.bg/">Bulgarian Academy of Sciences</a></dd>
+			<dt><span class="note">1983 - 1991</span> - First Bulgarian Scientific Laboratory for AI and International Academy "Artificial Intelligence and Expert Systems"</dt>
+			<dd><a href="http://oldweb.tu-sofia.bg/eng_new/index.html">Technical University - Sofia</a>, <a href="https://bg.wikipedia.org/wiki/%D0%9B%D1%8E%D0%B4%D0%BC%D0%B8%D0%BB_%D0%94%D0%B0%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B8">prof. Lyudmil Dakovski and co.</a></dd>
+			<dt>From 1990s until today, the Technical University and Sofia University (FMI) have many disciplines connected with AI, ML and Robotics.</dt>
+		</dl>
+	</section>
 </section>
 
 <section data-min="15"><h1>Machine Learning applications</h1></section>
 <section><h2>Machine Learning applications</h2>
-  <section><h3>Search systems</h3>
-    <dl class="fa">
-      <dt>Ranking algorithms</dt>
-      <dt>Semantic search</dt>
-      <dt>Personalized search</dt>
-    </dl>
-  </section>
-  <section><h3>Business and Marketing</h3>
-    <dl class="fa">
-      <dt>Online Advertising</dt>
-      <dt>Market Prediction</dt>
-      <dt>Accounting And Fintech</dt>
-      <dt>Credit Risk Analysis</dt>
-      <dt>Recruiting Automation</dt>
-      <dt>Intelligent Conversational Interfaces (chatbots)</dt>
-      <dt>Reduced Energy Use And Costs</dt>
-      <dt>Customer-centric, personalized services</dt>
-    </dl>
-  </section>
-  <section><h3>Health care</h3>
-    <dl class="fa">
-      <dt>Diagnosis in Medical Imaging</dt>
-      <dt>Treatment Queries and Suggestions</dt>
-      <dt>Medical Data Collection</dt>
-      <dt>Drug Discovery</dt>
-      <dt>Robotic Surgery</dt>
-    </dl>
-  </section>
-  <section><h3>Cyber Security</h3>
-    <dl class="fa">
-      <dt>Automated Spam Filtering</dt>
-      <dt>Malware detection</dt>
-      <dt>Abnormal site traffic detection</dt>
-      <dt>Security and Crime Prevention</dt>
-      <dt>IoT Systems Security</dt>
-    </dl>
-  </section>
-  <section><h3>PR, Social Agencies</h3>
-    <dl class="fa">
-      <dt>Large-scale analysis of social media data</dt>
-      <dt>Sentiment Analysis of online news/posts</dt>
-      <dt>Social media impact analysis</dt>
-      <dt>Fake-news detection</dt>
-    </dl>
-  </section>
+	<section><h3>Search systems</h3>
+		<dl class="fa">
+			<dt>Ranking algorithms</dt>
+			<dt>Semantic search</dt>
+			<dt>Personalized search</dt>
+		</dl>
+	</section>
+	<section><h3>Business and Marketing</h3>
+		<dl class="fa">
+			<dt>Online Advertising</dt>
+			<dt>Market Prediction</dt>
+			<dt>Accounting And Fintech</dt>
+			<dt>Credit Risk Analysis</dt>
+			<dt>Recruiting Automation</dt>
+			<dt>Intelligent Conversational Interfaces (chatbots)</dt>
+			<dt>Reduced Energy Use And Costs</dt>
+			<dt>Customer-centric, personalized services</dt>
+		</dl>
+	</section>
+	<section><h3>Health care</h3>
+		<dl class="fa">
+			<dt>Diagnosis in Medical Imaging</dt>
+			<dt>Treatment Queries and Suggestions</dt>
+			<dt>Medical Data Collection</dt>
+			<dt>Drug Discovery</dt>
+			<dt>Robotic Surgery</dt>
+		</dl>
+	</section>
+	<section><h3>Cyber Security</h3>
+		<dl class="fa">
+			<dt>Automated Spam Filtering</dt>
+			<dt>Malware detection</dt>
+			<dt>Abnormal site traffic detection</dt>
+			<dt>Security and Crime Prevention</dt>
+			<dt>IoT Systems Security</dt>
+		</dl>
+	</section>
+	<section><h3>PR, Social Agencies</h3>
+		<dl class="fa">
+			<dt>Large-scale analysis of social media data</dt>
+			<dt>Sentiment Analysis of online news/posts</dt>
+			<dt>Social media impact analysis</dt>
+			<dt>Fake-news detection</dt>
+		</dl>
+	</section>
 </section>
 
 
 <section data-min="20" id="ML_Process"><h1>The Machine Learning process and Tools</h1></section>
 <section>
-  <section><h3>The Machine Learning process</h3>
-    <p>It is an <span class="note">iterative process</span>
-    <a href="images/ML_Process_iep.png"><img src="images/ML_Process_iep.png"></a>
-  </section>
-  <section><h3>The Ml process and minimal tools which we'll use in the course:</h3>
-    <dl class="fa" style="font-size: .9em">
-      <dt class="note">Analyze the problem</dt>
-      <dd>Your brain && tools</dd>
-      <dt class="note">Prepare and get insights of the Data</dt>
-      <dd>numpy, pandas, matplotlib</dd>
-      <dt class="note">Select the features</dt>
-      <dd>Your brain && tools</dd>
-      <dt class="note">Choose the model</dt>
-      <dd>Your brain and scikit-learn</dd>
-      <dt class="note">Train</dt>
-      <dd>scikit-learn</dd>
-      <dt class="note">Evaluate</dt>
-      <dd>Your brain and scikit-learn</dd>
-      <dt class="note">Parameter Tuning</dt>
-      <dd>i.e. go back to previous steps and try again, and again and again...</dd>
-    </dl>
-  </section>
-  <section><h3>The tools on the data side</h3>
-    <dl class="fa">
-      <dt>numpy</dt>
-      <dd>Powerful array implementation and functions. Equipped with lots of linear algebra functions, as well </dd>
-      <dt>pandas</dt>
-      <dd>Easy to use, high-performance, data-wrangling package</dd>
-      <dt>matplotlib</dt>
-      <dd>2D plotting package with some 3D functionality.</dd>
-    </dl>
-  </section>
-  <section><h3>The tools on the modeling side</h3>
-    <dl class="fa">
-      <dt>Scikit-learn</dt>
-      <dd>a full packaged library with ML algorithms</dd>
-      <dt>NLTK (Natural Language Toolkit)</dt>
-      <dd>Python implementation of the famous nltk Java package for Natural language processing</dd>
-    </dl>
-  </section>
-  <section><h3>Optimizing tools</h3>
-    <p>ML is a computational heavy process. There are lots of tools to speed that process (which would not be used in that course), in the Python ecosystem, like:</p>
-    <dl class="fa">
-      <dt>Cython</dt>
-      <dd>Python implementation in C language</dd>
-      <dt>Numba</dt>
-      <dd>Python JIT compiler and GPU code execution</dd>
-      <dt>Py CUDA</dt>
-      <dd>GPU code execution</dd>
-      <dt>PP</dt>
-      <dd>Python code parallelizer</dd>
-    </dl>
-  </section>
-  <section><h3>Optimizing tools</h3>
-    <dl class="fa">
-      <dt>Blaze</dt>
-      <dd>allows working with data bigger than the available RAM</dd>
-      <dt>PySpark</dt>
-      <dd>use Python with Spark</dd>
-      <dt>Pydoop and Hadoopy</dt>
-      <dd>Use Python with Apache Hadoop</dd>
-    </dl>
-    <p class="note">We would not use them in this course!</p>
-  </section>
+	<section><h3>The Machine Learning process</h3>
+		<p>It is an <span class="note">iterative process</span>
+		<a href="images/ML_Process_iep.png"><img src="images/ML_Process_iep.png"></a>
+	</section>
+	<section><h3>The Ml process and minimal tools which we'll use in the course:</h3>
+		<dl class="fa" style="font-size: .9em">
+			<dt class="note">Analyze the problem</dt>
+			<dd>Your brain && tools</dd>
+			<dt class="note">Prepare and get insights of the Data</dt>
+			<dd>numpy, pandas, matplotlib</dd>
+			<dt class="note">Select the features</dt>
+			<dd>Your brain && tools</dd>
+			<dt class="note">Choose the model</dt>
+			<dd>Your brain and scikit-learn</dd>
+			<dt class="note">Train</dt>
+			<dd>scikit-learn</dd>
+			<dt class="note">Evaluate</dt>
+			<dd>Your brain and scikit-learn</dd>
+			<dt class="note">Parameter Tuning</dt>
+			<dd>i.e. go back to previous steps and try again, and again and again...</dd>
+		</dl>
+	</section>
+	<section><h3>The tools on the data side</h3>
+		<dl class="fa">
+			<dt>numpy</dt>
+			<dd>Powerful array implementation and functions. Equipped with lots of linear algebra functions, as well </dd>
+			<dt>pandas</dt>
+			<dd>Easy to use, high-performance, data-wrangling package</dd>
+			<dt>matplotlib</dt>
+			<dd>2D plotting package with some 3D functionality.</dd>
+		</dl>
+	</section>
+	<section><h3>The tools on the modeling side</h3>
+		<dl class="fa">
+			<dt>Scikit-learn</dt>
+			<dd>a full packaged library with ML algorithms</dd>
+			<dt>NLTK (Natural Language Toolkit)</dt>
+			<dd>Python implementation of the famous nltk Java package for Natural language processing</dd>
+		</dl>
+	</section>
+	<section><h3>Optimizing tools</h3>
+		<p>ML is a computational heavy process. There are lots of tools to speed that process (which would not be used in that course), in the Python ecosystem, like:</p>
+		<dl class="fa">
+			<dt>Cython</dt>
+			<dd>Python implementation in C language</dd>
+			<dt>Numba</dt>
+			<dd>Python JIT compiler and GPU code execution</dd>
+			<dt>Py CUDA</dt>
+			<dd>GPU code execution</dd>
+			<dt>PP</dt>
+			<dd>Python code parallelizer</dd>
+		</dl>
+	</section>
+	<section><h3>Optimizing tools</h3>
+		<dl class="fa">
+			<dt>Blaze</dt>
+			<dd>allows working with data bigger than the available RAM</dd>
+			<dt>PySpark</dt>
+			<dd>use Python with Spark</dd>
+			<dt>Pydoop and Hadoopy</dt>
+			<dd>Use Python with Apache Hadoop</dd>
+		</dl>
+		<p class="note">We would not use them in this course!</p>
+	</section>
 </section>
 
 
 <!-- <section data-min="1"><h1>References</h1></section>
 <section><h2>References</h2>
-  <section><h3>Readings</h3>
-    <dl class="fa">
-      <dt></dt>
-    </dl>
-  </section>
+	<section><h3>Readings</h3>
+		<dl class="fa">
+			<dt></dt>
+		</dl>
+	</section>
 </section>
 
 
 <section id="hw" data-min="4"><h1>Exercises</h1></section>
 <section><h2>Task1: Task1Title</h2>
-  <section><h3>The Task</h3>
-    <dl class="fa">
-      <dt></dt>
-    </dl>
-  </section>
+	<section><h3>The Task</h3>
+		<dl class="fa">
+			<dt></dt>
+		</dl>
+	</section>
 </section>
 
 <section><h3>Submission</h3>
-  <dl class="fa">
-    <dt>PLease, prefix your filenames/archive with your name initials, before sending.</dt>
-    <dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
-    <dt>Send files to <a href="mailto:ProgressBG.WWW.Courses@gmail.com?Subject=___title___">ProgressBG.WWW.Courses@gmail.com</a></dt>
-  </dl>
+	<dl class="fa">
+		<dt>PLease, prefix your filenames/archive with your name initials, before sending.</dt>
+		<dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
+		<dt>Send files to <a href="mailto:ProgressBG.WWW.Courses@gmail.com?Subject=___title___">ProgressBG.WWW.Courses@gmail.com</a></dt>
+	</dl>
 </section> -->
 
 
 <section class="disclaimer" data-background="/ProgressBG-MLwithPython-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
-  <p>These slides are based on</p>
-  <p>customised version of </p>
-  <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
-   <p>framework</p>
+	<p>These slides are based on</p>
+	<p>customised version of </p>
+	<p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+	 <p>framework</p>
 </section>
 <!--
 ########################################################
 ##################### SLIDES END   #####################
 ########################################################
 -->
-    </div>
-  </div>
-  <!-- Custom processing -->
-  <script src="/ProgressBG-MLwithPython-Slides/outfit/js/slides.js"></script>
-  <!-- external scripts -->
-  <script src="/ProgressBG-MLwithPython-Slides/lib/reveal.js/lib/js/head.min.js"></script>
-  <script src="/ProgressBG-MLwithPython-Slides/lib/reveal.js/js/reveal.js"></script>
+		</div>
+	</div>
+	<!-- Custom processing -->
+	<script src="/ProgressBG-MLwithPython-Slides/outfit/js/slides.js"></script>
+	<!-- external scripts -->
+	<script src="/ProgressBG-MLwithPython-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+	<script src="/ProgressBG-MLwithPython-Slides/lib/reveal.js/js/reveal.js"></script>
 
-  <!-- init reveal -->
-  <script>
-    // Full list of configuration options available at:
-    // https://github.com/hakimel/reveal.js#configuration
-    var highlightjsTabSize = '  ';
-    Reveal.initialize({
-      controls: true,
-      progress: true,
-      slideNumber: 'c/t',
-      keyboard: true,
-      history: true,
+	<!-- init reveal -->
+	<script>
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		var highlightjsTabSize = '  ';
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			slideNumber: 'c/t',
+			keyboard: true,
+			history: true,
 
-      // display control
-      // center: true,
-      // width: '100%',
-      // height: '100%',
-      // // Factor of the display size that should remain empty around the content
-      // margin: 0.1,
+			// display control
+			// center: true,
+			// width: '100%',
+			// height: '100%',
+			// // Factor of the display size that should remain empty around the content
+			// margin: 0.1,
 
-      // The "normal" size of the presentation, aspect ratio will be preserved
-      // when the presentation is scaled to fit different resolutions. Can be
-      // specified using percentage units.
-      width: 1024,
-      height: 768,
+			// The "normal" size of the presentation, aspect ratio will be preserved
+			// when the presentation is scaled to fit different resolutions. Can be
+			// specified using percentage units.
+			width: 1024,
+			height: 768,
 
-      // Factor of the display size that should remain empty around the content
-      margin: 0.1,
+			// Factor of the display size that should remain empty around the content
+			margin: 0.1,
 
-      // Bounds for smallest/largest possible scale to apply to content
-      minScale: 0.2,
-      maxScale: 1.5,
+			// Bounds for smallest/largest possible scale to apply to content
+			minScale: 0.2,
+			maxScale: 1.5,
 
-      // slide transition
-      transition: 'concave', // none/fade/slide/convex/concave/zoom
-      // shift+maous click to zoom in/out element
-      zoomKey: 'ctrl',
-      // theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-      // transition: Reveal.getQueryHash().transition || 'default'
-      // Optional reveal.js plugins
-      dependencies: [
-        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure({tabReplace: highlightjsTabSize}); hljs.initHighlightingOnLoad(); } },
-        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
-        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
-      ]
-    });
-  </script>
-  <!-- linkedin badge -->
-  <!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+			// slide transition
+			transition: 'concave', // none/fade/slide/convex/concave/zoom
+			// shift+maous click to zoom in/out element
+			zoomKey: 'ctrl',
+			// theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			// transition: Reveal.getQueryHash().transition || 'default'
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure({tabReplace: highlightjsTabSize}); hljs.initHighlightingOnLoad(); } },
+				{ src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+				{ src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+	<!-- linkedin badge -->
+	<!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
 </body>
 </html>

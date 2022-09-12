@@ -1,47 +1,47 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>supervised_learning_overview</title>
-  <link rel="shortcut icon" href="/ProgressBG-MLwithPython-Slides/favicon.ico">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <!-- css & themes include -->
-  <link rel="stylesheet" href="/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/reveal.css">
-  <link rel="stylesheet" href="/ProgressBG-MLwithPython-Slides/outfit/css/themes/projector.css" id="theme">
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-  <!--[if lt IE 9]>
-  <script src="lib/js/html5shiv.js"></script>
-  <![endif]-->
-  <!-- CUSTOM -->
-  <base target="_blank">
+	<meta charset="utf-8">
+	<title>supervised_learning_overview</title>
+	<link rel="shortcut icon" href="/ProgressBG-MLwithPython-Slides/favicon.ico">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<!-- css & themes include -->
+	<link rel="stylesheet" href="/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/reveal.css">
+	<link rel="stylesheet" href="/ProgressBG-MLwithPython-Slides/outfit/css/themes/projector.css" id="theme">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? '/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/print/pdf.css' : '/ProgressBG-MLwithPython-Slides/lib/reveal.js/css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+	<!-- CUSTOM -->
+	<base target="_blank">
 </head>
 <body>
-  <div class="reveal default center" data-transition-speed="default" data-background-transition="default">
-    <div class="top_links">
-      <a class="home_link" href="/ProgressBG-MLwithPython-Slides/index.html#supervised_learning_overview" target="_top"><i class="fa fa-home"></i></a>
-      <span class="help_link" href="#"><i class="fa fa-question"></i></span>
-      <div class="help_text">
-        <div><span>N/Space</span><span>Next Slide</span></div>
-        <div><span>P</span><span>Previous Slide</span></div>
-        <div><span>O</span><span>Slides Overview</span></div>
-        <div><span>ctrl+left click</span><span>Zoom Element</span></div>
-      </div>
-    </div>
-    <div class="footer theme_switch">
-      <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
-      <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/light.css'); return false;">Light</a>
-      <a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
-    </div>
-    <div class="slides">
+	<div class="reveal default center" data-transition-speed="default" data-background-transition="default">
+		<div class="top_links">
+			<a class="home_link" href="/ProgressBG-MLwithPython-Slides/index.html#supervised_learning_overview" target="_top"><i class="fa fa-home"></i></a>
+			<span class="help_link" href="#"><i class="fa fa-question"></i></span>
+			<div class="help_text">
+				<div><span>N/Space</span><span>Next Slide</span></div>
+				<div><span>P</span><span>Previous Slide</span></div>
+				<div><span>O</span><span>Slides Overview</span></div>
+				<div><span>ctrl+left click</span><span>Zoom Element</span></div>
+			</div>
+		</div>
+		<div class="footer theme_switch">
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/dark.css'); return false;">Dark</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/light.css'); return false;">Light</a>
+			<a href="#" onclick="document.getElementById('theme').setAttribute('href','/ProgressBG-MLwithPython-Slides/outfit/css/themes/projector.css'); return false;">Projector</a>
+		</div>
+		<div class="slides">
 <!--
 ########################################################
 ##################### SLIDES START #####################
@@ -49,125 +49,125 @@
 -->
 <section data-min-total="120"><h1>Supervised Learning Overview</h1></section>
 <section class="copyright" data-transition="zoom">
-  <section >
-    <div class="note">
-      <p>Created for</p>
-    </div>
-    <div class="company">
-      <a href="http://progressbg.net/kurs-po-web-design/">
-      <img style="height:80%" src="/ProgressBG-MLwithPython-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
-      </a>
-    </div>
-  </section>
-  <section>
-    <div class="note">
-      <p>Created by</p>
-    </div>
-    <div class="company">
-      <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova</a></div>
-    </div>
-    <div class="author">
-      <span>2018 - 2021,</span>
-      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
-    </div>
-  </section>
+	<section >
+		<div class="note">
+			<p>Created for</p>
+		</div>
+		<div class="company">
+			<a href="http://progressbg.net/kurs-po-web-design/">
+			<img style="height:80%" src="/ProgressBG-MLwithPython-Slides/outfit/images/logos/ProgressBG_logo_529_127.png">
+			</a>
+		</div>
+	</section>
+	<section>
+		<div class="note">
+			<p>Created by</p>
+		</div>
+		<div class="company">
+			<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="ivapopova"><a class="LI-simple-link" href='https://bg.linkedin.com/in/ivapopova?trk=profile-badge'>Iva E. Popova</a></div>
+		</div>
+		<div class="author">
+			<span>2018 - 2021,</span>
+			<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>
+		</div>
+	</section>
 </section>
 
 
 <section data-min="5"><h1>Supervised Learning Overview</h1></section>
 <section><h2>Supervised Learning Overview</h2>
-  <section>
-    <dl class="fa">
-      <dt>The training data are <span class="note">labeled</span>:</dt>
-      <dt>We have a set of <span class="note">instances</span> represented by certain <span class="note">features</span> and with a particular <span class="note">target</span> attribute</dt>
-      <dd>The <span class="note">features</span> are also called <b>predictors</b> or <b>independent variables</b> (X)</dd>
-      <dd>The <span class="note">target</span> is also known as <b>dependent variable</b> or <b>outcome</b> (Y)</dd>
-      <a href="images/features_target_ml_process.png">
-        <img src="images/features_target_ml_process.png" style="display: block; margin:1em 0 0 2em; width:40vw;">
-      </a>
-      <dt>I.e. we have historical data with mapped input => output pairs</dt>
-    </dl>
-  </section>
-  <section><h3>the goal</h3>
-    <dl class="fa">
-      <dt>approximating a mapping function (g) from input variables (<span class="note">X</span>) to output variable/s (<span class="note">y</span>).</dt>
-      <p>$$ {g:X\to Y} $$</p>
-      <dt>The job of modeling algorithm is to find the best mapping function, such that will minimize the error on prediction.
-      </dt>
-    </dl>
-  </section>
-  <section><h3>Problems that solves</h3>
-    <dl class="fa">
-      <dt>Two main problems categories:</dt>
-      <dt class="note">classification</dt>
-      <dd>predicting a <span class="note">discrete class label</span> output for an example.</dd>
-      <dd>example: determining if an email is spam or not</dd>
-      <dt class="note">regression</dt>
-      <dd>predicting a <span class="note">continuous quantity (value)</span> output for an example.</dd>
-      <dd>example: predict the price of a house</dd>
-    </dl>
-  </section>
-  <section><h3>classification tasks</h3></section>
-  <section><h3>The Process</h3>
-    <a href="images/SubpervisedLearningProcess.png"><img src="images/SubpervisedLearningProcess.png" style="display: block; margin: 1em auto;"></a>
-    <dl class="fa">
-      <dt>You can use this <a href="https://github.com/ProgressBG-Python-Course/JupyterNotebooksExamples/blob/master/Notebooks/Appendix/ML_Process_Template.ipynb">ML_Process_Template.ipynb</a>  for a starting point.</dt>
-    </dl>
-  </section>
+	<section>
+		<dl class="fa">
+			<dt>The training data are <span class="note">labeled</span>:</dt>
+			<dt>We have a set of <span class="note">instances</span> represented by certain <span class="note">features</span> and with a particular <span class="note">target</span> attribute</dt>
+			<dd>The <span class="note">features</span> are also called <b>predictors</b> or <b>independent variables</b> (X)</dd>
+			<dd>The <span class="note">target</span> is also known as <b>dependent variable</b> or <b>outcome</b> (Y)</dd>
+			<a href="images/features_target_ml_process.png">
+				<img src="images/features_target_ml_process.png" style="display: block; margin:1em 0 0 2em; width:40vw;">
+			</a>
+			<dt>I.e. we have historical data with mapped input => output pairs</dt>
+		</dl>
+	</section>
+	<section><h3>the goal</h3>
+		<dl class="fa">
+			<dt>approximating a mapping function (g) from input variables (<span class="note">X</span>) to output variable/s (<span class="note">y</span>).</dt>
+			<p>$$ {g:X\to Y} $$</p>
+			<dt>The job of modeling algorithm is to find the best mapping function, such that will minimize the error on prediction.
+			</dt>
+		</dl>
+	</section>
+	<section><h3>Problems that solves</h3>
+		<dl class="fa">
+			<dt>Two main problems categories:</dt>
+			<dt class="note">classification</dt>
+			<dd>predicting a <span class="note">discrete class label</span> output for an example.</dd>
+			<dd>example: determining if an email is spam or not</dd>
+			<dt class="note">regression</dt>
+			<dd>predicting a <span class="note">continuous quantity (value)</span> output for an example.</dd>
+			<dd>example: predict the price of a house</dd>
+		</dl>
+	</section>
+	<section><h3>classification tasks</h3></section>
+	<section><h3>The Process</h3>
+		<a href="images/SubpervisedLearningProcess.png"><img src="images/SubpervisedLearningProcess.png" style="display: block; margin: 1em auto;"></a>
+		<dl class="fa">
+			<dt>You can use this <a href="https://github.com/ProgressBG-Python-Course/JupyterNotebooksExamples/blob/master/Notebooks/Appendix/ML_Process_Template.ipynb">ML_Process_Template.ipynb</a>  for a starting point.</dt>
+		</dl>
+	</section>
 </section>
 
 
 <section data-min="5"><h1>The Math behind</h1></section>
 <section><h2>The Math behind</h2>
-  <section>
-    <dl class="fa">
-      <dt>Given is a set of ${N}$ training data of the form:
-        <p>$$ {(x_{1},y_{1}),...,(x_{N},\;y_{N})} $$</p>
-      </dt>
-      <dd>Where ${x_{i}}$ is the <span class="note">input (feature) vector</span></dd>
-      <dt>All Supervised Learning algorithms seeks a function:
-        <p>$$ {g:X\to Y} $$</p>
-      </dt>
-      <dt>Where</dt>
-      <dd>${X}$ is the input (feature) space</dd>
-      <dd>${Y}$ is the output (target) space</dd>
-      <dd>${g} \in {G}$, ${G}$ represents the <span class="note">hypothesis space</span> (see <a href="https://stats.stackexchange.com/questions/183989/what-exactly-is-a-hypothesis-space-in-the-context-of-machine-learning">What exactly is a hypothesis space in the context of Machine Learning?</a>)</dd>
-    </dl>
+	<section>
+		<dl class="fa">
+			<dt>Given is a set of ${N}$ training data of the form:
+				<p>$$ {(x_{1},y_{1}),...,(x_{N},\;y_{N})} $$</p>
+			</dt>
+			<dd>Where ${x_{i}}$ is the <span class="note">input (feature) vector</span></dd>
+			<dt>All Supervised Learning algorithms seeks a function:
+				<p>$$ {g:X\to Y} $$</p>
+			</dt>
+			<dt>Where</dt>
+			<dd>${X}$ is the input (feature) space</dd>
+			<dd>${Y}$ is the output (target) space</dd>
+			<dd>${g} \in {G}$, ${G}$ represents the <span class="note">hypothesis space</span> (see <a href="https://stats.stackexchange.com/questions/183989/what-exactly-is-a-hypothesis-space-in-the-context-of-machine-learning">What exactly is a hypothesis space in the context of Machine Learning?</a>)</dd>
+		</dl>
 </section>
 <section><h3>Scoring function</h3>
-  <dl class="fa">
-    <dt>In ML, ${g}$ is represented using a scoring function
-      <p>${f:X\times Y\to {\mathbb {R} }}$</p>
-    </dt>
-    <dt>such that  ${g}$ is defined as returning the ${y}$ value that gives the highest score
-      <p>$${\displaystyle g(x)={\underset {y}{\arg \max }}\;f(x,y)}$$</p>
-    </dt>
-  </dl>
+	<dl class="fa">
+		<dt>In ML, ${g}$ is represented using a scoring function
+			<p>${f:X\times Y\to {\mathbb {R} }}$</p>
+		</dt>
+		<dt>such that  ${g}$ is defined as returning the ${y}$ value that gives the highest score
+			<p>$${\displaystyle g(x)={\underset {y}{\arg \max }}\;f(x,y)}$$</p>
+		</dt>
+	</dl>
 </section>
 <section><h3>Loss function</h3>
-  <dl class="fa">
-    <dt> In order to measure how well a function fits the training data, the <span class="note">loss</span> function is defined:
-      <p>$$L: Y \times Y \to \Bbb{R} ^{\ge 0}$$</p>
-    </dt>
-    <dt>I.e. if we have the training samples ${(x_{i},\;y_{i})}$, then the the loss of predicting the value ${{\hat {y}}}$ is ${L(y_i,\hat{y})}$.</dt>
-    <dt>Usually, in the same context, is used the term <span class="note">cost</span>  function, which can be regarded as a generalization of the lost function </dt>
-  </dl>
+	<dl class="fa">
+		<dt> In order to measure how well a function fits the training data, the <span class="note">loss</span> function is defined:
+			<p>$$L: Y \times Y \to \Bbb{R} ^{\ge 0}$$</p>
+		</dt>
+		<dt>I.e. if we have the training samples ${(x_{i},\;y_{i})}$, then the the loss of predicting the value ${{\hat {y}}}$ is ${L(y_i,\hat{y})}$.</dt>
+		<dt>Usually, in the same context, is used the term <span class="note">cost</span>  function, which can be regarded as a generalization of the lost function </dt>
+	</dl>
 </section>
 </section>
 
 <!--
 <section data-min="5"><h1>Classification models.</h1></section>
 <section><h2>Classification models.</h2>
-  <section><h3>Algorithms</h3>
-    <dl class="fa">
-      <dt>Nearest Neighbor</dt>
-      <dt>Logistic Regression</dt>
-      <dt>Naive Bayes Classifier</dt>
-      <dt>Decision Trees</dt>
-      <dt>Random Forest</dt>
-      <dt>Neural Networks</dt>
-    </dl>
-  </section>
+	<section><h3>Algorithms</h3>
+		<dl class="fa">
+			<dt>Nearest Neighbor</dt>
+			<dt>Logistic Regression</dt>
+			<dt>Naive Bayes Classifier</dt>
+			<dt>Decision Trees</dt>
+			<dt>Random Forest</dt>
+			<dt>Neural Networks</dt>
+		</dl>
+	</section>
 </section>
 
 <section data-min="5"><h1>Predictions with Regression models.</h1></section>
@@ -178,159 +178,159 @@
 
 <section data-min="5"><h1>Important Concepts</h1></section>
 <section><h2>Important Concepts</h2>
-  <section><h3>Feature Selection</h3>
-    <dl class="fa">
-      <dt>Features are chosen with a <span class="note">specific task</span> in mind</dt>
-      <dt><span class="note">Curse of Dimensionality</span>: The more features you include, the more data you need (exponentially) to produce an equally accurate model</dt>
-    </dl>
-  </section>
-  <section><h3>No Free Lunch' theorem</h3>
-    <dl class="fa">
-      <dt><span class="note"><a href="https://en.wikipedia.org/wiki/No_free_lunch_theorem">'No Free Lunch' theorem</a></span>: "If an algorithm performs better than random search on some class of problems then it must perform worse than random search on the remaining problems".</dt>
-    </dl>
-    <img src="images/NoFreeLunchTheorem.png">
-  </section>
-  <section><h3>Generalization</h3>
-    <dl class="fa">
-      <dt>The ability of algorithm to perform well on new (not-seeing before) data</dt>
-    </dl>
-  </section>
-  <section><h3>Overfitting and Underfitting</h3>
-    <dl class="fa">
-      <dt><span class="note">Overfitting</span> happens when a model learns all the detail (and noise) in the training data to the extent that it negatively impacts the performance of the model on new data.</dt>
-      <dt><span class="note">Underfitting</span> is the case where the model has "not learned enough", resulting in low generalization and unreliable predictions.</dt>
-      <dt>Overfitting and underfitting are the two biggest causes for poor performance of machine learning algorithms</dt>
-    </dl>
-  </section>
-  <section><h3>Overfitting vs Underfitting</h3>
-    <a href="images/overfitting_vs_underfitting.png"><img src="images/overfitting_vs_underfitting.png"></a>
-  </section>
-  <section><h3>Bias and Variance</h3>
-    <dl class="fa">
-      <dt><span class="note">Bias</span> is the difference between the estimator's expected value and the true value of the parameter being estimated. In ML, biased results are usually due to faulty assumptions</dt>
-      <dd>In ML, bias is inevitable - remember the 'No Free Lunch theorem'.</dd>
-      <dt><span class="note">Variance is the expectation of the squared deviation of a random variable from its mean.</span></dt>
-    </dl>
-  </section>
-  <section><h3>The Bias–Variance tradeoff</h3>
-      <a href="images/bias-and-variance.jpg"><img src="images/bias-and-variance.jpg"></a><br>
-      <p><a href="https://towardsdatascience.com/the-bias-variance-tradeoff-8818f41e39e9">The Bias-Variance Tradeoff</a> by Giorgos Papachristoudis</p>
-      <!-- <a href="https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff">Bias–Variance tradeoff</a> -->
-  </section>
-  <section><h3>Cross-validation</h3>
-    <dl class="fa">
-      <dt>Cross validation is a technique for testing the effectiveness of a machine learning models.</dt>
-      <dt>Cross validation can give an insight on how the model will generalize to an independent dataset</dt>
-      <dt>The goal of cross-validation is to test the model's ability to predict new data, that was not used in estimating it, in order to flag problems like overfitting</dt>
-    </dl>
-  </section>
+	<section><h3>Feature Selection</h3>
+		<dl class="fa">
+			<dt>Features are chosen with a <span class="note">specific task</span> in mind</dt>
+			<dt><span class="note">Curse of Dimensionality</span>: The more features you include, the more data you need (exponentially) to produce an equally accurate model</dt>
+		</dl>
+	</section>
+	<section><h3>No Free Lunch' theorem</h3>
+		<dl class="fa">
+			<dt><span class="note"><a href="https://en.wikipedia.org/wiki/No_free_lunch_theorem">'No Free Lunch' theorem</a></span>: "If an algorithm performs better than random search on some class of problems then it must perform worse than random search on the remaining problems".</dt>
+		</dl>
+		<img src="images/NoFreeLunchTheorem.png">
+	</section>
+	<section><h3>Generalization</h3>
+		<dl class="fa">
+			<dt>The ability of algorithm to perform well on new (not-seeing before) data</dt>
+		</dl>
+	</section>
+	<section><h3>Overfitting and Underfitting</h3>
+		<dl class="fa">
+			<dt><span class="note">Overfitting</span> happens when a model learns all the detail (and noise) in the training data to the extent that it negatively impacts the performance of the model on new data.</dt>
+			<dt><span class="note">Underfitting</span> is the case where the model has "not learned enough", resulting in low generalization and unreliable predictions.</dt>
+			<dt>Overfitting and underfitting are the two biggest causes for poor performance of machine learning algorithms</dt>
+		</dl>
+	</section>
+	<section><h3>Overfitting vs Underfitting</h3>
+		<a href="images/overfitting_vs_underfitting.png"><img src="images/overfitting_vs_underfitting.png"></a>
+	</section>
+	<section><h3>Bias and Variance</h3>
+		<dl class="fa">
+			<dt><span class="note">Bias</span> is the difference between the estimator's expected value and the true value of the parameter being estimated. In ML, biased results are usually due to faulty assumptions</dt>
+			<dd>In ML, bias is inevitable - remember the 'No Free Lunch theorem'.</dd>
+			<dt><span class="note">Variance is the expectation of the squared deviation of a random variable from its mean.</span></dt>
+		</dl>
+	</section>
+	<section><h3>The Bias–Variance tradeoff</h3>
+			<a href="images/bias-and-variance.jpg"><img src="images/bias-and-variance.jpg"></a><br>
+			<p><a href="https://towardsdatascience.com/the-bias-variance-tradeoff-8818f41e39e9">The Bias-Variance Tradeoff</a> by Giorgos Papachristoudis</p>
+			<!-- <a href="https://en.wikipedia.org/wiki/Bias%E2%80%93variance_tradeoff">Bias–Variance tradeoff</a> -->
+	</section>
+	<section><h3>Cross-validation</h3>
+		<dl class="fa">
+			<dt>Cross validation is a technique for testing the effectiveness of a machine learning models.</dt>
+			<dt>Cross validation can give an insight on how the model will generalize to an independent dataset</dt>
+			<dt>The goal of cross-validation is to test the model's ability to predict new data, that was not used in estimating it, in order to flag problems like overfitting</dt>
+		</dl>
+	</section>
 </section>
 
 
 
 <!-- <section data-min="1"><h1>References</h1></section>
 <section><h2>References</h2>
-  <section><h3>Readings</h3>
-    <dl class="fa">
-      <dt></dt>
-    </dl>
-  </section>
+	<section><h3>Readings</h3>
+		<dl class="fa">
+			<dt></dt>
+		</dl>
+	</section>
 </section>
 
 
 <section id="hw" data-min="4"><h1>Exercises</h1></section>
 <section><h2>Task1: Task1Title</h2>
-  <section><h3>The Task</h3>
-    <dl class="fa">
-      <dt></dt>
-    </dl>
-  </section>
+	<section><h3>The Task</h3>
+		<dl class="fa">
+			<dt></dt>
+		</dl>
+	</section>
 </section>
 
 <section><h3>Submission</h3>
-  <dl class="fa">
-    <dt>PLease, prefix your filenames/archive with your name initials, before sending.</dt>
-    <dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
-    <dt>Send files to <a href="mailto:ProgressBG.WWW.Courses@gmail.com?Subject=_supervised_learning_overview_">ProgressBG.WWW.Courses@gmail.com</a></dt>
-  </dl>
+	<dl class="fa">
+		<dt>PLease, prefix your filenames/archive with your name initials, before sending.</dt>
+		<dd>For instance: <b>iep_task1.py</b> or <b>iep_tasks.rar</b></dd>
+		<dt>Send files to <a href="mailto:ProgressBG.WWW.Courses@gmail.com?Subject=_supervised_learning_overview_">ProgressBG.WWW.Courses@gmail.com</a></dt>
+	</dl>
 </section> -->
 
 
 <section class="disclaimer" data-background="/ProgressBG-MLwithPython-Slides/outfit/images/for_slides/the_end_on_sand.jpg">
-  <p>These slides are based on</p>
-  <p>customised version of </p>
-  <p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
-   <p>framework</p>
+	<p>These slides are based on</p>
+	<p>customised version of </p>
+	<p><a href="http://hakim.se/">Hakimel</a>'s <a href="http://lab.hakim.se/reveal-js">reveal.js</a></p>
+	 <p>framework</p>
 </section>
 <!--
 ########################################################
 ##################### SLIDES END   #####################
 ########################################################
 -->
-    </div>
-  </div>
-  <!-- Custom processing -->
-  <script src="/ProgressBG-MLwithPython-Slides/outfit/js/slides.js"></script>
-  <!-- external scripts -->
-  <script src="/ProgressBG-MLwithPython-Slides/lib/reveal.js/lib/js/head.min.js"></script>
-  <script src="/ProgressBG-MLwithPython-Slides/lib/reveal.js/js/reveal.js"></script>
+		</div>
+	</div>
+	<!-- Custom processing -->
+	<script src="/ProgressBG-MLwithPython-Slides/outfit/js/slides.js"></script>
+	<!-- external scripts -->
+	<script src="/ProgressBG-MLwithPython-Slides/lib/reveal.js/lib/js/head.min.js"></script>
+	<script src="/ProgressBG-MLwithPython-Slides/lib/reveal.js/js/reveal.js"></script>
 
-  <!-- init reveal -->
-  <script>
-    // Full list of configuration options available at:
-    // https://github.com/hakimel/reveal.js#configuration
-    var highlightjsTabSize = '  ';
-    Reveal.initialize({
-      controls: true,
-      progress: true,
-      slideNumber: 'c/t',
-      keyboard: true,
-      history: true,
+	<!-- init reveal -->
+	<script>
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		var highlightjsTabSize = '  ';
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			slideNumber: 'c/t',
+			keyboard: true,
+			history: true,
 
-      // display control
-      // center: true,
-      // width: '100%',
-      // height: '100%',
-      // // Factor of the display size that should remain empty around the content
-      // margin: 0.1,
+			// display control
+			// center: true,
+			// width: '100%',
+			// height: '100%',
+			// // Factor of the display size that should remain empty around the content
+			// margin: 0.1,
 
-      // The "normal" size of the presentation, aspect ratio will be preserved
-      // when the presentation is scaled to fit different resolutions. Can be
-      // specified using percentage units.
-      width: "100%",
-      height: "100%",
+			// The "normal" size of the presentation, aspect ratio will be preserved
+			// when the presentation is scaled to fit different resolutions. Can be
+			// specified using percentage units.
+			width: "100%",
+			height: "100%",
 
-      // Factor of the display size that should remain empty around the content
-      margin: 0.1,
+			// Factor of the display size that should remain empty around the content
+			margin: 0.1,
 
-      // Bounds for smallest/largest possible scale to apply to content
-      minScale: 0.2,
-      maxScale: 1.5,
+			// Bounds for smallest/largest possible scale to apply to content
+			minScale: 0.2,
+			maxScale: 1.5,
 
-      // slide transition
-      transition: 'concave', // none/fade/slide/convex/concave/zoom
-      // shift+maous click to zoom in/out element
-      zoomKey: 'ctrl',
-      // theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-      // transition: Reveal.getQueryHash().transition || 'default'
-      // Optional reveal.js plugins
-      dependencies: [
-        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure({tabReplace: highlightjsTabSize}); hljs.initHighlightingOnLoad(); } },
-        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
-        { src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
-      ]
-    });
-  </script>
-  <!-- linkedin badge -->
-  <!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
-  <!-- MathJax -->
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-  </script>
-  <script type="text/javascript" async src="/ProgressBG-MLwithPython-Slides/lib/MathJax/MathJax.js?config=TeX-AMS_HTML-full"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML-full" id=""></script> -->
+			// slide transition
+			transition: 'concave', // none/fade/slide/convex/concave/zoom
+			// shift+maous click to zoom in/out element
+			zoomKey: 'ctrl',
+			// theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			// transition: Reveal.getQueryHash().transition || 'default'
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.configure({tabReplace: highlightjsTabSize}); hljs.initHighlightingOnLoad(); } },
+				{ src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/zoom-js/zoom.js', async: true },
+				{ src: '/ProgressBG-MLwithPython-Slides/lib/reveal.js/plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+	<!-- linkedin badge -->
+	<!--<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>-->
+	<!-- MathJax -->
+	<script type="text/x-mathjax-config">
+		MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+	</script>
+	<script type="text/javascript" async src="/ProgressBG-MLwithPython-Slides/lib/MathJax/MathJax.js?config=TeX-AMS_HTML-full"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML-full" id=""></script> -->
 </body>
 </html>
